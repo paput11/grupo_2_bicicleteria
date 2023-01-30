@@ -15,6 +15,6 @@ https://www.newsportbikes.com.ar
 https://www.nitrobikes.com.ar
 https://borabikes.com.ar/
 https://sin-limite.com.ar/
-https://jujuyenbici.com.ar/
+https://marcovecchiobikes.com/
 https://bicicletasantafe.com.ar/
 
