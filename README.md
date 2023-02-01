@@ -1,15 +1,15 @@
 # grupo_2_bicicleteria
 
-Tematica del Sitio:
+Temática del sitio:
 
-Ventas de bicicletas y afines, con carro de compras. 
+Ventas de bicicletas, partes, accesorios y afines, mediante carro de compras. 
 
-Publico objetivo: 
+Público objetivo: 
 
-Ciclistas profesionales y amateur
+Ciclistas de MTB, BMX y ruta profesionales y amateur
 
 
-urls:
+urls de referencia:
 
 https://www.newsportbikes.com.ar
 https://www.nitrobikes.com.ar
