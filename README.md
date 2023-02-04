@@ -8,6 +8,14 @@ Público objetivo:
 
 Ciclistas de MTB, BMX y ruta profesionales y amateur
 
+Autores
+Marco Diamantino
+Erick Kiessling
+Patricio Aput 
+Santiago Acquisto
+Mateo Castro Aristizabal
+
+
 
 urls de referencia:
 
