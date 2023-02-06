@@ -24,7 +24,7 @@ Sitio web con caracteristicas visuales muy atrayentes para el usuario, menús de
 https://www.nitrobikes.com.ar
 Sitio Web con home mas simple en cuanto a propiedades y componentes pero fácilmente reproducible
 https://borabikes.com.ar/
-Tambien es un sitio web sencillo, similar en cuanto a diseño e inclusion de la misma información(Bicicletas, indumentaria, repuestos, accesorios) pero incluye un blog que podría ser un componente interesante de incluir para aumentar el flujo por el sitio web
+Tambien es un sitio web sencillo, similar en cuanto a diseño e inclusion de la misma información(Bicicletas, indumentaria, repuestos, accesorios) pero incluye un blog que podría ser un componente interesante de agregar para aumentar el flujo por el sitio web
 https://sin-limite.com.ar/
 Ratifica el número y tipo de componentes de sitios web con tematicas de comercialización de bicicletas
 https://marcovecchiobikes.com/
