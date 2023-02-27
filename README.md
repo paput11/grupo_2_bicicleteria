@@ -10,7 +10,7 @@ Ciclistas de MTB, BMX y ruta profesionales y amateur, aficionados a la bicicleta
 
 Autores
 Marco Diamantino
-Erick Kiessling
+Erick Kiessling (Asesor Financiero 27 años)
 Patricio Aput 
 Santiago Acquisto
 Mateo Castro Aristizabal (Ingeniero ambiental 26 años)
