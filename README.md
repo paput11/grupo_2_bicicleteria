@@ -6,13 +6,13 @@ Ventas de bicicletas, partes, accesorios, tours en bicicleta y afines, mediante 
 
 Público objetivo: 
 
-Ciclistas de MTB, BMX y ruta profesionales y amateur, aficionados a la bicicleta, personas con gusto por la práctica deportiva.
+Ciclistas de MTB y ruta profesionales y amateur, aficionados a la bicicleta, personas con gusto por la práctica deportiva.
 
 Autores
 Marco Diamantino
-Erick Kiessling (Asesor Financiero 27 años)
+Erick Kiessling
 Patricio Aput 
-Santiago Acquisto
+Santiago Acquisto ( Chef Totalmente detallista 30 años --> *-Tarea a realizar-* Catalogo! ) 
 Mateo Castro Aristizabal (Ingeniero ambiental 26 años)
 
 
