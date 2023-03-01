@@ -1,7 +1,43 @@
-.banner {
+header {}
+    
+footer{}
+    
+
+.bnr{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    background-position: center;
+    justify-content: left;
+    /* align-items: center; */
+    height: 30px;
+    /* background-position: center; */
+} 
+.bnr{
+    display: flex;
+    width: 90px;
+    height: 90px;
+    top: 30%;
 }
+
+
+
+.b2{
+    position: flex;
+    width: 768px;
+    height: 90px;
+    left: 50%;
+    
+    
+
+}
+
+.logo {
+    position:absolute;
+    left: 50px;
+    top: 50px;
+    }
+.p{
+}
+.p1{}
+.p2{}
+.p3{}
+.p4{}
+.p5{}
