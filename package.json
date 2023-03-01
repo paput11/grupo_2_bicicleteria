@@ -1,11 +1,11 @@
 {
-  "name": "MercadoLiebre",
+  "name": "Bicicleteria",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "/src/app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "nodemon app.js"
+    "start": "node src/app.js",
+    "test": "nodemon src/app.js"
     
   },
   "keywords": [],
