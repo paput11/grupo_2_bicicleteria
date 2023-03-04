@@ -15,13 +15,4 @@ app.use(express.static("public"));
     
 app.get ("/", (req,res) => {
     res.sendFile(path.join(__dirname, "/views/home.html"));
-})
-app.get ("/catalogo.html", (req,res) => {
-    res.sendFile(path.join(__dirname, "/views/catalogo.html"));
-
-})
-
-app.get ("/registro.html", (req,res) => {
-    res.sendFile(path.join(__dirname, "/views/registro.html"));
-
-})
+});
