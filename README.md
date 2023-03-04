@@ -13,7 +13,7 @@ Marco Diamantino
 Erick Kiessling
 Patricio Aput 
 Santiago Acquisto ( Chef Totalmente detallista 30 años --> *-Tarea a realizar-* Catalogo! ) 
-Mateo Castro Aristizabal (Ingeniero ambiental 26 años)
+Mateo Castro Aristizabal (Ingeniero ambiental 26 años, Medellín)
 
 
 
