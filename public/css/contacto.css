@@ -1,0 +1,41 @@
+body{
+  margin: 0;
+}
+
+header div{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #FDDB70;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo{
+  width: 7rem;
+}
+
+.carrito{
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+}
+.botones-header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.botones-header button{
+  background-color: #FDDB70;
+  padding: 0.25rem;
+  border: none;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.miCuenta{
+  background-color: #FDDB70;
+  padding: 0.25rem;
+  border: none;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
