@@ -1,4 +1,5 @@
-
+@import "header-footer.css";
+@import "registro.css";
 html, body { 
     font-family: 'Roboto', sans-serif;
     margin: 0px;
@@ -10,7 +11,7 @@ main {
     margin: 0px;
 }
 
-header {
+/*header {
     
     background-color: rgba(253,219,112,255);
     height: 80px;
@@ -33,12 +34,10 @@ header ul.bnr li {
 }
 
 header ul.bnr {
-    margin-left: 0px; /* elimina el margen izquierdo del primer elemento */
+    margin-left: 0px; 
     display: inline-block;
 
 }
-
-
 
 .logo {
 display: flex;
@@ -102,3 +101,4 @@ footer {
     background-color: rgba(253,219,112,255);
     height: 80px;
 }
+ */
