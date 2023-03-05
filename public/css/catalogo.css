@@ -73,6 +73,11 @@ footer ul li:last-child {
     margin-right: 0px;
 }
 
+.blogs-button {
+    padding-bottom: 20px; 
+    margin-right: 0px;
+}
+
 footer {
     background-color: rgba(253,219,112,255);
     height: 80px;
