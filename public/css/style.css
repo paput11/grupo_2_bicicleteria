@@ -1,5 +1,6 @@
 @import "header-footer.css";
 @import "registro.css";
+@import "catalogo.css";
 html, body { 
     font-family: 'Roboto', sans-serif;
     margin: 0px;

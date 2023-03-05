@@ -1,76 +1,8 @@
-@import "/public/css/style.css";
 
-
-
-
-/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-
-header {
-    position: flex;
-    background-color: rgba(253,219,112,255);
-    height: 80px;
-    width: 250%;
-}
-
-header ul.bnr {
-    padding: 0px 0px;
-    text-align: left; 
-    
-    }
-
-
-header ul.bnr li {
-    display: inline-block;
-    margin-left: 60px;
-    padding-inline-start: 0px;
-    position: relative;
-    bottom: 40px;
-}
-
-header ul.bnr {
-    margin-left: 0px; /* elimina el margen izquierdo del primer elemento */
-    display: inline-block;
-
-}
-
-
-
-footer {
-    position: fixed;
-    bottom: 30px;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background-color: rgba(253,219,112,255);
-}
-
-footer ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    
-    }
-    
-
-footer ul li {
-    margin-left: 70px;
-    position: relative;
-    margin-right: 10px;
-    top: 20px;
-
-}
-
-
-footer ul li:last-child {
-    padding-right: 15px; 
-    margin-right: 0px;
 }
 
 .blogs-button {
@@ -78,7 +10,3 @@ footer ul li:last-child {
     margin-right: 0px;
 }
 
-footer {
-    background-color: rgba(253,219,112,255);
-    height: 80px;
-}
