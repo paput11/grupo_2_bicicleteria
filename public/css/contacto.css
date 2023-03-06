@@ -37,10 +37,23 @@
 .datos-contacto-mapa{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  padding: 1rem;
 }
 .datos-contacto{
   width: 40%;
   padding: 1rem;
 }
 
+.formulario-contacto{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 50%;
+  padding: 3rem;
+  justify-content: left;
+}
+
+form a input{
+  width: 100%;
+}
