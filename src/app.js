@@ -14,7 +14,21 @@ app.listen(port,()=> (
 app.use(express.static("public"));
     
 app.get ("/", (req,res) => {
+<<<<<<< HEAD
     res.sendFile(path.join(__dirname, "/views/catalogo.html"));
+=======
+    res.sendFile(path.join(__dirname, "/views/home.html"));
+});
+>>>>>>> e404853f8b3b4e921044544525ff6d35d8fac75a
 
+app.get ("/registro", (req,res) => {
+    res.sendFile(path.join(__dirname, "/views/registro.html"));
+});
 
+app.get ("/contacto", (req,res) => {
+    res.sendFile(path.join(__dirname, "/views/contacto.html"));
+});
+
+app.get ("/catalogo", (req,res) => {
+    res.sendFile(path.join(__dirname, "/views/catalogo.html"));
 });

@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/style.css">
-    
+  
 
     <!-- Font  -->
-    
 
-    <title>®_GRAVITY_®</title>
+    <title>Registro</title>
     <style>
     </style>
 </head>
@@ -41,40 +40,54 @@
         <img width="100%" src="/images/banner-nuevo.jpg" alt="">
       </header>
     <main>  
-    
-        </section>
-                <article class="bici">
-                    <img src="/public/images/trek/trek1.webp" alt="">
-                    <p>Título de Trek</p>
-                    <p>Arriba estan las Trek.</p>
-                    <a href="" class=" ">Leer más</a>
-                </article>
-                <article class="bici">
-                    <img src="assets/img/post-2.png" alt="">
-                    <p>2do articulo</p>
-                    <p>Ojo con las Class</p>
-                    <a href="" class="blogs-button">Leer más</a>
-                </article>
-                <article class="bici">
-                    <img src="assets/img/post-3.png" alt="">
-                    <p>3r articulo</p>
-                    <p>vamos por el tercero.</p>
-                    <a href="" class="bici">Leer más</a>
-                </article>
-                <article class="bici">
-                    <img src="assets/img/post-1.png" alt="">
-                    <p>4ta bici</p>
-                    <p>corregir link de img.</p>
-                    <a href="" class="blogs-button">Leer más</a>
-                </article>
-                <article class="bici">
-                    <img src="assets/img/post-2.png" alt="">
-                    <p>5ta bici</p>
-                    <p>nlog button es para direccionar el "leer mas".</p>
-                    <a href="" class="blogs-button">Leer más</a>
-                </article> -->
-            </div>
-        </section>
+        <form method="post">
+            <p>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required minlength="5">
+            </p>
+            <p>
+                <input type="text" id="nombre" name="nombreuser" placeholder="Nombre de usuario">
+            </p>
+                <b><label for="nacimiento" id="fecha">Fecha de nacimiento</label></b>
+            <p>
+                <input type="date" id="nacimiento" name="nacimiento" placeholder="Nacimiento" required>
+            </p>
+            <p>
+                <input type="text" id="nombre" name="direccion" placeholder="Direccion">
+            </p>
+                <b><label for="Intereses" id="Intereses">Intereses del usuario</label></b>
+            <p>
+                <input type="checkbox" name="Intereses" value="Bicicletas" class="boton" checked> 
+                <label>Bicicletas</label>
+                <input type="checkbox" name="Intereses" value="Indumentaria" class="boton" checked> 
+                <label>Indumentaria</label>
+                <input type="checkbox" name="Intereses" value="Repuestos" class="boton" checked> 
+                <label>Repuestos</label>
+                <input type="checkbox" name="Intereses" value="Tours" class="boton" checked> 
+                <label>Tours</label>
+                <input type="checkbox" name="Intereses" value="Rental" class="boton" checked> 
+                <label>Rental</label>
+            </p>
+            </p>
+                <b><label for="fotoperfil" id="fotoperfil">Ingrese foto perfil del usuario</label></b>
+            </p>
+            <p>
+                <input type="file" id="fotoperfil" name="fotoperfil" accept=".jpg">
+            </p>
+            <p>        
+                <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña" required>
+            </p>
+            <p>        
+                <input type="password" id="contraseña" name="contraseña" placeholder="Confirme su contraseña" required>
+            </p>
+            <p>
+                <input id="ingreso" type="submit" value="Enviar"> </input>
+            </p>
+            <p>
+                <input id="ingreso" type="reset" value="Borrar"> </input>
+            </p>
+            
+        </form>
+
     </main>
     <footer>
         <div class="botonesFooter">
