@@ -1,0 +1,48 @@
+@import "header-footer-css";
+
+
+
+
+
+.article-box {
+    width: 300px;
+    height: 400px;
+    border: 1px solid #ccc;
+    margin: 20px;
+}
+
+
+.article-box img {
+    height: 250px;
+}
+
+.article-box h2 {
+    font-size: 24px;
+}
+
+.article-box .price {
+    font-size: 18px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.article-box img {
+    height: 250px;
+}
+
+.article-box h2 {
+    font-size: 24px;
+}
+
+.article-box .price {
+    font-size: 18px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.article-box {
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
