@@ -117,5 +117,12 @@ html, body {
     object-fit: cover; /* cubrir la caja con la imagen, recortando si es necesario */
 }
 
+h2 {
+    text-align: center;
+    font-size: 18;
+    position: relative;
+    top: 20px;
+}
+
 
 
