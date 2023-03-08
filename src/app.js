@@ -33,10 +33,9 @@ app.get ("/repuesto", (req,res) => {
 });
 
 app.get ("/indumentaria", (req,res) => {
-    res.sendFile(path.join(__dirname, "/views/indu.html"));
+    res.sendFile(path.join(__dirname, "/views/indumentaria.html"));
 });
 
-
-    app.get ("/login", (req,res) => {
+app.get ("/login", (req,res) => {
     res.sendFile(path.join(__dirname, "/views/login.html"));
 });
