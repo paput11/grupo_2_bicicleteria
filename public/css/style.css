@@ -1,8 +1,6 @@
 @import "header-footer.css";
-@import "registro.css";
-@import "catalogo.css";
-@import "contacto.css";
-@import "login.css";
+
+
 
 html, body { 
     font-family: 'Roboto', sans-serif;
