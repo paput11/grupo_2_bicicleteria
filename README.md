@@ -31,3 +31,6 @@ https://marcovecchiobikes.com/
 Sitio atractivo visualmente e inclusión de sesiones novedosas como intructivo para realizar compras y ventas de objetos de segunda mano o tipo outlet.
 https://bicicletasantafe.com.ar/
 Con un diseño diferente (one page) podría ser referente para la contrucción de paginas mas sencillas pero con funcionalidades limitadas
+
+
+Espacio para agregar link del tablero de trabajo.

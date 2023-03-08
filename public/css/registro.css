@@ -27,3 +27,9 @@ form input {
 .boton {
     width: auto;
 }
+
+#ingreso{
+    width: 30%;
+    border: solid 2px black;
+    font-size: 1vw;
+}
