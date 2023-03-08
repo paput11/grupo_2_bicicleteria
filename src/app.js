@@ -1,7 +1,7 @@
 const express = require("express");
-const { dirname } = require("path");
+
 const path = require ("path");
-const { env } = require("process");
+
 
 const app = express ();
 
@@ -28,15 +28,14 @@ app.get ("/contacto", (req,res) => {
 app.get ("/catalogo", (req,res) => {
     res.sendFile(path.join(__dirname, "/views/catalogo.html"));
 });
+app.get ("/repuesto", (req,res) => {
+    res.sendFile(path.join(__dirname, "/views/repuesto.html"));
+});
 
 app.get ("/indumentaria", (req,res) => {
     res.sendFile(path.join(__dirname, "/views/indu.html"));
 });
 
-
-app.get ("/repuestos", (req,res) => {
-    res.sendFile(path.join(__dirname, "/views/repuestos.html"));
-});
 
     app.get ("/login", (req,res) => {
     res.sendFile(path.join(__dirname, "/views/login.html"));
