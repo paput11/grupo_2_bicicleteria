@@ -56,6 +56,16 @@
     top: 293px;
     left: 529px;
     margin: 0px;
+    color:rgb(2, 109, 2);
+    font-weight: bold; 
+}
+
+.article-box i {
+    position: absolute; /* establecer la posición absoluta para que la imagen se superponga al cuadro */
+    top: 620px; /* ajustar la posición superior de la imagen */
+    right: 200px; /* ajustar la posición izquierda de la imagen */
+    width: 45px; /* ajustar el ancho de la imagen */
+    height: 45px; /* ajustar la altura de la imagen */
 }
 
 .article-box {
@@ -74,4 +84,5 @@
     border: 1px solid #ccc;
     padding: 5px;
     background-color: #f2f2f2;
+    font-weight: bold; 
     }
