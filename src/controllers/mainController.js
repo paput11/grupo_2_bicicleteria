@@ -1,3 +1,4 @@
+
 const controlador = {
 
     compraRealizada: (req,res) => { res.send ("Gracias por su compra")},
@@ -6,4 +7,4 @@ const controlador = {
 
 };
 
-module.exports =controlador
+module.exports = controlador;

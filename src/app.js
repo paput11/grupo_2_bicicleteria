@@ -1,12 +1,16 @@
 const express = require("express");
 
 const path = require ("path");
+const routes = require('./routes/mainRoutes'); // import the routes
 
 
 const app = express ();
 
+app.use(express.json());
 
 const port = process.env.port || 3000;
+
+app.use('/rest', routes);
 
 app.listen(port,()=> (
     console.log("Servidor escuchando en el puerto http://localhost:" + port)

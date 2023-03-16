@@ -121,7 +121,7 @@ div {
   padding: 30px;
   box-sizing: border-box;
 }
-#kiko-slider>.menu {
+.menu {
   text-align: center;
   margin: 20px;
 }
@@ -156,7 +156,7 @@ ul.slider{
   box-sizing: border-box;
 }
 ul.slider li {
-  position: absolute;
+  position:  absolute;
   left: 0;
   top: 0;
   opacity: 0;
