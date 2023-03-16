@@ -1,0 +1,28 @@
+body {
+    text-align: center;
+    
+}
+
+.serviciop {
+    margin-left: 30px;
+    margin-right: 30px;
+    display: inline-block;
+}
+
+div{
+    display: inline-block;
+}
+
+h2 {
+    margin-left: 3%;
+    margin-top: 3%;
+}
+section{
+    margin: 2px;
+    padding: 5%;
+}
+.otros {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}

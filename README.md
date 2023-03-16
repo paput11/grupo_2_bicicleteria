@@ -33,4 +33,5 @@ https://bicicletasantafe.com.ar/
 Con un diseño diferente (one page) podría ser referente para la contrucción de paginas mas sencillas pero con funcionalidades limitadas
 
 
-Espacio para agregar link del tablero de trabajo.
+Tablero de trabajo.
+https://trello.com/b/hSEtOvG1/gravity-bicycles
