@@ -41,3 +41,11 @@ app.get ("/login", (req,res) => {
 app.get ("/terminos", (req,res) => {
     res.sendFile(path.join(__dirname, "/views/terminos.html"));
 });
+
+app.get ("/politicas", (req,res) => {
+    res.sendFile(path.join(__dirname, "/views/politicas.html"));
+});
+
+app.get ("/copy", (req,res) => {
+    res.sendFile(path.join(__dirname, "/views/copy.html"));
+});
