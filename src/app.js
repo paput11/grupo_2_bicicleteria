@@ -1,51 +1,14 @@
 const express = require("express");
-
+const app = express ();
 const path = require ("path");
 
-const app = express ();
+const mainRouter = require("./routes/mainRoutes")
+app.use("/", mainRouter)
+
+app.use(express.static("public"));
 
 const port = process.env.port || 3000;
 
 app.listen(port,()=> (
     console.log("Servidor escuchando en el puerto http://localhost:" + port)
 ));
-app.use(express.static("public"));
-    
-app.get ("/", (req,res) => {
-    res.sendFile(path.join(__dirname, "/views/home.html"));
-});
-
-app.get ("/registro", (req,res) => {
-    res.sendFile(path.join(__dirname, "/views/registro.html"));
-});
-
-app.get ("/contacto", (req,res) => {
-    res.sendFile(path.join(__dirname, "/views/contacto.html"));
-});
-
-app.get ("/catalogo", (req,res) => {
-    res.sendFile(path.join(__dirname, "/views/catalogo.html"));
-});
-app.get ("/repuesto", (req,res) => {
-    res.sendFile(path.join(__dirname, "/views/repuesto.html"));
-});
-
-app.get ("/indumentaria", (req,res) => {
-    res.sendFile(path.join(__dirname, "/views/indumentaria.html"));
-});
-
-app.get ("/login", (req,res) => {
-    res.sendFile(path.join(__dirname, "/views/login.html"));
-});
-
-app.get ("/terminos", (req,res) => {
-    res.sendFile(path.join(__dirname, "/views/terminos.html"));
-});
-
-app.get ("/politicas", (req,res) => {
-    res.sendFile(path.join(__dirname, "/views/politicas.html"));
-});
-
-app.get ("/copy", (req,res) => {
-    res.sendFile(path.join(__dirname, "/views/copy.html"));
-});
