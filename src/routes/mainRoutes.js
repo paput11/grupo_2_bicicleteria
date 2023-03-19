@@ -23,5 +23,6 @@ mainRouter.get ("/politicas", mainController.politicas);
 
 mainRouter.get ("/copy", mainController.copy);
 
+mainRouter.get ("/rental", mainController.rental);
 
 module.exports = mainRouter 

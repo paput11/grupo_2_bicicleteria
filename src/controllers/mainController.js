@@ -30,8 +30,10 @@ const mainController = {
     },
     copy: (req,res) => {
         res.sendFile(path.join(__dirname, "../views/copy.html"));
-    }   
-    
-};
+    },   
+    rental: (req,res) => {
+        res.sendFile(path.join(__dirname, "../views/rental.html"));
+    },   
+ };
 
-module.exports = mainController
+module.exports = mainController;

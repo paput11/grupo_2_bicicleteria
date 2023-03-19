@@ -1,0 +1,86 @@
+section{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.article-box{
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 2rem;
+    width: 100%;
+}
+
+.tituloFoto{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    align-items: center;
+    text-align: left;
+}
+
+.tituloFoto h2{
+    font-size: 50px;
+    color: cadetblue;
+    font-weight: bolder;
+    margin: 0;  
+}
+
+.tituloFoto img{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.descriptionPrecioCarrito{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 40%;
+    padding: 1rem;
+    justify-content: space-between; 
+}
+
+.description{
+    font-size: 17px;
+    text-align: justify;
+    margin: 0;
+}
+
+.precioCarrito{
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.precioCarrito p{
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(0, 173, 0);
+}
+
+.precioCarrito i{
+    position: absolute;
+    right: 5px;
+    color: rgb(0, 173, 0);
+}
+
+/*queries*/
+
+@media (max-width: 900px) {
+
+    .article-box{
+        flex-direction: column;
+    }
+    .descriptionPrecioCarrito{
+        width: 100%;
+    }
+}
+@media (max-width: 600px) {
+.tituloFoto h2{
+    font-size: 30px;
+    }
+}
