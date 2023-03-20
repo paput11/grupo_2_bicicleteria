@@ -33,7 +33,10 @@ const mainController = {
     },   
     rental: (req,res) => {
         res.render ("rental");
-    },   
+    },
+    carro: (req,res) => {
+        res.render ("carro");
+    },    
  };
 
 module.exports = mainController;
