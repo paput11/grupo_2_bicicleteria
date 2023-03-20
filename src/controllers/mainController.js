@@ -2,37 +2,37 @@ const path = require ("path");
 
 const mainController = {
     home: (req,res) => { 
-        res.sendFile(path.join(__dirname, "../views/home.html"))
+        res.render("home")
     },
     registro: (req,res) => {
-        res.sendFile(path.join(__dirname, "../views/registro.html"));
+        res.render ("registro");
     },
     contacto: (req,res) => {
-        res.sendFile(path.join(__dirname, "../views/contacto.html"));
+        res.render ("contacto");
     },
     catalogo: (req,res) => {
-        res.sendFile(path.join(__dirname, "../views/catalogo.html"));
+        res.render ("catalogo");
     },
     repuesto: (req,res) => {
-        res.sendFile(path.join(__dirname, "../views/repuesto.html"));
+        res.render ("repuesto");
     },
     indumentaria: (req,res) => {
-        res.sendFile(path.join(__dirname, "../views/indumentaria.html"));
+        res.render ("indumentaria");
     },
     login: (req,res) => {
-        res.sendFile(path.join(__dirname, "../views/login.html"));
+        res.render ("login");
     },
     terminos: (req,res) => {
-        res.sendFile(path.join(__dirname, "../views/terminos.html"));
+        res.render ("terminos");
     },
     politicas: (req,res) => {
-        res.sendFile(path.join(__dirname, "../views/politicas.html"));
+        res.render ("politicas");
     },
     copy: (req,res) => {
-        res.sendFile(path.join(__dirname, "../views/copy.html"));
+        res.render ("copy");
     },   
     rental: (req,res) => {
-        res.sendFile(path.join(__dirname, "../views/rental.html"));
+        res.render ("rental");
     },   
  };
 
