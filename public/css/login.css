@@ -8,13 +8,12 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-}
+    position: relative;
+    }
 
 .formulario {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    text-align: center;
+    
     width: 300px;
     background: white;
     border-radius: 5px;
@@ -76,7 +75,7 @@ form .username {
     width: 100%;
 }
 .recordar{
-    margin: -5px 0px 20px 30px;
+    margin: 0px 0px 20px 0px;
     color:blue;
     cursor: pointer;
     
@@ -116,10 +115,7 @@ input[type="submit"]{
 
 @media (max-width: 767px) {
         .formulario {
-            position: absolute;
-            top: 105%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(15%, 0%);
             width: 80%;
             background: white;
             border-radius: 5px;
@@ -127,11 +123,8 @@ input[type="submit"]{
     }
 
     @media (min-width: 767px){
-        .formulario {
-            position: absolute;
-            top: 85%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .formulario {         
+            transform: translate(75%, 0%);
             width: 40%;
             background: white;
             border-radius: 5px;
