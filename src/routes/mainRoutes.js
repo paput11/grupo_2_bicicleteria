@@ -25,4 +25,6 @@ mainRouter.get ("/copy", mainController.copy);
 
 mainRouter.get ("/rental", mainController.rental);
 
+mainRouter.get ("/carro", mainController.carro);
+
 module.exports = mainRouter 
