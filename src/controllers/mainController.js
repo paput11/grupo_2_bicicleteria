@@ -25,6 +25,11 @@ const mainController = {
     terminos: (req,res) => {
         res.render ("terminos");
     },
+    //* tours *//
+    tours: (req,res) => {
+        res.render ("tours");
+    },
+    //* *//
     politicas: (req,res) => {
         res.render ("politicas");
     },
@@ -37,6 +42,6 @@ const mainController = {
     carro: (req,res) => {
         res.render ("carro");
     },    
- };
+};
 
 module.exports = mainController;
