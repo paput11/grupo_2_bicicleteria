@@ -12,11 +12,20 @@ body {
     }
 
 .formulario {
+<<<<<<< HEAD
     text-align: center;
     
     width: 300px;
+=======
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+>>>>>>> 89f82624092d27d9a979be65f767bfb362864999
     background: white;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .formulario h1 {
@@ -55,6 +64,7 @@ form .username {
     pointer-events: none;
     transition: .5s;
 }
+
 .username span::before{
     content:" ";
     position: absolute;
@@ -64,13 +74,12 @@ form .username {
     height: 2px;
     background-color: #1f6035;
 }
-.username input:focus ~ label,
+
 .username input:focus ~ label{
     top: 6px;
     color: #1f6035;
 }
 
-.username input:focus ~ span::before,
 .username input:focus ~ span::before{
     width: 100%;
 }
@@ -107,6 +116,7 @@ input[type="submit"]{
     text-decoration: underline;
 }
 
+<<<<<<< HEAD
 .resolution{
     width: 99%;
     text-align: center;
@@ -132,4 +142,6 @@ input[type="submit"]{
     }
 
 
+=======
+>>>>>>> 89f82624092d27d9a979be65f767bfb362864999
 

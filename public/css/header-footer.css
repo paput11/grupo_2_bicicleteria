@@ -41,6 +41,13 @@ header div{
   box-sizing: border-box;
 }
 
+@media (max-width: 750px) {
+
+      .botones-header{
+        flex-wrap: wrap;
+        width: 70%;
+      }
+}
 /* footer */
 
 footer{
@@ -55,7 +62,7 @@ footer{
 }
 footer button{
   background-color: #FDDB70;
-  padding: 0.25rem 0.5rem;
+  padding: 1rem;
   border: none;
   font-size: 1rem;
   box-sizing: border-box;
