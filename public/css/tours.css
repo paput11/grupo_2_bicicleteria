@@ -1,0 +1,25 @@
+/*queries*/
+
+@media (max-width: 900px) {
+
+    .article-box{
+        flex-direction: column;
+    }
+    .descriptionPrecioCarrito{
+        width: 100%;
+    }
+}
+@media (max-width: 600px) {
+.tituloFoto h2{
+    font-size: 30px;
+    }
+}
+
+.sec_tours {
+
+position:relative;   
+}
+.tours_container{
+    padding-left: 20px;
+
+}
