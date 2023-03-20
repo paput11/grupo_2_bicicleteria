@@ -11,13 +11,14 @@ body {
 }
 
 .formulario {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     background: white;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .formulario h1 {
@@ -56,6 +57,7 @@ form .username {
     pointer-events: none;
     transition: .5s;
 }
+
 .username span::before{
     content:" ";
     position: absolute;
@@ -65,13 +67,12 @@ form .username {
     height: 2px;
     background-color: #1f6035;
 }
-.username input:focus ~ label,
+
 .username input:focus ~ label{
     top: 6px;
     color: #1f6035;
 }
 
-.username input:focus ~ span::before,
 .username input:focus ~ span::before{
     width: 100%;
 }
@@ -107,36 +108,5 @@ input[type="submit"]{
 .registrate a:hover{
     text-decoration: underline;
 }
-
-.resolution{
-    width: 99%;
-    text-align: center;
-}
-
-
-@media (max-width: 767px) {
-        .formulario {
-            position: absolute;
-            top: 105%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            background: white;
-            border-radius: 5px;
-        }
-    }
-
-    @media (min-width: 767px){
-        .formulario {
-            position: absolute;
-            top: 85%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40%;
-            background: white;
-            border-radius: 5px;
-        }
-    }
-
 
 
