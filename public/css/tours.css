@@ -1,4 +1,20 @@
-/*queries*/
+
+.sec_tours {
+
+    width: 60%;
+    display:flex ;
+    flex-direction: column;
+    text-align: left;
+}
+section {
+
+display: flex;
+justify-content: center;
+
+
+}
+
+/* /*queries*/
 
 @media (max-width: 900px) {
 
@@ -13,13 +29,4 @@
 .tituloFoto h2{
     font-size: 30px;
     }
-}
-
-.sec_tours {
-
-position:relative;   
-}
-.tours_container{
-    padding-left: 20px;
-
 }
