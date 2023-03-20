@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/contacto.css">
+  <title>Contacto</title>
+</head>
+<body>
+    <!-- header -->
+    <%- include('./partials/header') %>
+
+    <main>
+    <!-- imagen banner y cuadros de contacto y soporte-->
+    <div class="contacto-banner">
+      <img  width="100%" src="/images/contacto-banner.jpg" alt="contacto-banner">
+      <!-- contacto departamento de ventas -->
+      <div class="carteles-Banner">
+        <div class="cartelBanner">
+          <a class="titulo-cartel-banner">Departamento de Ventas</a>
+          <a>Escribinos para presupuestar todo lo que estas buscando</a>
+          <a href="https://api.whatsapp.com/send/?phone=5491125026198">+54 9 11 2502-6198</a>
+        </div>
+        <div class="cartelBanner">
+          <a class="titulo-cartel-banner">Consultas Técnicas</a>
+          <a>No dudes en consultarnos</a>
+          <a href="https://api.whatsapp.com/send/?phone=5491125026199">+54 9 11 2502-6199</a>
+        </div>
+      </div>
+    </div>
+    <!-- datos de contacto y mapa -->
+    <div class="datos-contacto-mapa">
+      <div class="datos-contacto">
+        <h2>Gravity Bicycles</h2>
+        <h3>Dirección</h3>
+        <h4>Av. Gral. Miguel de Azcuenaga 633</h4>
+        <h4>Morón, Bs. As.</h4>
+        <h4>Lunes a Viernes de 10 - 14 y de 15 - 19 hs, Sábados de 9 - 13</h4>
+      </div>
+      <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.413500141991!2d-58.6220470849465!3d-34.64425878044904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb89e4bf549ad%3A0x4141b99587fcc57!2sAv.%20Gral.%20Miguel%20de%20Azcu%C3%A9naga%20633%2C%20B1708%20Mor%C3%B3n%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1678048741859!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <!-- formulario de contacto -->
+      <form  method="post">
+        <div class="formulario-contacto">
+          <a>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+          </a>
+          <a>
+            <input type="text" id="email" name="email" placeholder="email">
+          </a>
+          <textarea rows="4" cols="50" name="comment" form="usrform">
+            Dejanos tu mensaje...</textarea>
+            <input type="submit">
+        </div>
+        </form>
+      </main>
+
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+</body>
+</html>

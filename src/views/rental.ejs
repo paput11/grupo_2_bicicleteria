@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>®_Bicicletas_®</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+        <!--Link CSS  -->
+        <link rel="stylesheet" href="../css/rental.css"> 
+        <link rel="stylesheet" href="../css/style.css"> 
+
+
+</head>
+<body>
+    <!-- header -->
+    <%- include('./partials/header') %>
+
+    <main>  
+        <section>
+            <!-- articulo rental N°1 -->
+            <div class="article-box">
+            <!-- nombre y foto -->
+                <div class="tituloFoto">
+                    <h2>TREK SuperCaliber 9</h2>
+                    <img src="..//images/trek/Supercaliber9.jpg" alt="img-1">
+                </div>
+            <!-- descripcion precio y carrito -->
+                <div class="descriptionPrecioCarrito">    
+                    <p class="description">La Supercaliber 9.8 es una bicicleta de competición para cross country diseñada para rodar a toda velocidad y subir a lo más alto del podio en la Copa del Mundo. Está equipada con
+                    Cuadro ultra ligero íntegro de carbono OCLV Mountain con 60 mm de recorrido, horquilla FOX Performance 32 Step-Cast de 100 mm y amortiguador FOX Performance IsoStrut exclusivo de Trek diseñado específicamente para la Supercaliber. Además, incorpora doble bloqueo remoto de la suspensión, una transmisión SRAM GX Eagle 1x12 con bielas de carbono y ruedas de carbono Bontrager Kovee Pro 30 con buje trasero Rapid Drive de 108 dientes que ofrece un engranaje rápido.
+                    </p>
+                    <!-- precio y carrito -->
+                    <div class="precioCarrito">
+                        <p>Precio: usd 120/día.-</p>
+                        <i class="fa-solid fa-cart-plus"></i>
+                    </div>
+                </div>
+            </div>  
+            <!-- articulo rental N°2 -->  
+            <div class="article-box">
+                <div class="tituloFoto">
+                    <h2>TREK Marlin 7</h2>
+                    <img src="..//images/trek/trek2.jpg" alt="img-1">
+                </div>
+                <div class="descriptionPrecioCarrito">    
+                    <p class="description">La Marlin 7 es ideal para iniciarse en el mountain bike y está preparada para competir.
+                        La tecnología que incorpora es un cuadro ligero con guiado interno de los cables del cambio y del latiguillo de freno, una horquilla RockShox Judy con bloqueo que aporta más suavidad, frenos de disco hidráulico Shimano y ruedas Bontrager. Una sencilla transmisión 1x sin desviador delantero para reducir el traqueteo y ofrecer un funcionamiento más sencillo. No te preocupes, gracias al cassette 11-46 con una amplia relación de desarrollos, podrás elegir la marcha adecuada para subir sin problema y para lanzarte en las bajadas.
+                     </p>
+                    <div class="precioCarrito">
+                        <p>Precio: usd 150/día.-</p>
+                        <i class="fa-solid fa-cart-plus"></i>
+                    </div>
+                </div>
+            </div>    
+            <!-- articulo rental N°3 -->
+            <div class="article-box">
+                <div class="tituloFoto">
+                    <h2>TREK Marlin 5</h2>
+                    <img src="../images/trek/trek3.jpg" alt="img-1">
+                </div>
+                <div class="descriptionPrecioCarrito">    
+                    <p class="description">La Marlin  5 es una bicicleta preparada para trail, ideal para las aventuras del día a día, ya sea por senderos o fuera de ellos
+                    a tecnología que incorpora un cuadro ligero de aluminio con guiado interno para proteger los cables y aportar un aspecto impecable, transmisión 2x8 con una amplia relación de desarrollos para poder elegir la velocidad adecuada en cada tipo de terreno, potentes frenos de disco hidráulico y una horquilla de suspensión con bloqueo que suaviza el terreno.
+                    </p>
+                    <div class="precioCarrito">
+                        <p>Precio: usd 30/día.-</p>
+                        <i class="fa-solid fa-cart-plus"></i>
+                    </div>
+                </div>
+            </div>    
+         </section>
+    </main>
+
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+
+</body>
+</html> 
