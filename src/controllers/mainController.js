@@ -13,8 +13,8 @@ const mainController = {
     catalogo: (req,res) => {
         res.render ("catalogo");
     },
-    repuesto: (req,res) => {
-        res.render ("repuesto");
+    accesorios: (req,res) => {
+        res.render ("accesorios");
     },
     indumentaria: (req,res) => {
         res.render ("indumentaria");

@@ -12,7 +12,6 @@
     text-align: center; /* centrar el contenido verticalmente */
     border: 2px solid black; /* agregar un borde negro de 2px */
     bottom: 30px;
-    position: absolute;
     top: 220px;
     left: 40px;
 }

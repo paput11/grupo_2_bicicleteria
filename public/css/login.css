@@ -58,7 +58,7 @@ form .username {
     position: absolute;
     top: 50%;
     left: 5px;
-    color: whitesmoke;
+    color: #a9a7a703;
     transform: translateY(-80%);
     font-size: 16px;
     pointer-events: none;

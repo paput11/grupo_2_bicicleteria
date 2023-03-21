@@ -11,7 +11,7 @@ mainRouter.get ("/contacto", mainController.contacto);
 
 mainRouter.get ("/catalogo", mainController.catalogo);
 
-mainRouter.get ("/repuesto", mainController.repuesto);
+mainRouter.get ("/accesorios", mainController.accesorios);
 
 mainRouter.get ("/indumentaria", mainController.indumentaria);
 
