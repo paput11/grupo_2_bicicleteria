@@ -74,6 +74,7 @@ table tbody tr td {
 
 .product img {
   border-radius: 6px;
+  width: 100%;
 }
 
 .product .info {

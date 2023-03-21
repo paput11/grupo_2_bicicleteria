@@ -29,4 +29,8 @@ mainRouter.get ("/carro", mainController.carro);
 
 mainRouter.get ("/tours", mainController.tours);
 
+mainRouter.get ("/crearProducto", mainController.crearProducto);
+
+mainRouter.get ("/editarProducto", mainController.editarProducto);
+
 module.exports = mainRouter 

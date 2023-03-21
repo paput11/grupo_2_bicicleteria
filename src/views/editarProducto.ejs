@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head -->
+<%- include('./partials/head',{cssSheet:"registro"})%>
+<body>
+  <!-- header -->
+  <%- include('./partials/header') %>
+    <main>  
+        <form method="post">
+            <p>
+                <input type="text" id="nombre" name="nombre" placeholder="Producto" required minlength="5">
+            </p>
+            <p>
+                <input type="text" id="tipo" name="tipo" placeholder="Tipo">
+            </p>
+
+            <p>
+                <input type="number" id="precio" name="precio" placeholder="Precio">
+            </p>
+
+            <p>
+                <input type="text" id="nombre" name="descripcion" placeholder="Descripcion">
+            </p>
+            
+            <input type="file" name="Foto">
+            
+            <p>
+                <input id="ingreso" type="submit" value="Editar"> </input>
+            </p>
+
+
+            <p>
+                <input id="ingreso" type="submit" value="borrar"> </input>
+            </p>
+            
+        </form>
+
+    </main>
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+</body>
+</html>
