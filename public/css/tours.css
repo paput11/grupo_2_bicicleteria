@@ -14,33 +14,16 @@ justify-content: center;
 
 
 }
-.lagos {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    margin: auto;
-    top: 25px;
-}
 
-img {
-    width: 50%;
-    height: auto;
-    
-}
+.mapa {
+    top: 60%;
+    position: relative;
+    right: 400px;
+    width: 400px;
+    height: 600px;
+    border: 2px solid black;
+    margin: 0 auto;
 
+
+}
 /* /*queries*/
-
-@media (max-width: 900px) {
-
-    .article-box{
-        flex-direction: column;
-    }
-    .descriptionPrecioCarrito{
-        width: 100%;
-    }
-}
-@media (max-width: 600px) {
-.tituloFoto h2{
-    font-size: 30px;
-    }
-}
