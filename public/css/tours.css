@@ -27,3 +27,37 @@ justify-content: center;
 
 }
 /* /*queries*/
+
+
+@media (max-width: 480px){
+
+.sec_tours{
+    flex-direction: column;
+    width: 100%; /* ancho del contenedor */
+    max-width: 480px; /* ancho máximo del contenedor */
+    margin-left: 120%; /* centrado horizontal */
+    padding: 10px 20px; /* espacio interior */
+
+    font-size: 16px; /* tamaño de fuente de los párrafos */
+  line-height: 1.5; /* altura de línea de los párrafos */
+  margin-bottom: 20px; /* espacio inferior entre párrafos */
+}
+
+}
+
+@media (max-width: 1024px){
+
+.sec_tours{
+        flex-direction: column;
+    
+    }
+}
+
+@media (min-width: 1025px){
+
+.sec_tours{
+        flex-direction: column;
+    
+    }
+
+}
