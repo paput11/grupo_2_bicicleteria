@@ -10,10 +10,11 @@
         
     <main>  
     <section>
-        <!-- articulo rental N°1 -->
+        <!-- articulo rental N° -->
+        <% products.forEach(function(product){ %>
         <div class="article-box">
             <div class="tituloFoto">
-                <h2>TREK Marlin 5</h2>
+                <h2><%= product.nombre %></h2>
                 <img src="../images/trek/trek3.jpg" alt="img-1">
             </div>
             <div class="descriptionPrecioCarrito">    
@@ -28,7 +29,7 @@
                 </div>
             </div>
         </div>    
-        
+        <% }) %>
         <!-- articulo rental N°2 -->  
         <div class="article-box">
             <!-- nombre y foto -->

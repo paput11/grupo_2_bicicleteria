@@ -1,0 +1,29 @@
+[{
+    "id": 1,
+    "nombre": "esteban",
+    "apellido": "quito",
+    "email":"Estabanquito@gmail.com",
+    "contraseña":"callefalsa123",
+    "categoria": "admin",
+    "imagen":"[Falta imagen]",
+    "edad": 25
+ 
+  }, {
+    "id": 2,
+    "nombre": "matias",
+    "apellido": "perez",
+    "email": "matiasperezbostero86@hotmail.com",
+    "contraseña": "Bokita",
+    "categoria": "admin",
+    "imagen":"[Falta imagen]",
+    "edad": 38
+  }, {
+    "id": 3,
+    "nombre": "benito",
+    "apellido": "suarez",
+    "email": "benitoSuarez15@hotmail.com",
+    "contraseña": "vamosUruguay",
+    "categoria":"user" ,
+    "imagen":"[Falta imagen]",
+    "edad": 15
+  }]

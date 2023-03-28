@@ -5,7 +5,9 @@ const path = require ("path");
 
 /* Ruteadores */
 const mainRouter = require("./routes/mainRoutes")
+const productRouter = require("./routes/productsRouter")
 app.use("/", mainRouter)
+app.use("/products", productRouter)
 
 /* Funcionamiento EJS */
 app.set("view engine","ejs")
