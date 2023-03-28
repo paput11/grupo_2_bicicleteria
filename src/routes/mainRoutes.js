@@ -9,7 +9,7 @@ mainRouter.get ("/registro", mainController.registro);
 
 mainRouter.get ("/contacto", mainController.contacto);
 
-mainRouter.get ("/catalogo", mainController.catalogo);
+
 
 mainRouter.get ("/accesorios", mainController.accesorios);
 
