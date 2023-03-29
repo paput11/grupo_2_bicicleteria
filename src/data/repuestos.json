@@ -4,7 +4,7 @@
     "imagen": "/repuestos/repuestos.jpg",
     "descripcion": "El grupo entrada de gama amateur ahora con con 11 velocidades",
     "categoria": "Grupos",
-    "precio": "usd 400",
+    "precio": "usd 400"
     
  
   }, {
@@ -13,7 +13,7 @@
     "imagen": "/repuestos/repuestos2.webp",
     "descripcion": "SHIMANO DEORE XT es el grupo de bicicletas de montaña en el que llevan confiando los usuarios de MTB, generación tras generación, en todo el mundo",
     "categoria": "Grupos",
-    "precio": "U$D 600",
+    "precio": "U$D 600"
     
   }, {
     "id": 3,
@@ -21,6 +21,6 @@
     "imagen": "/repuestos/repuestos3.webp",
     "descripcion": "El famoso grupo XT, ahora en una version de 11velocidades y con frenos de doble piston",
     "categoria": "Grupos",
-    "precio":"U$D 500" ,
+    "precio":"U$D 500" 
   
   }]
