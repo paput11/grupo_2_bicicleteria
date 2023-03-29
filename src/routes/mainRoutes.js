@@ -9,8 +9,6 @@ mainRouter.get ("/registro", mainController.registro);
 
 mainRouter.get ("/contacto", mainController.contacto);
 
-
-
 mainRouter.get ("/accesorios", mainController.accesorios);
 
 mainRouter.get ("/indumentaria", mainController.indumentaria);

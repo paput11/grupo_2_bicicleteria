@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- head -->
+<%- include('./partials/head',{cssSheet:"rental"})%>
+
+<body>
+    <!-- header -->
+    <%- include('./partials/header') %>
+        
+    <main>  
+        <section>
+            <!-- articulo rental N° -->
+            
+            <div class="article-box">
+                <div class="tituloFoto">
+                    <h2><%= product.nombre %></h2>
+                    <img src="../images/trek/<%= product.imagen%>" alt="img-1">
+                </div>
+                <div class="descriptionPrecioCarrito">    
+                    <p class="description"> <%= product.descripcion %>
+                    </p>
+                    <div class="precioCarrito">
+                        <p>Precio: <%= product.precio %></p>
+                    <div>
+                        <img class="carrito" src="/images/carritoCompras.png" alt="carrito de compras">
+                    </div>
+                    </div>
+                </div>
+            </div>    
+            
+        </section>
+    </main>
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+</body>
+</html> 

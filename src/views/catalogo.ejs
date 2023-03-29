@@ -12,11 +12,15 @@
     <section>
         <!-- articulo rental N° -->
         <% products.forEach(function(product){ %>
+        
         <div class="article-box">
-            <div class="tituloFoto">
+            <a href="/catalogo/detail/<%=product.id %>">
+            <div class="tituloFoto">  
                 <h2><%= product.nombre %></h2>
-                <img src="../images/trek/<%= product.imagen %>" alt="img-1">
+                <img src="../images/trek/<%= product.imagen %>" alt="img-1">  
             </div>
+            </a> 
+            
             <div class="descriptionPrecioCarrito">    
                 <p class="description"> <%= product.descripcion %>
                 </p>
@@ -27,7 +31,9 @@
                 </div>
                 </div>
             </div>
-        </div>    
+        </div>
+        
+          
         <% }) %>
        
 
