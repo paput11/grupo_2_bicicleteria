@@ -15,16 +15,21 @@
             <div class="article-box">
                 <div class="tituloFoto">
                     <h2><%= product.nombre %></h2>
-                    <img src="../images/trek/<%= product.imagen%>" alt="img-1">
+                    <img src="/images/trek/<%= product.imagen %>" alt="img-1">
                 </div>
                 <div class="descriptionPrecioCarrito">    
                     <p class="description"> <%= product.descripcion %>
+                    </p>
+                    <br>
+                    <p class="description"> Color: <%= product.color %>
+                    </p>
+                    <br>
+                    <p class="description"> Categoría: <%= product.categoria %>
                     </p>
                     <div class="precioCarrito">
                         <p>Precio: <%= product.precio %></p>
                     <div>
                         <img class="carrito" src="/images/carritoCompras.png" alt="carrito de compras">
-                    </div>
                     </div>
                 </div>
             </div>    

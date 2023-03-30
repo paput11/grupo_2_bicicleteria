@@ -7,4 +7,6 @@ productRouter.get ("/", productController.catalogo);
 
 productRouter.get ("/detail/:id", productController.detail);
 
+productRouter.post("/crearProducto", productController.store)
+
 module.exports = productRouter

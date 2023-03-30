@@ -13,7 +13,7 @@ app.use("/catalogo", productRouter)
 app.set("view engine","ejs")
 app.set ("views",path.resolve(__dirname,"views"))
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, '../public')));
 
 /* Puerto para funcionamiento local */
 const port = process.env.port || 3000;

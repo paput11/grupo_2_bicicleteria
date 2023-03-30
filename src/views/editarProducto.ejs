@@ -6,33 +6,35 @@
   <!-- header -->
   <%- include('./partials/header') %>
     <main>  
-        <form method="post">
+        <form method="post" action="/catalogo/editarProducto">
             <p>
                 <input type="text" id="nombre" name="nombre" placeholder="Producto" required minlength="5">
             </p>
             <p>
-                <input type="text" id="tipo" name="tipo" placeholder="Tipo">
+                <input type="text" id="tipo" name="color" placeholder="Color">
             </p>
-
             <p>
                 <input type="number" id="precio" name="precio" placeholder="Precio">
             </p>
-
             <p>
                 <input type="text" id="nombre" name="descripcion" placeholder="Descripcion">
             </p>
-            
-            <input type="file" name="Foto">
-            
+            <p>
+                <select>
+                    <option value="select">Seleccionar</option>
+                    <option value="Biciletas">Bicicletas</option>
+                    <option value="Indumentaria">Indumentaria</option>
+                    <option value="Acesorios">Accesorios</option>
+                  </select>
+            </p>
+                       
+            <input type="file" name="Foto">           
             <p>
                 <input id="ingreso" type="submit" value="Editar"> </input>
             </p>
-
-
             <p>
-                <input id="ingreso" type="submit" value="borrar"> </input>
-            </p>
-            
+                <input id="ingreso" type="submit" value="Borrar"> </input>
+            </p>        
         </form>
 
     </main>
