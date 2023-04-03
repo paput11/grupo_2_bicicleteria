@@ -9,4 +9,6 @@ productRouter.get ("/detail/:id", productController.detail);
 productRouter.get('/crearProducto', productController.create);
 productRouter.post("/", productController.store)
 
+productRouter.get('/products/:id/edit', productController.edit);
+
 module.exports = productRouter
