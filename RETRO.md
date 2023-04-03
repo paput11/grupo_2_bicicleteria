@@ -43,3 +43,20 @@ que hay que hacer menos?
 que hay que dejar de hacer?
 
   Cambiar cosas sin consultar
+
+    Tercer Sprint
+
+Que hay que comenzar a hacer?
+
+
+que hay que hacer mas?
+
+
+que hay que continuar haciendo?
+
+
+que hay que hacer menos?
+
+
+que hay que dejar de hacer?
+

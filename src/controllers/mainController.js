@@ -41,10 +41,7 @@ const mainController = {
     },
     carro: (req,res) => {
         res.render ("carro");
-    },    
-    crearProducto: (req,res) => {
-        res.render ("crearProducto");
-    },    
+    },        
     editarProducto: (req,res) => {
         res.render ("editarProducto");
     },    

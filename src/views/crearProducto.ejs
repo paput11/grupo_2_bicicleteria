@@ -6,9 +6,9 @@
   <!-- header -->
   <%- include('./partials/header') %>
     <main>  
-        <form method="post" action="/catalogo/crearProducto">
+        <form method="post" action="/catalogo/">
             <p>
-                <input type="text" id="nombre" name="nombre" placeholder="Producto" required minlength="5">
+                <input type="text" id="name" name="name" placeholder="Producto" >
             </p>
             <p>
                 <input type="text" id="color" name="color" placeholder="Color">
@@ -18,19 +18,19 @@
             </p>
                 
             <p>
-                <input type="text" id="nombre" name="descripcion" placeholder="Descripcion">
+                <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion">
             </p>
             
             <p>
                 <select name="categoria" id="categoria">
                     <option value="select">Seleccionar</option>
-                    <option value="Bicicletas">Bicicletas</option>
+                    <option value="Bicicleta">Bicicleta</option>
                     <option value="Indumentaria">Indumentaria</option>
                     <option value="Acesorios">Accesorios</option>
-                  </select>
+                </select>
             </p>
 
-            <input type="file" name="Foto">
+            <!-- <input type="file" name="Foto"> -->
 
             
             <p>

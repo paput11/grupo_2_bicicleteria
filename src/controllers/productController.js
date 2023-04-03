@@ -1,9 +1,7 @@
 const path = require ("path");
-
 const fs = require ("fs");
 
 const productsFilePath = path.join(__dirname,"../data/products.json")
-
 
 const productController = {
   catalogo: (req,res) => { 
@@ -21,12 +19,16 @@ const productController = {
     res.render("detail",{product:producto});
     },
 
+  create: (req, res) => {
+		res.render("crearProducto")
+	},
+
   store:(req,res) => { 
     const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
+    
     const newProduct = {
-      id: (products.lenght - 1).id + 1,
-      nombre: req.body.nombre,
+      id: products[products.length-1].id + 1,
+      nombre: req.body.name , 
       descripcion: req.body.descripcion,
       categoria: req.body.categoria,
       precio: req.body.precio,
@@ -36,10 +38,11 @@ const productController = {
     products.push (newProduct)
     let productJSON= JSON.stringify(products,null," ")
     fs.writeFileSync(productsFilePath, productJSON)
+
     res.redirect ("/catalogo")
  
   }
 
 }
 
-  module.exports = productController
+module.exports = productController

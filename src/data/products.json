@@ -1,26 +1,38 @@
-[{
-    "id": 1,
-    "nombre": "TREK Marlin 5",
-    "imagen": "trek3.jpg",
-    "descripcion": "La Marlin 5 es una bicicleta preparada para trail, ideal para las aventuras del día a día, ya sea por senderos o fuera de ellos a tecnología que incorpora un cuadro ligero de aluminio con guiado interno para proteger los cables y aportar un aspecto impecable, transmisión 2x8 con una amplia relación de desarrollos para poder elegir la velocidad adecuada en cada tipo de terreno, potentes frenos de disco hidráulico y una horquilla de suspensión con bloqueo que suaviza el terreno.",
-    "categoria": "Bicicleta",
-    "precio": "usd 10.500",
-    "color":"gris"
- 
-  }, {
-    "id": 2,
-    "nombre": "TREK SuperCaliber 9",
-    "imagen": "Supercaliber9.jpg",
-    "descripcion": "La Supercaliber 9.8 es una bicicleta de competición para cross country diseñada para rodar a toda velocidad y subir a lo más alto del podio en la Copa del Mundo. Está equipada con Cuadro ultra ligero íntegro de carbono OCLV Mountain con 60 mm de recorrido, horquilla FOX Performance 32 Step-Cast de 100 mm y amortiguador FOX Performance IsoStrut exclusivo de Trek diseñado específicamente para la Supercaliber. Además, incorpora doble bloqueo remoto de la suspensión, una transmisión SRAM GX Eagle 1x12 con bielas de carbono y ruedas de carbono Bontrager Kovee Pro 30 con buje trasero Rapid Drive de 108 dientes que ofrece un engranaje rápido",
-    "categoria": "Bicicleta",
-    "precio": 2756.25,
-    "color":"Rojo"
-  }, {
-    "id": 3,
-    "nombre": "TREK Marlin 7",
-    "imagen": "trek2.jpg",
-    "descripcion": "La Marlin 7 es ideal para iniciarse en el mountain bike y está preparada para competir. La tecnología que incorpora es un cuadro ligero con guiado interno de los cables del cambio y del latiguillo de freno, una horquilla RockShox Judy con bloqueo que aporta más suavidad, frenos de disco hidráulico Shimano y ruedas Bontrager. Una sencilla transmisión 1x sin desviador delantero para reducir el traqueteo y ofrecer un funcionamiento más sencillo. No te preocupes, gracias al cassette 11-46 con una amplia relación de desarrollos, podrás elegir la marcha adecuada para subir sin problema y para lanzarte en las bajadas.",
-    "categoria": "Bicicleta",
-    "precio":"usd 18000" ,
-    "color":"naraja"
-  }]
+[
+ {
+  "id": 1,
+  "nombre": "TREK Marlin 5",
+  "imagen": "trek3.jpg",
+  "descripcion": "La Marlin 5 es una bicicleta preparada para trail, ideal para las aventuras del día a día, ya sea por senderos o fuera de ellos a tecnología que incorpora un cuadro ligero de aluminio con guiado interno para proteger los cables y aportar un aspecto impecable, transmisión 2x8 con una amplia relación de desarrollos para poder elegir la velocidad adecuada en cada tipo de terreno, potentes frenos de disco hidráulico y una horquilla de suspensión con bloqueo que suaviza el terreno.",
+  "categoria": "Bicicleta",
+  "precio": "usd 10.500",
+  "color": "gris"
+ },
+ {
+  "id": 2,
+  "nombre": "TREK SuperCaliber 9",
+  "imagen": "Supercaliber9.jpg",
+  "descripcion": "La Supercaliber 9.8 es una bicicleta de competición para cross country diseñada para rodar a toda velocidad y subir a lo más alto del podio en la Copa del Mundo. Está equipada con Cuadro ultra ligero íntegro de carbono OCLV Mountain con 60 mm de recorrido, horquilla FOX Performance 32 Step-Cast de 100 mm y amortiguador FOX Performance IsoStrut exclusivo de Trek diseñado específicamente para la Supercaliber. Además, incorpora doble bloqueo remoto de la suspensión, una transmisión SRAM GX Eagle 1x12 con bielas de carbono y ruedas de carbono Bontrager Kovee Pro 30 con buje trasero Rapid Drive de 108 dientes que ofrece un engranaje rápido",
+  "categoria": "Bicicleta",
+  "precio": 2756.25,
+  "color": "Rojo"
+ },
+ {
+  "id": 3,
+  "nombre": "TREK Marlin 7",
+  "imagen": "trek2.jpg",
+  "descripcion": "La Marlin 7 es ideal para iniciarse en el mountain bike y está preparada para competir. La tecnología que incorpora es un cuadro ligero con guiado interno de los cables del cambio y del latiguillo de freno, una horquilla RockShox Judy con bloqueo que aporta más suavidad, frenos de disco hidráulico Shimano y ruedas Bontrager. Una sencilla transmisión 1x sin desviador delantero para reducir el traqueteo y ofrecer un funcionamiento más sencillo. No te preocupes, gracias al cassette 11-46 con una amplia relación de desarrollos, podrás elegir la marcha adecuada para subir sin problema y para lanzarte en las bajadas.",
+  "categoria": "Bicicleta",
+  "precio": "usd 18000",
+  "color": "naraja"
+ },
+ {
+  "id": 4,
+  "nombre": "Trek11",
+  "descripcion": "Super bici",
+  "categoria": "Bicicleta",
+  "precio": "1",
+  "imagen": "default-imagen.jpg",
+  "color": "Blanco"
+ }
+]

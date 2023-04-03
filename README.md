@@ -34,5 +34,4 @@ Con un diseño diferente (one page) podría ser referente para la contrucción d
 
 
 Espacio para agregar link del tablero de trabajo.
-
 https://trello.com/b/hSEtOvG1/gravity-bicycles

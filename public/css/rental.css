@@ -68,6 +68,16 @@ section{
     color: rgb(0, 173, 0);
 }
 
+.button {
+    background-color: gold;
+    display: block;
+    margin-bottom: 10px;
+    height: 40px;
+    font-size: x-large;
+    text-align: center ;
+    margin-top: 150px;
+}
+
 /*queries*/
 
 @media (max-width: 900px) {
