@@ -24,4 +24,6 @@ productRouter.post("/", upload.single("Product"), productController.store)
 
 productRouter.delete("/delete/:id",productController.destroy);
 
+productRouter.get('/products/:id/edit', productController.edit);
+
 module.exports = productRouter

@@ -56,7 +56,18 @@ const productController = {
 		fs.writeFileSync(productsFilePath, productsJSON);
 
 		res.redirect ("/catalogo");
-	}
+	},
+  edit: (req, res) => {
+    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    const id = req.params.id;
+    const product = products.find(product => product.id == id);
+  
+    if (!product) {
+      res.send('Producto no encontrado');
+    } else {
+      res.render('editarProducto', { product });
+    }
+  },
 
 }
 
