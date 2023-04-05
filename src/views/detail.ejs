@@ -35,7 +35,10 @@
             </div>  
             
             <p>
-                <input class= "button" id="ingreso" type="submit" value="Editar"> </input>
+                <a href="/catalogo/edit/<%= product.id  %>">
+                    <input class= "button" id="ingreso" type="submit" value="Editar"> </input>
+                </a>
+               
                 
                 <form action="/catalogo/delete/<%= product.id %>?_method=DELETE" method="POST" >
                      <button type="submit" class= "button"> Eliminar </button>

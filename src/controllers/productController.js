@@ -57,17 +57,34 @@ const productController = {
 
 		res.redirect ("/catalogo");
 	},
-  edit: (req, res) => {
+  change: (req, res) => {
     const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
     const id = req.params.id;
     const product = products.find(product => product.id == id);
   
-    if (!product) {
-      res.send('Producto no encontrado');
-    } else {
-      res.render('editarProducto', { product });
+    const editProduct = {
+      id: req.params.id,
+      nombre: req.body.nombre , 
+      descripcion: req.body.descripcion,
+      categoria: req.body.categoria,
+      precio: req.body.precio,
+      imagen: /* req.file ? req.file.filename : */ "default-imagen.jpg",
+      color: req.body.color,
     }
+    let indice= products.findIndex(product=>{return product.id==id})
+    products [indice]= editProduct;
+    let productsJSON = JSON.stringify(products, null, " ");
+	
+		fs.writeFileSync(productsFilePath, productsJSON);
+
+		res.redirect ("/catalogo");
   },
+  edit: (req, res) => {
+    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    const id = req.params.id;
+    const product = products.find(product => product.id == id);
+		res.render("editarProducto", {product})
+	},
 
 }
 

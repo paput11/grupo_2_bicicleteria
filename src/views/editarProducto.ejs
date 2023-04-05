@@ -6,21 +6,21 @@
   <!-- header -->
   <%- include('./partials/header') %>
     <main>  
-        <form method="post" action="/catalogo/editarProducto">
+        <form action="/catalogo/edit/<%= product.id %>?_method=PATCH" method="POST"  >
             <p>
-                <input type="text" id="nombre" name="nombre" placeholder="Producto" required minlength="5">
+                <input type="text" id="nombre" name="nombre" placeholder="Producto" value="<%= product.nombre %>" required minlength="5"> 
             </p>
             <p>
-                <input type="text" id="tipo" name="color" placeholder="Color">
+                <input type="text" id="tipo" name="color" placeholder="Color"value="<%= product.color %>">
             </p>
             <p>
-                <input type="number" id="precio" name="precio" placeholder="Precio">
+                <input type="number" id="precio" name="precio" placeholder="Precio" value="<%= product.precio %>">
             </p>
             <p>
-                <input type="text" id="nombre" name="descripcion" placeholder="Descripcion">
+                <input type="text" id="nombre" name="descripcion" placeholder="Descripcion" value="<%= product.descripcion %>">
             </p>
             <p>
-                <select>
+                <select name="categoria" id="categoria">
                     <option value="select">Seleccionar</option>
                     <option value="Biciletas">Bicicletas</option>
                     <option value="Indumentaria">Indumentaria</option>
@@ -28,9 +28,10 @@
                   </select>
             </p>
                        
-            <input type="file" name="Foto">           
+            <input type="file" name="Product">           
             <p>
                 <input id="ingreso" type="submit" value="Editar"> </input>
+                
             </p>
             <p>
                 <input id="ingreso" type="submit" value="Borrar"> </input>

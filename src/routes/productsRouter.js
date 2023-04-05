@@ -11,7 +11,6 @@ const storage =multer.diskStorage({
         cb(null, file.fieldname+"-"+Date.now()+path.extname(file.originalname))}
 
 })
-
 const upload = multer({storage:storage})
 
 const productController = require ("../controllers/productController.js")
@@ -24,6 +23,8 @@ productRouter.post("/", upload.single("Product"), productController.store)
 
 productRouter.delete("/delete/:id",productController.destroy);
 
-productRouter.get('/products/:id/edit', productController.edit);
+
+productRouter.get('/edit/:id', productController.edit);
+productRouter.patch('/edit/:id', productController.change);
 
 module.exports = productRouter
