@@ -29,9 +29,9 @@
  {
   "id": 4,
   "nombre": "Trek11",
-  "descripcion": "Super bici",
+  "descripcion": "Super bici - trek ",
   "categoria": "Bicicleta",
-  "precio": "1",
+  "precio": "111",
   "imagen": "default-imagen.jpg",
   "color": "Blanco"
  }

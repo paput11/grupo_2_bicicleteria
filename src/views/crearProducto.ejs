@@ -6,7 +6,7 @@
   <!-- header -->
   <%- include('./partials/header') %>
     <main>  
-        <form method="post" action="/catalogo/">
+        <form method="post" action="/catalogo/" enctype="multipart/form-data">
             <p>
                 <input type="text" id="name" name="name" placeholder="Producto" >
             </p>
@@ -30,7 +30,7 @@
                 </select>
             </p>
 
-            <!-- <input type="file" name="Foto"> -->
+            <input type="file" name="Product">
 
             
             <p>

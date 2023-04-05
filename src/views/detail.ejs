@@ -36,7 +36,10 @@
             
             <p>
                 <input class= "button" id="ingreso" type="submit" value="Editar"> </input>
-                <input class= "button" id="ingreso" type="submit" value="Eliminar"> </input> 
+                
+                <form action="/catalogo/delete/<%= product.id %>?_method=DELETE" method="POST" >
+                     <button type="submit" class= "button"> Eliminar </button>
+                </form>
             </p>
             
         </section>

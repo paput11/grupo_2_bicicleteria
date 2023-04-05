@@ -32,7 +32,7 @@ const productController = {
       descripcion: req.body.descripcion,
       categoria: req.body.categoria,
       precio: req.body.precio,
-      imagen: "default-imagen.jpg",
+      imagen: req.file ? req.file.filename : "default-imagen.jpg",
       color: req.body.color,
     }
     products.push (newProduct)
@@ -41,7 +41,22 @@ const productController = {
 
     res.redirect ("/catalogo")
  
-  }
+  },
+  destroy : (req, res) => {
+		let id = req.params.id;
+
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+		let finalProducts = products.filter(product => {
+			return product.id != id
+		})
+		
+		let productsJSON = JSON.stringify(finalProducts, null, " ");
+	
+		fs.writeFileSync(productsFilePath, productsJSON);
+
+		res.redirect ("/catalogo");
+	}
 
 }
 
