@@ -31,7 +31,7 @@ const productController = {
       nombre: req.body.name , 
       descripcion: req.body.descripcion,
       categoria: req.body.categoria,
-      precio: req.body.precio,
+      precio: parseInt(req.body.precio),
       imagen: req.file ? req.file.filename : "default-imagen.jpg",
       color: req.body.color,
     }
@@ -63,12 +63,12 @@ const productController = {
     const product = products.find(product => product.id == id);
   
     const editProduct = {
-      id: req.params.id,
+      id: parseInt(req.params.id),
       nombre: req.body.nombre , 
       descripcion: req.body.descripcion,
       categoria: req.body.categoria,
-      precio: req.body.precio,
-      imagen: /* req.file ? req.file.filename : */ "default-imagen.jpg",
+      precio: parseInt(req.body.precio),
+      imagen: req.file ? req.file.filename : product.imagen,
       color: req.body.color,
     }
     let indice= products.findIndex(product=>{return product.id==id})

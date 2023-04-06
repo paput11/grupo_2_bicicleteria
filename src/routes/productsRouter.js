@@ -25,6 +25,6 @@ productRouter.delete("/delete/:id",productController.destroy);
 
 
 productRouter.get('/edit/:id', productController.edit);
-productRouter.patch('/edit/:id', productController.change);
+productRouter.patch('/edit/:id', upload.single("Product"),productController.change);
 
 module.exports = productRouter

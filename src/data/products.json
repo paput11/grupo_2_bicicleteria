@@ -18,21 +18,21 @@
   "color": "Rojo"
  },
  {
-  "id": "3",
-  "nombre": "Trek11",
-  "descripcion": "Super bici",
-  "categoria": "Biciletas",
-  "precio": "444",
-  "imagen": "default-imagen.jpg",
-  "color": "Blanco"
+  "id": 3,
+  "nombre": "TREK Marlin 7",
+  "imagen": "trek2.jpg",
+  "descripcion": "La Marlin 7 es ideal para iniciarse en el mountain bike y está preparada para competir. La tecnología que incorpora es un cuadro ligero con guiado interno de los cables del cambio y del latiguillo de freno, una horquilla RockShox Judy con bloqueo que aporta más suavidad, frenos de disco hidráulico Shimano y ruedas Bontrager. Una sencilla transmisión 1x sin desviador delantero para reducir el traqueteo y ofrecer un funcionamiento más sencillo. No te preocupes, gracias al cassette 11-46 con una amplia relación de desarrollos, podrás elegir la marcha adecuada para subir sin problema y para lanzarte en las bajadas.",
+  "categoria": "Bicicleta",
+  "precio": "usd 18000",
+  "color": "naraja"
  },
  {
-  "id": "31",
-  "nombre": "Trek 11",
-  "descripcion": "Super bici - trek 13",
+  "id": 4,
+  "nombre": "Trek11",
+  "descripcion": "Super bici - trek ",
   "categoria": "Biciletas",
-  "precio": "1110",
-  "imagen": "default-imagen.jpg",
-  "color": "Blanco"
+  "precio": 1100,
+  "imagen": "Product-1680741785863.png",
+  "color": "Rojo"
  }
 ]
