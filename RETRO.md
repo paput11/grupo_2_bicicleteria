@@ -61,19 +61,19 @@ Intentar no llegar a ultimo momento
 que hay que dejar de hacer?
 Dejar todo para despues
 
+
 Cuarto Sprint
 Que hay que comenzar a hacer?
-Organizarnos mejor
+
 
 que hay que hacer mas?
-Reunirnos mas seguido
+
 
 que hay que continuar haciendo?
-Mirar mas clases
+
 
 que hay que hacer menos?
-Intentar no llegar a ultimo momento
+
 
 que hay que dejar de hacer?
-Procastinar
 
