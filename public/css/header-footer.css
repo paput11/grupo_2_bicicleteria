@@ -20,20 +20,21 @@ header div{
 }
 
 .carrito{
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   padding: 0.5rem;
 }
 .botones-header{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 60%;
 }
 .botones-header button{
   background-color: #FDDB70;
   padding: 0.25rem 0.5rem;
   border: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
   box-sizing: border-box;
 }
 
@@ -41,14 +42,13 @@ header div{
   background-color: #FDDB70;
   padding: 0.25rem;
   border: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
   box-sizing: border-box;
 }
 
 @media (max-width: 750px) {
 
       .botones-header{
-        flex-wrap: wrap;
         width: 70%;
       }
 }

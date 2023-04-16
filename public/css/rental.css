@@ -1,6 +1,7 @@
 section{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 
@@ -10,6 +11,8 @@ section{
     box-sizing: border-box;
     padding: 2rem;
     width: 100%;
+    justify-content: space-between;
+    max-width: 1030px;
 }
 
 .tituloFoto{
@@ -43,7 +46,7 @@ section{
 }
 
 .description{
-    font-size: 17px;
+    font-size: 20px;
     text-align: justify;
     margin: 0;
 }
@@ -89,7 +92,7 @@ section{
         width: 100%;
     }
 }
-@media (max-width: 600px) {
+@media (max-width: 500px) {
 .tituloFoto h2{
     font-size: 30px;
     }
