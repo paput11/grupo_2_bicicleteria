@@ -1,0 +1,77 @@
+@import "header-footer.css";
+
+main {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section {
+    padding: 3%;
+    box-sizing: border-box;
+    height: 100%;
+}
+.accesorio {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding-bottom: 5%;
+    border-bottom: 1px rgb(64, 62, 62);
+}
+
+.accesorio p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    
+}
+.accesorio img {
+    width: 90%;
+    max-height: 450px;
+}
+
+.imagen {
+height: 450px;
+align-items: center;
+display: flex;
+justify-content: center;
+box-sizing: border-box;
+}
+
+.accesorioTitulo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    height: 100px;
+    align-items: flex-start;
+}
+
+.precioCarro {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.precioCarro p{
+    font-weight: 100;
+    text-align: left;
+    color: rgb(0, 173, 0);
+}
+
+@media (min-width: 700px) and (max-width: 1200px){
+        section{
+        width: 48%;
+    }
+}
+
+@media (min-width: 1200px) {
+        section{
+            width: 33%;
+        }
+}
+
+
+
+
+
+
