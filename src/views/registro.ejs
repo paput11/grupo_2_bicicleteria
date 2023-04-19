@@ -6,32 +6,34 @@
   <!-- header -->
   <%- include('./partials/header') %>
     <main>  
-        <form method="post">
+        <form method="post" action="/users/" enctype="multipart/form-data">
             <p>
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required minlength="5">
+               
+            
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required minlength="5">
+            
+                
+           
+                <input type="text" id="nombre" name="apeliido" placeholder="Apellido">
+            </p>
+                <b><label for="correo" id="correo">Correo electrónico</label></b>
+            <p>
+                <input type="mail" id="correo" name="correo" placeholder="pepito@ejemplo.com" required>
             </p>
             <p>
-                <input type="text" id="nombre" name="nombreuser" placeholder="Nombre de usuario">
+                <input type="number" id="edad" name="edad" placeholder="Edad">
             </p>
-                <b><label for="nacimiento" id="fecha">Fecha de nacimiento</label></b>
+                <b><label for="tipoUser" id="tipoUser">Categoría</label></b>
             <p>
-                <input type="date" id="nacimiento" name="nacimiento" placeholder="Nacimiento" required>
-            </p>
-            <p>
-                <input type="text" id="nombre" name="direccion" placeholder="Direccion">
-            </p>
-                <b><label for="Intereses" id="Intereses">Intereses del usuario</label></b>
-            <p>
-                <input type="checkbox" name="Intereses" value="Bicicletas" class="boton" checked> 
-                <label>Bicicletas</label>
-                <input type="checkbox" name="Intereses" value="Indumentaria" class="boton" checked> 
-                <label>Indumentaria</label>
-                <input type="checkbox" name="Intereses" value="Repuestos" class="boton" checked> 
-                <label>Repuestos</label>
-                <input type="checkbox" name="Intereses" value="Tours" class="boton" checked> 
-                <label>Tours</label>
-                <input type="checkbox" name="Intereses" value="Rental" class="boton" checked> 
-                <label>Rental</label>
+                <input type="radio" name="perfil" value="admin" class="boton"> 
+                <label>Administrador</label>
+                <input type="radio" name="perfil" value="user" class="boton"> 
+                <label>Usuario</label>
+                <input type="radio" name="perfil" value="admin1" class="boton"> 
+                <label>Administrador_1</label>
+                <input type="radio" name="perfil" value="host" class="boton"> 
+                <label>Visitante</label>
+                
             </p>
             </p>
                 <b><label for="fotoperfil" id="fotoperfil">Ingrese foto perfil del usuario</label></b>
@@ -40,11 +42,11 @@
                 <input type="file" id="fotoperfil" name="fotoperfil" accept=".jpg">
             </p>
             <p>        
-                <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña" required>
+                <input type="password" id="contraseña" name="contrasenia" placeholder="Ingrese su contraseña" required>
             </p>
-            <p>        
-                <input type="password" id="contraseña" name="contraseña" placeholder="Confirme su contraseña" required>
-            </p>
+            <!-- <p>        
+                <input type="password" id="contraseña" name="contraseña1" placeholder="Confirme su contraseña" required>
+            </p> -->
             <p>
                 <input id="ingreso" type="submit" value="Enviar"> </input>
             </p>

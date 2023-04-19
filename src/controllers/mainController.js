@@ -4,9 +4,6 @@ const mainController = {
     home: (req,res) => { 
         res.render("home")
     },
-    registro: (req,res) => {
-        res.render ("registro");
-    },
     contacto: (req,res) => {
         res.render ("contacto");
     },
@@ -18,9 +15,6 @@ const mainController = {
     },
     indumentaria: (req,res) => {
         res.render ("indumentaria");
-    },
-    login: (req,res) => {
-        res.render ("login");
     },
     terminos: (req,res) => {
         res.render ("terminos");
@@ -41,10 +35,7 @@ const mainController = {
     },
     carro: (req,res) => {
         res.render ("carro");
-    },        
-    editarProducto: (req,res) => {
-        res.render ("editarProducto");
-    },    
+    },  
 };
 
 module.exports = mainController;

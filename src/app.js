@@ -6,6 +6,7 @@ const methodOverride = require("method-override");
 
 /* Funcionamiento EJS */
 app.set("view engine","ejs")
+
 app.set ("views",path.resolve(__dirname,"views"))
 
 app.use(express.static(path.join(__dirname, '../public')));
@@ -16,8 +17,10 @@ app.use(methodOverride("_method"));
 /* Ruteadores */
 const mainRouter = require("./routes/mainRoutes")
 const productRouter = require("./routes/productsRouter")
+const usersRouter = require("./routes/usersRouter")
 app.use("/", mainRouter)
 app.use("/catalogo", productRouter)
+app.use("/users", usersRouter)
 
 /* Puerto para funcionamiento local */
 const port = process.env.port || 3000;
