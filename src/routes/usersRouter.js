@@ -15,11 +15,15 @@ const upload = multer({storage:storage})
 
 const usersController = require ("../controllers/usersController.js")
 
+usersRouter.get("/users",usersController.list)
+
 usersRouter.get("/login",usersController.login)
 
 usersRouter.get("/registro",usersController.registro)
 
 usersRouter.post("/",upload.single("fotoperfil"),usersController.store)
+
+usersRouter.get("/deleteUser/:id",usersController.destroy)
 
 
 module.exports = usersRouter

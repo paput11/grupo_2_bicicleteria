@@ -6,7 +6,7 @@
   "email": "Estabanquito@gmail.com",
   "contraseña": "callefalsa123",
   "categoria": "admin",
-  "imagen": "[Falta imagen]",
+  "imagen": "default-image.jpg",
   "edad": 25
  },
  {
@@ -16,7 +16,7 @@
   "email": "matiasperezbostero86@hotmail.com",
   "contraseña": "Bokita",
   "categoria": "admin",
-  "imagen": "[Falta imagen]",
+  "imagen": "default-image.jpg",
   "edad": 38
  },
  {
@@ -26,15 +26,27 @@
   "email": "benitoSuarez15@hotmail.com",
   "contraseña": "vamosUruguay",
   "categoria": "user",
-  "imagen": "[Falta imagen]",
+  "imagen": "default-image.jpg",
   "edad": 15
  },
  {
-  "id": 4,
-  "nombre": "Mateo",
-  "correo": "sdad@dasda.com",
-  "contrasenia": "3231",
+  "id": 8,
+  "nombre": "Trek 11",
+  "apellido": "Castro",
+  "correo": "yo@prub.com",
+  "contrasenia": "$2a$10$u3R64n7BTbcdFCemiD0f2ey9ArWdkoiWkIHYQE9Nzsr.xue8FKBDW",
   "categoria": "admin",
-  "edad": 3343
+  "imagen": "fotoperfil-1682373167977.jpg",
+  "edad": 12
+ },
+ {
+  "id": 9,
+  "nombre": "Pepito",
+  "apellido": "Perez",
+  "correo": "yo@prub.com",
+  "contrasenia": "$2a$10$TAMgt09bTr.VKZ6k8nEAKeX8J7xrT8H7V8IIYEl9c5G9HLHlXBjwW",
+  "categoria": "user",
+  "imagen": "default-image.jpg",
+  "edad": 21
  }
 ]

@@ -34,5 +34,14 @@
   "precio": 1100,
   "imagen": "Product-1680741785863.png",
   "color": "Rojo"
+ },
+ {
+  "id": 5,
+  "nombre": "Trek11",
+  "descripcion": "Super bici",
+  "categoria": "Bicicleta",
+  "precio": 12,
+  "imagen": "Product-1682373022816.jpg",
+  "color": "Blanco"
  }
 ]
