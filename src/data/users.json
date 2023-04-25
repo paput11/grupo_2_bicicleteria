@@ -3,7 +3,7 @@
   "id": 1,
   "nombre": "esteban",
   "apellido": "quito",
-  "email": "Estabanquito@gmail.com",
+  "correo": "Estabanquito@gmail.com",
   "contraseña": "callefalsa123",
   "categoria": "admin",
   "imagen": "default-image.jpg",
@@ -13,7 +13,7 @@
   "id": 2,
   "nombre": "matias",
   "apellido": "perez",
-  "email": "matiasperezbostero86@hotmail.com",
+  "correo": "matiasperezbostero86@hotmail.com",
   "contraseña": "Bokita",
   "categoria": "admin",
   "imagen": "default-image.jpg",
@@ -23,7 +23,7 @@
   "id": 3,
   "nombre": "benito",
   "apellido": "suarez",
-  "email": "benitoSuarez15@hotmail.com",
+  "correo": "benitoSuarez15@hotmail.com",
   "contraseña": "vamosUruguay",
   "categoria": "user",
   "imagen": "default-image.jpg",
@@ -31,22 +31,12 @@
  },
  {
   "id": 8,
-  "nombre": "Trek 11",
-  "apellido": "Castro",
-  "correo": "yo@prub.com",
-  "contrasenia": "$2a$10$u3R64n7BTbcdFCemiD0f2ey9ArWdkoiWkIHYQE9Nzsr.xue8FKBDW",
-  "categoria": "admin",
-  "imagen": "fotoperfil-1682373167977.jpg",
-  "edad": 12
- },
- {
-  "id": 9,
   "nombre": "Pepito",
-  "apellido": "Perez",
+  "apellido": "Sanchez",
   "correo": "yo@prub.com",
-  "contrasenia": "$2a$10$TAMgt09bTr.VKZ6k8nEAKeX8J7xrT8H7V8IIYEl9c5G9HLHlXBjwW",
-  "categoria": "user",
-  "imagen": "default-image.jpg",
-  "edad": 21
+  "contrasenia": "$2a$10$DIU5h0Hapn2s/bArcObxZO4ol1le0Etf.t4Kl0QWHu6vSGhR6UYye",
+  "categoria": "admin",
+  "imagen": "fotoperfil-1682381959340.jpg",
+  "edad": 123
  }
 ]

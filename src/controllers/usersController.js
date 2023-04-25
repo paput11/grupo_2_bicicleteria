@@ -39,7 +39,7 @@ const usersController = {
     res.redirect ("/catalogo")
  
   },
-  destroy : (req, res) => {
+  destroy :  (req, res) =>{
 		let id = req.params.id;
 
 		const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -55,6 +55,39 @@ const usersController = {
 		res.redirect ("/users/users");
 	},
 
+  edit: (req, res) =>{
+  const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+  let id = req.params.id; 
+  const user = users.find(user => user.id == id)
+  
+  const editUser = {
+    id: parseInt(req.params.id),
+    nombre: req.body.nombre , 
+    apellido: req.body.apellido,
+    correo: req.body.correo,
+    contrasenia: bcrypt.hashSync (req.body.contrasenia,10),
+    categoria: req.body.perfil,
+    imagen: req.file ? req.file.filename : user.imagen,
+    edad: parseInt(req.body.edad),
+    
+  }
+  let indice= users.findIndex(user=>{return user.id==id})
+    
+    users [indice]= editUser;
+    let usersJSON = JSON.stringify(users, null, " ");
+		fs.writeFileSync(usersFilePath, usersJSON);
+
+		res.redirect ("/users/users");
+  },
+
+  editUser: (req, res) => {
+    const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+    const id = req.params.id;
+    const user = users.find(user => user.id == id);
+		res.render("editarUser", {user})
+	},
+
 }
+
 
 module.exports = usersController
