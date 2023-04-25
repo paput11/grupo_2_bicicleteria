@@ -1,30 +1,30 @@
 [
  {
   "id": 1,
-  "nombre": "esteban",
-  "apellido": "quito",
-  "correo": "Estabanquito@gmail.com",
-  "contraseña": "callefalsa123",
-  "categoria": "admin",
+  "nombre": "Esteban",
+  "apellido": "Quito",
+  "correo": "estabanquito@gmail.com",
+  "contrasenia": "$2a$10$V3FgIx3bgtQ.hrf2Ouu7aetU4H5j5ruqAiY73gcEsxG2f0g.Z2AoG",
+  "categoria": "user",
   "imagen": "default-image.jpg",
   "edad": 25
  },
  {
   "id": 2,
-  "nombre": "matias",
-  "apellido": "perez",
+  "nombre": "Matias",
+  "apellido": "Perez",
   "correo": "matiasperezbostero86@hotmail.com",
-  "contraseña": "Bokita",
-  "categoria": "admin",
+  "contrasenia": "$2a$10$eN0JRh4V2kUeA1Q5ZfNZvOSqZ3d.ioJ8HyVhRsIIyO5MD8KmT/R0O",
+  "categoria": "user",
   "imagen": "default-image.jpg",
   "edad": 38
  },
  {
   "id": 3,
-  "nombre": "benito",
-  "apellido": "suarez",
-  "correo": "benitoSuarez15@hotmail.com",
-  "contraseña": "vamosUruguay",
+  "nombre": "Benito",
+  "apellido": "Suarez",
+  "correo": "benitosuarez15@hotmail.com",
+  "contrasenia": "$2a$10$0dhcVFjo2yTpZfDG64sOu.5hVcUjDzSF6Ziu4Fd6dSS5Pu49PhjpO",
   "categoria": "user",
   "imagen": "default-image.jpg",
   "edad": 15
