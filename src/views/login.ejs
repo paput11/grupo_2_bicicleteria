@@ -9,13 +9,19 @@
   <main>
     <div class="formulario">
       <h1>Inicio de Sesion</h1>
-      <form method="post">
+      <form method="post" action="/login">
+        <label><b>Correo electronico</b></label>
         <div class="username">
-          <input type="text" required>
-          <label>Nombre del usuario</label>
+          <input type="text" name="email" class="form-control">
+          <% if (locals.errors && errors.email) { %>
+            <div class="text-danger"></div>
+            <%= errors.email.msg %>
+          </div>
+          <% } %>
         </div>
+        <label><b>Contraseña</b></label>
         <div class="username">
-          <input type="text" required>
+          <input type="password" required>
           <label>Contraseña</label>
         </div>
         <div class="recordar">¿Olvido su contraseña?</div>

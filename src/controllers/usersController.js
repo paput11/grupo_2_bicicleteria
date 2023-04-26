@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+const user = require("../models/users");
+>>>>>>> 651fb8c (login incompleto)
 const path = require ("path");
 const fs = require ("fs");
 const bcrypt = require ("bcryptjs")
@@ -9,6 +13,34 @@ const usersController = {
     login: (req,res) => { 
         res.render("login")
     },
+<<<<<<< HEAD
+=======
+    loginProcess: (req,res) => {
+      let userToLogin = user.findByField("email",req.body.email);
+     
+      if(userToLogin){
+       let isOkPassword = (req.body.password,userToLogin.password);
+       if(isOkPassword){
+              return res.send("Ok puedes ingresar")
+          }
+          return res.render("login",{
+              errors:{
+                  email:{
+                      msg:"Las credenciales son inválidas"
+                  }
+              }
+          });      
+
+      }
+      return res.render("login",{
+          errors:{
+              email:{
+                  msg:"no se encuentra este email en nuestra base de datos"
+              }
+          }
+      });
+  },
+>>>>>>> 651fb8c (login incompleto)
     registro: (req,res) => {
         res.render ("registro");
     },

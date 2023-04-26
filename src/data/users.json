@@ -38,5 +38,18 @@
   "categoria": "admin",
   "imagen": "fotoperfil-1682381959340.jpg",
   "edad": 123
+<<<<<<< HEAD
+=======
+ },
+ {
+  "id": 9,
+  "nombre": "marco",
+  "apellido": "diamantino",
+  "correo": "marco@hotmail.com",
+  "contrasenia": "$2a$10$0uwLg16z40EEdW0JkS491uGy0waTMza/XtDm.D0YOep73bYyeAxDq",
+  "categoria": "user",
+  "imagen": "default-image.jpg",
+  "edad": 12
+>>>>>>> 651fb8c (login incompleto)
  }
 ]
