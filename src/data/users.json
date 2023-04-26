@@ -58,5 +58,15 @@
   "categoria": "admin",
   "imagen": "default-image.jpg",
   "edad": 12
+ },
+ {
+  "id": 11,
+  "nombre": "juana",
+  "apellido": "termo",
+  "correo": "juana10@hotmail.com",
+  "contrasenia": "$2a$10$fkRDrgdeMboFKjnNiTBYXOVU.S.kdAoneCdTKDpjHd9wcifP21WZu",
+  "categoria": "host",
+  "imagen": "default-image.jpg",
+  "edad": 18
  }
 ]

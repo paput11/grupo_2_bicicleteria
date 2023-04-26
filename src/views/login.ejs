@@ -14,7 +14,7 @@
         <div class="username">
           <input type="text" name="email" class="form-control">
           <% if (locals.errors && errors.correo) { %>
-            <div class="text-danger"></div>
+            <div class="text-danger">
             <%= errors.correo.msg %>
           </div>
           <% } %>
@@ -23,11 +23,13 @@
         <div class="username">
           <input type="password" name="password" class="form-control">
           <label>Contraseña</label>
-        </div>
+        
+      </div>
         <div class="recordar">¿Olvido su contraseña?</div>
         <input type="submit" value="Iniciar">
         <div class="registrate">
           Quiero hacer el <a href="registro">Registro</a>
+        </div>
         </div>
       </form>
     </div>
