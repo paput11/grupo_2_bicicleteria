@@ -48,5 +48,15 @@
   "categoria": "user",
   "imagen": "default-image.jpg",
   "edad": 12
+ },
+ {
+  "id": 10,
+  "nombre": "marco",
+  "apellido": "termo",
+  "correo": "pepito123@hotmail.com",
+  "contrasenia": "$2a$10$qrniHXT5gNWABPKKaPDE8efM4Dj8iv7/m.JkBlrUxOFZisNW6uIS2",
+  "categoria": "admin",
+  "imagen": "default-image.jpg",
+  "edad": 12
  }
 ]
