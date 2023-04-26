@@ -9,19 +9,19 @@
   <main>
     <div class="formulario">
       <h1>Inicio de Sesion</h1>
-      <form method="post" action="/login">
+      <form method="post" action="login">
         <label><b>Correo electronico</b></label>
         <div class="username">
           <input type="text" name="email" class="form-control">
-          <% if (locals.errors && errors.email) { %>
+          <% if (locals.errors && errors.correo) { %>
             <div class="text-danger"></div>
-            <%= errors.email.msg %>
+            <%= errors.correo.msg %>
           </div>
           <% } %>
         </div>
         <label><b>Contraseña</b></label>
         <div class="username">
-          <input type="password" required>
+          <input type="password" name="password" class="form-control">
           <label>Contraseña</label>
         </div>
         <div class="recordar">¿Olvido su contraseña?</div>

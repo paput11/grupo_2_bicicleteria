@@ -1,38 +1,40 @@
-const user = require("../models/users");
-const path = require ("path");
-const fs = require ("fs");
-const bcrypt = require ("bcryptjs")
+const path = require ("path")
+const fs = require ("fs")
+const bcryptjs = require ("bcryptjs")
 
 const usersFilePath = path.join(__dirname,"../data/users.json")
-
+const user = require("../models/LoginConfig");
 const usersController = {
+  
     login: (req,res) => { 
-        res.render("login")
+        res.render("login") 
     },
     loginProcess: (req,res) => {
-      let userToLogin = user.findByField("email",req.body.email);
-     
-      if(userToLogin){
-       let isOkPassword = (req.body.password,userToLogin.password);
-       if(isOkPassword){
+      let usoDeLogin = user.findByField("email",req.body.correo);
+      if(usoDeLogin){
+    let okLaContrasenia = bcryptjs.compareSync(req.body.contrasenia,usoDeLogin.contrasenia);
+       if(okLaContrasenia){
               return res.send("Ok puedes ingresar")
           }
           return res.render("login",{
               errors:{
-                  email:{
+                  correo:{
                       msg:"Las credenciales son inválidas"
                   }
               }
-          });      
+          })   
 
       }
       return res.render("login",{
           errors:{
-              email:{
+              correo:{
                   msg:"no se encuentra este email en nuestra base de datos"
               }
+             
           }
-      });
+         
+      });  
+      
   },
     registro: (req,res) => {
         res.render ("registro");

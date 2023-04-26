@@ -1,7 +1,8 @@
-const express = require ("express")
-const usersRouter = express.Router()
-const multer  = require('multer')
-const path = require("path")
+const express = require ("express");
+const usersRouter = express.Router();
+const multer  = require('multer');
+const path = require("path");
+
 
 const storage =multer.diskStorage({
     destination: function (req, file, cb){
@@ -16,7 +17,7 @@ const upload = multer({storage:storage})
 const usersController = require ("../controllers/usersController.js")
 
 usersRouter.get("/login",usersController.login)
-usersRouter.post("/login",usersController.login)
+usersRouter.post("/login",usersController.loginProcess)
 
 usersRouter.get("/registro",usersController.registro)
 usersRouter.post("/",upload.single("fotoperfil"),usersController.store)
