@@ -10,20 +10,22 @@ const usersController = {
         res.render("login") 
     },
     loginProcess: (req,res) => {
-      let usoDeLogin = user.findByField("email",req.body.correo);
+      let usoDeLogin = user.findByField("correo",req.body.email);
       if(usoDeLogin){
-    let okLaContrasenia = bcryptjs.compareSync(req.body.contrasenia,usoDeLogin.contrasenia);
+    let okLaContrasenia = bcryptjs.compareSync(req.body.password,usoDeLogin.contrasenia);
+    console.log(okLaContrasenia);
        if(okLaContrasenia){
-              return res.send("Ok puedes ingresar")
-          }
+              return res.send("/user/profile"); // [[USUARIO Para el PERFIL ]
+          }else{
           return res.render("login",{
               errors:{
                   correo:{
                       msg:"Las credenciales son inválidas"
                   }
               }
-          })   
-
+            
+          }) 
+        }  
       }
       return res.render("login",{
           errors:{
@@ -31,8 +33,7 @@ const usersController = {
                   msg:"no se encuentra este email en nuestra base de datos"
               }
              
-          }
-         
+          }   
       });  
       
   },
@@ -47,7 +48,7 @@ const usersController = {
       nombre: req.body.nombre , 
       apellido: req.body.apellido,
       correo: req.body.correo,
-      contrasenia: bcrypt.hashSync (req.body.contrasenia,10),
+      contrasenia: bcryptjs.hashSync (req.body.contrasenia,10),
       categoria: req.body.perfil,
       imagen: req.file ? req.file.filename : "default-image.jpg",
       edad: parseInt(req.body.edad),
