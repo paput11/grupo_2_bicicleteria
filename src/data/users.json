@@ -38,8 +38,6 @@
   "categoria": "admin",
   "imagen": "fotoperfil-1682381959340.jpg",
   "edad": 123
-<<<<<<< HEAD
-=======
  },
  {
   "id": 9,
@@ -50,6 +48,5 @@
   "categoria": "user",
   "imagen": "default-image.jpg",
   "edad": 12
->>>>>>> 651fb8c (login incompleto)
  }
 ]

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-
-=======
 const user = require("../models/users");
->>>>>>> 651fb8c (login incompleto)
 const path = require ("path");
 const fs = require ("fs");
 const bcrypt = require ("bcryptjs")
@@ -13,8 +9,6 @@ const usersController = {
     login: (req,res) => { 
         res.render("login")
     },
-<<<<<<< HEAD
-=======
     loginProcess: (req,res) => {
       let userToLogin = user.findByField("email",req.body.email);
      
@@ -40,7 +34,6 @@ const usersController = {
           }
       });
   },
->>>>>>> 651fb8c (login incompleto)
     registro: (req,res) => {
         res.render ("registro");
     },

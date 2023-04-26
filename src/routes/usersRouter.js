@@ -16,10 +16,7 @@ const upload = multer({storage:storage})
 const usersController = require ("../controllers/usersController.js")
 
 usersRouter.get("/login",usersController.login)
-<<<<<<< HEAD
-=======
 usersRouter.post("/login",usersController.login)
->>>>>>> 651fb8c (login incompleto)
 
 usersRouter.get("/registro",usersController.registro)
 usersRouter.post("/",upload.single("fotoperfil"),usersController.store)
