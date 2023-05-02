@@ -1,56 +1,59 @@
+.section {
+    display: block;
+    margin-left: 50px;
+}
 
 .sec_tours {
-
-    width: 60%;
-    display:flex ;
-    flex-direction: column;
-    text-align: left;
-    margin-left: 30px;
-}
-section {
-
-display: flex;
-justify-content: center;
-
-
+    width: 80%;
+    text-align: justify;
+    margin-left: 50px;
+    font-size: x-large;
 }
 
 .mapa {
-    top: 60%;
-    position: relative;
-    right: 400px;
-    width: 400px;
-    height: 600px;
-    border: 2px solid black;
-    
+    width: 50%;
+    height: 50%;
+    border: solid 3px;
+    margin-bottom: 50px;
+}
 
-
+.mapaDescripcion {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    padding-left: 50px;
 }
 /* /*queries*/
 
-
-@media (min-width: 0px) and (max-width: 760px){
-
-    .sec_tours{
-        flex-direction: column;
-        font-size: small;
-        }
-}
-
-@media (min-width: 761px) and (max-width: 1023px){
-
-    .sec_tours{
-        flex-direction: column;
-        font-size: large;
-        padding-right: 50px;
-        }
-}
-
-@media (min-width: 1024px) and (max-width: 2000px){
-
-    .sec_tours{
-        flex-direction: column;
+@media (max-width: 1200px) and (min-width: 760){
+    .sieteLagos {
+        padding-left: 50px;
         font-size: medium;
-        padding-right: 20%;
-        }
+    }
+
+
+}
+
+
+@media (max-width: 760px){
+
+    .sec_tours{
+        font-size: large;
+    }
+    .mapaDescripcion {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sieteLagos {
+        padding-left: 50px;
+        font-size: large;
+    }
+
+    .mapa {
+        width: 90%;
+        height: 90%;
+        border: solid 2px;
+        margin-bottom: 50px;
+    }
 }

@@ -3,11 +3,16 @@ body{
   margin: 0;
 }
 
+.menuMobile,
+.botones-header-mobile {
+  display: none;  
+}
+
 a {
   text-decoration: none;
 }
 
-header div{
+header > div{
   display: flex;
   flex-wrap: wrap;
   background-color: #FDDB70;
@@ -36,6 +41,9 @@ header div{
   border: none;
   font-size: 1.5rem;
   box-sizing: border-box;
+  color: black;
+  font-family: sans-serif;
+  font-weight: 600;
 }
 
 .miCuenta{
@@ -44,6 +52,9 @@ header div{
   border: none;
   font-size: 1.5rem;
   box-sizing: border-box;
+  color: black;
+  font-family: sans-serif;
+  font-weight: 600;
 }
 
 @media (max-width: 750px) {
@@ -52,6 +63,52 @@ header div{
         width: 70%;
       }
 }
+
+@media (max-width: 600px) {
+
+.botones-header, 
+.crearCuenta {
+  display: none;
+}
+
+.menuMobile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #FDDB70;
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+}
+
+.menuMobile .top,
+.menuMobile .medium,
+.menuMobile .bottom {
+  border-top: 2px solid gray;
+  width: 100%;
+  display: inline-block;
+}
+
+.botones-header-mobile-mostrar {
+  display: flex;
+  flex-direction: column;
+}
+.botones-header-mobile-mostrar a {
+  font-size: 1.5rem;
+  color: black;
+  padding: 10px;
+  font-family: sans-serif;
+  font-weight: 600;
+  border: solid 1px rgba(80, 71, 128, 0.507);
+  width: 100%;
+}
+
+}/* cierre de query */
+
+
 /* footer */
 
 footer{
