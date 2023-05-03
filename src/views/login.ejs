@@ -9,19 +9,27 @@
   <main>
     <div class="formulario">
       <h1>Inicio de Sesion</h1>
-      <form method="post">
+      <form method="post" action="login">
+        <label><b>Correo electronico</b></label>
         <div class="username">
-          <input type="text" required>
-          <label>Nombre del usuario</label>
+          <input type="text" name="email" class="form-control">
+          <% if (locals.errors && errors.correo) { %>
+            <div class="text-danger">
+            <%= errors.correo.msg %>
+          </div>
+          <% } %>
         </div>
+        <label><b>Contraseña</b></label>
         <div class="username">
-          <input type="text" required>
+          <input type="password" name="password" class="form-control">
           <label>Contraseña</label>
-        </div>
+        
+      </div>
         <div class="recordar">¿Olvido su contraseña?</div>
         <input type="submit" value="Iniciar">
         <div class="registrate">
           Quiero hacer el <a href="registro">Registro</a>
+        </div>
         </div>
       </form>
     </div>

@@ -1,40 +1,72 @@
 [
  {
   "id": 1,
-  "nombre": "esteban",
-  "apellido": "quito",
-  "email": "Estabanquito@gmail.com",
-  "contraseña": "callefalsa123",
-  "categoria": "admin",
-  "imagen": "[Falta imagen]",
+  "nombre": "Esteban",
+  "apellido": "Quito",
+  "correo": "estabanquito@gmail.com",
+  "contrasenia": "$2a$10$V3FgIx3bgtQ.hrf2Ouu7aetU4H5j5ruqAiY73gcEsxG2f0g.Z2AoG",
+  "categoria": "user",
+  "imagen": "default-image.jpg",
   "edad": 25
  },
  {
   "id": 2,
-  "nombre": "matias",
-  "apellido": "perez",
-  "email": "matiasperezbostero86@hotmail.com",
-  "contraseña": "Bokita",
-  "categoria": "admin",
-  "imagen": "[Falta imagen]",
+  "nombre": "Matias",
+  "apellido": "Perez",
+  "correo": "matiasperezbostero86@hotmail.com",
+  "contrasenia": "$2a$10$eN0JRh4V2kUeA1Q5ZfNZvOSqZ3d.ioJ8HyVhRsIIyO5MD8KmT/R0O",
+  "categoria": "user",
+  "imagen": "default-image.jpg",
   "edad": 38
  },
  {
   "id": 3,
-  "nombre": "benito",
-  "apellido": "suarez",
-  "email": "benitoSuarez15@hotmail.com",
-  "contraseña": "vamosUruguay",
+  "nombre": "Benito",
+  "apellido": "Suarez",
+  "correo": "benitosuarez15@hotmail.com",
+  "contrasenia": "$2a$10$0dhcVFjo2yTpZfDG64sOu.5hVcUjDzSF6Ziu4Fd6dSS5Pu49PhjpO",
   "categoria": "user",
-  "imagen": "[Falta imagen]",
+  "imagen": "default-image.jpg",
   "edad": 15
  },
  {
-  "id": 4,
-  "nombre": "Mateo",
-  "correo": "sdad@dasda.com",
-  "contrasenia": "3231",
+  "id": 8,
+  "nombre": "Pepito",
+  "apellido": "Sanchez",
+  "correo": "yo@prub.com",
+  "contrasenia": "$2a$10$DIU5h0Hapn2s/bArcObxZO4ol1le0Etf.t4Kl0QWHu6vSGhR6UYye",
   "categoria": "admin",
-  "edad": 3343
+  "imagen": "fotoperfil-1682381959340.jpg",
+  "edad": 123
+ },
+ {
+  "id": 9,
+  "nombre": "marco",
+  "apellido": "diamantino",
+  "correo": "marco@hotmail.com",
+  "contrasenia": "$2a$10$0uwLg16z40EEdW0JkS491uGy0waTMza/XtDm.D0YOep73bYyeAxDq",
+  "categoria": "user",
+  "imagen": "default-image.jpg",
+  "edad": 12
+ },
+ {
+  "id": 10,
+  "nombre": "marco",
+  "apellido": "termo",
+  "correo": "pepito123@hotmail.com",
+  "contrasenia": "$2a$10$qrniHXT5gNWABPKKaPDE8efM4Dj8iv7/m.JkBlrUxOFZisNW6uIS2",
+  "categoria": "admin",
+  "imagen": "default-image.jpg",
+  "edad": 12
+ },
+ {
+  "id": 11,
+  "nombre": "juana",
+  "apellido": "termo",
+  "correo": "juana10@hotmail.com",
+  "contrasenia": "$2a$10$fkRDrgdeMboFKjnNiTBYXOVU.S.kdAoneCdTKDpjHd9wcifP21WZu",
+  "categoria": "host",
+  "imagen": "default-image.jpg",
+  "edad": 18
  }
 ]

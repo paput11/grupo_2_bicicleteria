@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- head -->
+<%- include('./partials/head',{cssSheet:"users"})%>
+
+<body>
+    <!-- header -->
+    <%- include('./partials/header') %>
+        
+    <main>  
+    <section>
+        <!-- articulo rental N° -->
+        <% users.forEach(function(user){ %>
+        
+        <div class="article-box">
+            <a href="/users/detail/<%=user.id %>">
+            <div class="tituloFoto">  
+                <h2><%= user.nombre +" "+ user.apellido %></h2>
+                <img src="../images/users/<%= user.imagen %>" alt="sin-imagen">  
+            </div>
+            </a> 
+            
+            <div class="descriptionPrecioCarrito">    
+                <p class="description"> <%= user.correo %></p>
+                <p class="precioCarrito">Categoría: <%= user.categoria %></p>
+                <div>
+                    <a href="/users/editUser/<%=user.id %>"><button>Editar</button></a>
+                    <a href="/users/deleteUser/<%=user.id %>"><button>Eliminar</button></a>
+                </div>
+                
+            </div>
+        </div>
+        
+          
+        <% }) %>
+       
+
+    </section>
+    </main>
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+</body>
+</html> 
