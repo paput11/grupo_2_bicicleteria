@@ -1,28 +1,52 @@
+<script>
+  function toggleClass() {
+    const element = document.getElementsByClassName('botones-header-mobile')[0]
+    element.classList.toggle('botones-header-mobile-mostrar');
+  }
+</script>
 <header>
-    <div>
-      <!--logo-->
-      <a href="/"> <img class="logo" src="/images/logo.jpg" alt="logo"> </a>
-      <!-- botones header -->
-      <div class="botones-header">
-        <a href="/catalogo"><button>Bicicletas</button></a>
-        <a href="/accesorios"><button>Accesorios</button></a>
-        <a href="/tours"><button>Tours</button></a>
-        <a href="/rental"><button>Rental</button></a>
-        <a href="/catalogo/crearProducto"><button>Crear Producto</button></a>
-        <a href="/users/login"><button>Login</button></a>
-      </div>
-      <!-- carrito de compras -->
-      <div>
-        <a href="/carro">
-          <img class="carrito" src="/images/carritoCompras.png" alt="carrito de compras">
-        </a>
-      </div>
-      <!-- boton mi cuenta -->
-      <div>
-        <a href="/users/registro"><button class="miCuenta">Crear cuenta</button></a>
-      </div>
+  <div>
+    <!--logo-->
+    <a href="/"> <img class="logo" src="/images/logo.jpg" alt="logo"> </a>
+    <!-- botones header -->
+    <div class="botones-header">
+      <a href="/catalogo"><button>Bicicletas</button></a>
+      <a href="/accesorios"><button>Accesorios</button></a>
+      <a href="/tours"><button>Tours</button></a>
+      <a href="/rental"><button>Rental</button></a>
+      <a href="/catalogo/crearProducto"><button>Crear Producto</button></a>
+      <a href="/users/login"><button>Login</button></a>
     </div>
-    <!-- imagen banner -->
-    <img width="100%" src="/images/NuevoBanner2.jpg" alt="">
-  </header>
+    <!-- carrito de compras -->
+    <div class="carrito">
+      <a href="/carro">
+        <img class="carrito" src="/images/carritoCompras.png" alt="carrito de compras">
+      </a>
+    </div>
+          <span class="medium"></span>
+          <span class="medium"></span>
+    <div class="menuMobile" onclick="toggleClass()">
+          <span class="top"></span>
+          <span class="medium"></span>
+          <span class="bottom"></span>
+    </div>
+
+    <!-- boton crear cuenta -->
+    <div class="crearCuenta">
+      <a href="/users/registro"><button class="miCuenta">Crear cuenta</button></a>
+    </div>
+  </div>
+  <!-- botones Mobile -->
+  <div class="botones-header-mobile">
+    <a href="/catalogo">Bicicletas</a>
+    <a href="/accesorios">Accesorios</a>
+    <a href="/tours">Tours</a>
+    <a href="/rental">Rental</a>
+    <a href="/catalogo/crearProducto">Crear Producto</a>
+    <a href="/users/login">Login</a>
+  </div>
+
+  <!-- imagen banner -->
+  <img width="100%" src="/images/NuevoBanner2.jpg" alt="">
+</header>
 
