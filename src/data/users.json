@@ -68,5 +68,15 @@
   "categoria": "host",
   "imagen": "default-image.jpg",
   "edad": 18
+ },
+ {
+  "id": 12,
+  "nombre": "Patricio",
+  "apellido": "Aput",
+  "correo": "paput11@gmail.com",
+  "contrasenia": "$2a$10$uGozw0FHBiTJI1YTTOdmiuFA.lrKcVQhVerdi3wySjqDreu7.iFMW",
+  "categoria": "user",
+  "imagen": "default-image.jpg",
+  "edad": 33
  }
 ]
