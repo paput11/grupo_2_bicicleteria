@@ -117,8 +117,5 @@ const usersController = {
 
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 619637b9c1f21e49489052c9679f87929f779d72
 module.exports = usersController

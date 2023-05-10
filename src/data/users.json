@@ -68,5 +68,15 @@
   "categoria": "host",
   "imagen": "default-image.jpg",
   "edad": 18
+ },
+ {
+  "id": 12,
+  "nombre": "erick",
+  "apellido": "kiess",
+  "correo": "erick123@gmail.com",
+  "contrasenia": "$2a$10$oD1dOd5oLjkjaTsr8hfUR.KNGt2z6MvOwl7wJau7uxkj1T3LiDI1S",
+  "categoria": "host",
+  "imagen": "default-image.jpg",
+  "edad": 25
  }
 ]
