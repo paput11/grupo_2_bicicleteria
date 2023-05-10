@@ -115,7 +115,15 @@ const usersController = {
       res.render("editarUser", {user})
     },
 
+    perfil: function (req, res, next) {
+      res.render("perfil", { user: req.user });
+    },
+
+
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e38f38117ee1bbfd7621203fc4aec1ce6c2e8c3c
 module.exports = usersController
