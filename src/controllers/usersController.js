@@ -7,15 +7,16 @@ const user = require("../models/LoginConfig");
 const usersController = {
   
     login: (req,res) => { 
-        res.render("login") 
+      res.render("login");
     },
     loginProcess: (req,res) => {
       let usoDeLogin = user.findByField("correo",req.body.email);
       if(usoDeLogin){
     let okLaContrasenia = bcryptjs.compareSync(req.body.password,usoDeLogin.contrasenia);
-    console.log(okLaContrasenia);
        if(okLaContrasenia){
-              return res.send("/user/profile"); // [[USUARIO Para el PERFIL ]
+              delete usoDeLogin.password;
+              req.session.userLogged = usoDeLogin;
+              return res.redirect("/users/perfil"); // [[USUARIO Para el PERFIL ]
           }else{
           return res.render("login",{
               errors:{
@@ -116,14 +117,11 @@ const usersController = {
     },
 
     perfil: function (req, res, next) {
-      res.render("perfil", { user: req.user });
+      console.log("Estas en perfil");
+      res.render("perfil", { user: req.session.userLogged });
     },
 
 
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e38f38117ee1bbfd7621203fc4aec1ce6c2e8c3c
 module.exports = usersController
