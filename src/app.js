@@ -14,7 +14,11 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: false })); 
 app.use(express.json()); 
 app.use(methodOverride("_method"));
-app.use(session({secret: "secreto"}))
+app.use(session({
+    secret: "secreto",
+    resave: false,
+    saveUninitialized: false
+}))
 
 /* Ruteadores */
 const mainRouter = require("./routes/mainRoutes");
