@@ -24,9 +24,11 @@ app.use(session({
 const mainRouter = require("./routes/mainRoutes");
 const productRouter = require("./routes/productsRouter");
 const usersRouter = require("./routes/usersRouter");
+//const routerProductosBicicleta = require("./router/productosBicicletas");
 app.use("/", mainRouter);
 app.use("/catalogo", productRouter);
 app.use("/users", usersRouter);
+//app.use("/productosBicicletas",routerProductosBicicleta);
 
 /* Puerto para funcionamiento local */
 const port = process.env.port || 3000;
