@@ -21,14 +21,14 @@ module.exports = function(sequelize,DataTypes){
     color:{
       type: DataTypes.STRING,
     },
-    categoria: {
+    jerarquias: {
       type: DataTypes.INTEGER,
       
     },
     
   }
   let config = {
-    tableName:"products",
+    tableName:"productos",
     timestamps:false
   }
 

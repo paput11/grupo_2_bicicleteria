@@ -38,11 +38,11 @@ CREATE TABLE `productos` (
    `precio` DECIMAL NOT NULL,
    `imagen` VARCHAR(255),
    `color` VARCHAR(255),
-   `categoria` INTEGER NOT NULL,
+   `jerarquias` INTEGER NOT NULL,
    PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `categoriasProductos` (
+CREATE TABLE `jerarquias` (
    `id` INTEGER NOT NULL,
    `nombre` VARCHAR(255) NOT NULL,
    `descripcion` VARCHAR(255),
@@ -50,10 +50,10 @@ CREATE TABLE `categoriasProductos` (
 );
 
 
-ALTER TABLE `usuarios` ADD CONSTRAINT `FK_dc253d84-bb07-4ac5-9b9c-825c1b3fe486` FOREIGN KEY (`categoria_id`) REFERENCES `categorias`(`id`)  ;
+ALTER TABLE `usuarios` ADD CONSTRAINT `FK_d021a606-f273-43fd-9699-50099c5cd6fc` FOREIGN KEY (`categoria_id`) REFERENCES `categorias`(`id`)  ;
 
 ALTER TABLE `productosUsuarios` ADD CONSTRAINT `FK_e6a63f1c-bdcb-446f-a4cd-b85a69f16a35` FOREIGN KEY (`usuarios_id`) REFERENCES `usuarios`(`id`)  ;
 
 ALTER TABLE `productosUsuarios` ADD CONSTRAINT `FK_35f740bc-1fd8-4275-8dcc-f9d780553144` FOREIGN KEY (`productos_id`) REFERENCES `productos`(`id`)  ;
 
-ALTER TABLE `productos` ADD CONSTRAINT `FK_ae4a9b45-773a-49cf-982f-6d3371c4abf7` FOREIGN KEY (`categoria`) REFERENCES `categoriasProductos`(`id`)  ;
+ALTER TABLE `productos` ADD CONSTRAINT `FK_ae4a9b45-773a-49cf-982f-6d3371c4abf7` FOREIGN KEY (`jerarquias`) REFERENCES `jerarquias`(`id`)  ;
