@@ -5,17 +5,30 @@ const db = require ("../database/models")
 const productsFilePath = path.join(__dirname,"../data/products.json")
 
 const productController = {
-  catalogo: (req,res) => { 
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    
-    res.render("catalogo",{products});
-    },
-
-  list: function(req,res){
+  lista: function(req,res){
     db.product.findAll()
-      .then (function(result){
-        res.send(result)
+      .then (function(products){
+        res.render("catalogo",{products})
       })
+  },
+  create: (req, res) => {
+		res.render("crearProducto")
+	},
+
+  guardar: function(req,res){
+    let indice = db.product.Op.max(id)
+    .then(    
+      db.product.create({
+        id: indice ++ ,
+        nombre: req.body.name , 
+        descripcion: req.body.descripcion,
+        jerarquias: req.body.categoria,
+        precio: parseInt(req.body.precio),
+        imagen: req.file ? req.file.filename : "default-imagen.jpg",
+        color: req.body.color,
+      })
+    ).then(res.redirect("/catalogo"))
+    
   },
 
   detail: (req,res) => { 
@@ -27,11 +40,7 @@ const productController = {
     res.render("detail",{product:producto});
     },
 
-  create: (req, res) => {
-		res.render("crearProducto")
-	},
-
-  store:(req,res) => { 
+  /* store:(req,res) => { 
     const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
     
     const newProduct = {
@@ -49,7 +58,7 @@ const productController = {
 
     res.redirect ("/catalogo")
  
-  },
+  }, */
   destroy : (req, res) => {
 		let id = req.params.id;
 
@@ -93,6 +102,11 @@ const productController = {
     const product = products.find(product => product.id == id);
 		res.render("editarProducto", {product})
 	},
+  catalogo: (req,res) => { 
+    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    
+    res.render("catalogo",{products});
+    },
 
 }
 
