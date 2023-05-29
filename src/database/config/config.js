@@ -1,6 +1,6 @@
 module.exports = {
   "development": {
-    "username": "root",
+    "username": "tabla",
     "password": null,
     "database": "bicicleteria",
     "host": "127.0.0.1",
