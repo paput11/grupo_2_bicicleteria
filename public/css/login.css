@@ -12,17 +12,9 @@ body {
     }
 
 .formulario {
-<<<<<<< HEAD
     text-align: center;
     
     width: 300px;
-=======
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
->>>>>>> 89f82624092d27d9a979be65f767bfb362864999
     background: white;
     border-radius: 5px;
     box-sizing: border-box;
