@@ -16,17 +16,25 @@ const upload = multer({storage:storage})
 const productController = require ("../controllers/productController.js")
 
 productRouter.get ("/", productController.lista);
-productRouter.get ("/detail/:id", productController.detail);
+productRouter.get ("/detail/:id", productController.detalle);
 
-productRouter.get('/crearProducto', productController.create);
+productRouter.get('/crearProducto', productController.crear);
 productRouter.post("/", upload.single("Product"), productController.guardar)
 
-productRouter.delete("/delete/:id",productController.destroy);
+productRouter.delete("/delete/:id",productController.eliminar);
 
-productRouter.get('/edit/:id', productController.edit);
-productRouter.patch('/edit/:id', upload.single("Product"),productController.change);
+productRouter.get('/edit/:id', productController.modificar);
+productRouter.patch('/edit/:id',upload.single("Product"), productController.editar);
+
 
 /* productRouter.get("/",productController.catalogo) */
+/* productRouter.get ("/detail/:id", productController.detail); */
+
 /* productRouter.post("/", upload.single("Product"), productController.store) */
+
+/* productRouter.get('/edit/:id', productController.edit); */ 
+/* productRouter.patch('/edit/:id', upload.single("Product"),productController.change); */
+
+/* productRouter.delete("/delete/:id",productController.destroy); */
 
 module.exports = productRouter
