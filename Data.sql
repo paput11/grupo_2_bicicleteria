@@ -1,49 +1,45 @@
--- INSERT INTO product ( categoryId, name, description, price)
--- VALUES ( '4','FOX MTB', 'Indumentaria', "2-000") 
-
-DROP DATABASE IF EXISTS bicicletas;
 DROP DATABASE IF EXISTS bicicleteria;
 CREATE DATABASE bicicleteria;
 USE bicicleteria;
 CREATE TABLE `usuarios` (
-   `id` INTEGER NOT NULL,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `nombre` VARCHAR(255) NOT NULL,
    `apellido` VARCHAR(255),
    `mail` VARCHAR(255),
    `contraseña` VARCHAR(255) NOT NULL,
-   `categoria_id` VARCHAR(255) NOT NULL,
+   `categoria_id` INT NOT NULL,
    `imagen` VARCHAR(255),
-   `edad` INTEGER,
+   `edad` INT,
    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `productosUsuarios` (
-   `id` INTEGER NOT NULL,
-   `usuarios_id` INTEGER NOT NULL,
-   `productos_id` INTEGER NOT NULL,
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `usuarios_id` INT NOT NULL,
+   `productos_id` INT NOT NULL,
    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `categorias` (
-   `id` INTEGER NOT NULL,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `tipo` VARCHAR(50),
    `descripcion` VARCHAR(55),
    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `productos` (
-   `id` INTEGER NOT NULL,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `nombre` VARCHAR(255) NOT NULL,
    `descripcion` VARCHAR(255),
    `precio` DECIMAL NOT NULL,
    `imagen` VARCHAR(255),
    `color` VARCHAR(255),
-   `jerarquias` INTEGER NOT NULL,
+   `jerarquia_id` INT NOT NULL,
    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `jerarquias` (
-   `id` INTEGER NOT NULL,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `nombre` VARCHAR(255) NOT NULL,
    `descripcion` VARCHAR(255),
    PRIMARY KEY (`id`)
@@ -56,4 +52,9 @@ ALTER TABLE `productosUsuarios` ADD CONSTRAINT `FK_e6a63f1c-bdcb-446f-a4cd-b85a6
 
 ALTER TABLE `productosUsuarios` ADD CONSTRAINT `FK_35f740bc-1fd8-4275-8dcc-f9d780553144` FOREIGN KEY (`productos_id`) REFERENCES `productos`(`id`)  ;
 
-ALTER TABLE `productos` ADD CONSTRAINT `FK_ae4a9b45-773a-49cf-982f-6d3371c4abf7` FOREIGN KEY (`jerarquias`) REFERENCES `jerarquias`(`id`)  ;
+ALTER TABLE `productos` ADD CONSTRAINT `FK_ae4a9b45-773a-49cf-982f-6d3371c4abf7` FOREIGN KEY (`jerarquia_id`) REFERENCES `jerarquias`(`id`)  ;
+
+
+INSERT INTO jerarquias values (1, "Bicicletas", "Bicicletas");
+INSERT INTO jerarquias values (2, "Indumentaria", "Indumentaria");
+INSERT INTO jerarquias values (3, "Accesorios", "Accessorios");

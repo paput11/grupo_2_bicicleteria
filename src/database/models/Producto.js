@@ -21,9 +21,13 @@ module.exports = function(sequelize,DataTypes){
     color:{
       type: DataTypes.STRING,
     },
-    jerarquias: {
+    jerarquia_id: {
       type: DataTypes.INTEGER,
       
+    },
+    imagen: {
+      type: DataTypes.STRING,
+    
     },
     
   }

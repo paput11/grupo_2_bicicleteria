@@ -1,7 +1,8 @@
 const path = require ("path");
 const fs = require ("fs");
 const db = require ("../database/models")
-const {Op} = require ("sequelize")
+const {Op} = require ("sequelize");
+const { stringify } = require("querystring");
 
 const productsFilePath = path.join(__dirname,"../data/products.json")
 
@@ -22,36 +23,36 @@ const productController = {
 	},
 
   guardar: function(req,res){
-    let index= db.product.max("id") 
-      
+    
     db.product.create({
-      id: index ++,
+      
       nombre: req.body.name , 
       descripcion: req.body.descripcion,
-      jerarquias: req.body.categoria,
+      jerarquia_id: req.body.categoria,
       precio: parseInt(req.body.precio),
       imagen: req.file ? req.file.filename : "default-imagen.jpg",
       color: req.body.color,
     })
-    .then(res.redirect("/catalogo"))
     
+    .then(res.redirect("/catalogo"))
   },
+
   modificar: (req, res) => {
     db.product.findByPk(req.params.id)
     .then((product)=>(res.render("editarProducto", {product})))
   },
 
   editar: (req, res) => {
+    let product = db.product.findByPk(req.params.id)
     const editProduct = {
-      id: parseInt(req.params.id),
       nombre: req.body.nombre , 
       descripcion: req.body.descripcion,
-      categoria: req.body.categoria,
+      jerarquia_id: req.body.categoria,
       precio: parseInt(req.body.precio),
-      imagen: req.file ? req.file.filename : db.product.findAll({atributtes:["imagen"],where:{id:req.params.id}}),
+      imagen: req.file ? req.file.filename : product.imagen,
       color: req.body.color,
     }
-    db.product.update({editProduct},{where:{id:req.params.id}})
+    db.product.update(editProduct,{where:{id:req.params.id}})
       .then(res.redirect ("/catalogo"));
   },
   
