@@ -78,5 +78,25 @@
   "categoria": "host",
   "imagen": "default-image.jpg",
   "edad": 25
+ },
+ {
+  "id": 13,
+  "nombre": "Mateo",
+  "apellido": "Castro",
+  "correo": "yo@prub.com",
+  "contrasenia": "$2a$10$1xAHc4KVrnH5Tz4JI6dCiuGu3gRNmEUACQrnxx9LpOj5NuNvOTAKK",
+  "categoria": "admin",
+  "imagen": "default-image.jpg",
+  "edad": 23
+ },
+ {
+  "id": 14,
+  "nombre": "Mateo",
+  "apellido": "Castro",
+  "correo": "sdad@dasda.com",
+  "contrasenia": "$2a$10$lkOVkH6PQMgFbhUeLLAtEu4ZiSzjY5BKvC5z5g.6kLb.RNS8C05We",
+  "categoria": "host",
+  "imagen": "fotoperfil-1685992028691.jpg",
+  "edad": 45
  }
 ]

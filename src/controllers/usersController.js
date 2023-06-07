@@ -1,11 +1,14 @@
 const path = require ("path")
 const fs = require ("fs")
 const bcryptjs = require ("bcryptjs")
+const db = require ("../database/models")
+const {Op} = require ("sequelize")
+
 
 const usersFilePath = path.join(__dirname,"../data/users.json")
 const user = require("../models/LoginConfig");
+
 const usersController = {
-  
     login: (req,res) => { 
       res.render("login");
     },
@@ -94,7 +97,7 @@ const usersController = {
       nombre: req.body.nombre , 
       apellido: req.body.apellido,
       correo: req.body.correo,
-      contrasenia: bcrypt.hashSync (req.body.contrasenia,10),
+      contrasenia: bcryptjs.hashSync (req.body.contrasenia,10),
       categoria: req.body.perfil,
       imagen: req.file ? req.file.filename : user.imagen,
       edad: parseInt(req.body.edad),
@@ -106,7 +109,7 @@ const usersController = {
       let usersJSON = JSON.stringify(users, null, " ");
       fs.writeFileSync(usersFilePath, usersJSON);
 
-      res.redirect ("/users/users");
+      res.redirect ("/users/perfil");
     },
 
     editUser: (req, res) => {

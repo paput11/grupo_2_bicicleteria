@@ -22,18 +22,18 @@ const productController = {
 	},
 
   guardar: function(req,res){
-    /* let indice = db.product.max("id")
-    . */ 
-      db.product.create({
-    
-        nombre: req.body.name , 
-        descripcion: req.body.descripcion,
-        jerarquias: req.body.categoria,
-        precio: parseInt(req.body.precio),
-        imagen: req.file ? req.file.filename : "default-imagen.jpg",
-        color: req.body.color,
-      }   
-    ).then(res.redirect("/catalogo"))
+    let index= db.product.max("id") 
+      
+    db.product.create({
+      id: index ++,
+      nombre: req.body.name , 
+      descripcion: req.body.descripcion,
+      jerarquias: req.body.categoria,
+      precio: parseInt(req.body.precio),
+      imagen: req.file ? req.file.filename : "default-imagen.jpg",
+      color: req.body.color,
+    })
+    .then(res.redirect("/catalogo"))
     
   },
   modificar: (req, res) => {
@@ -51,14 +51,14 @@ const productController = {
       imagen: req.file ? req.file.filename : db.product.findAll({atributtes:["imagen"],where:{id:req.params.id}}),
       color: req.body.color,
     }
-    db.product.update({editProduct},{where:{id:req.params.id}}).then(
-
-		res.redirect ("/catalogo"));
+    db.product.update({editProduct},{where:{id:req.params.id}})
+      .then(res.redirect ("/catalogo"));
   },
   
   eliminar: (req, res) => {
-    db.product.destroy({where: {id: req.params.id}}).then(
-    res.redirect ("/catalogo"));
+    db.product.destroy({where: {id: req.params.id}})
+      .then(res.redirect ("/catalogo"))
+      .catch(res.status(404))
   },
 }
 

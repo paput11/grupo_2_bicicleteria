@@ -1,1 +1,0 @@
-console.log(req.body.contrasenia,usoDeLogin.contrasenia);
