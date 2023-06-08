@@ -40,12 +40,12 @@ const usersController = {
           }   
       });  
       
-  },
+    },
     registro: (req,res) => {
         res.render ("registro");
     },
 
-    store:(req,res) => {
+    /* store:(req,res) => {
     const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
     const newUser = {
       id: users[users.length-1].id + 1,
@@ -64,6 +64,23 @@ const usersController = {
 
     res.redirect ("/catalogo")
  
+    }, */
+
+    guardar: (req,res) => {
+      db.user.create({
+        nombre: req.body.nombre , 
+        apellido: req.body.apellido,
+        mail: req.body.correo,
+        contraseña: bcryptjs.hashSync (req.body.contrasenia,10),
+        categoria_id: parseInt(req.body.perfil),
+        imagen: req.file ? req.file.filename : "default-image.jpg",
+        edad: parseInt(req.body.edad),
+
+        });
+      req.session.userLogged = true
+
+      res.redirect("perfil")
+    
     },
 
     list: (req,res)=> {

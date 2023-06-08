@@ -58,3 +58,9 @@ ALTER TABLE `productos` ADD CONSTRAINT `FK_ae4a9b45-773a-49cf-982f-6d3371c4abf7`
 INSERT INTO jerarquias values (1, "Bicicletas", "Bicicletas");
 INSERT INTO jerarquias values (2, "Indumentaria", "Indumentaria");
 INSERT INTO jerarquias values (3, "Accesorios", "Accessorios");
+
+
+insert into categorias  values (1,"Admin","Administrador");
+insert into categorias  values (2,"Usuario","Usuario");
+insert into categorias  values (3,"Administrador_1","Administrador_1");
+insert into categorias  values (4,"Visitante","Visitante");

@@ -22,6 +22,18 @@ module.exports = function(sequelize,DataTypes){
       type: DataTypes.STRING,
       
     },
+    categoria_id:{
+      type: DataTypes.INTEGER,
+      
+    },
+    imagen: {
+      type: DataTypes.STRING,
+    
+    },
+    edad:{
+      type: DataTypes.INTEGER,
+      
+    },
     
   }
     let config = {
