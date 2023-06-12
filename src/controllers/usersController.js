@@ -12,7 +12,7 @@ const usersController = {
     login: (req,res) => { 
       res.render("login");
     },
-    loginProcess: (req,res) => {
+    /* loginProcess: (req,res) => {
       let usoDeLogin = user.findByField("correo",req.body.email);
       if(usoDeLogin){
     let okLaContrasenia = bcryptjs.compareSync(req.body.password,usoDeLogin.contrasenia);
@@ -40,12 +40,104 @@ const usersController = {
           }   
       });  
       
+    }, */
+
+    validacion:(req,res) => {
+      
+      db.user.findOne({where:{mail: req.body.email}})
+      .then(user=> {/* console.log(user)}) */
+        const contrasenia =  bcryptjs.compareSync(req.body.password,user.dataValues.contraseña)   
+        if(contrasenia) {
+          req.session.userLogged = user;
+          return res.redirect("/users/perfil")
+        }else{
+          return res.render("login",{
+              errors:{
+                  correo:{
+                      msg:"Las credenciales son inválidas"
+                  }
+              }
+          })
+        
+        }
+      })      
+      .catch(res.render("login",{
+        errors:{
+            correo:{
+                msg:"no se encuentra este email en nuestra base de datos"
+            }
+        }
+      }))
     },
+
+    perfil: function (req, res) {
+      console.log("Estas en perfil");
+      res.render("perfil", { user: req.session.userLogged });
+    },
+
     registro: (req,res) => {
         res.render ("registro");
     },
+    
 
-    /* store:(req,res) => {
+    guardar: (req,res) => {
+      db.user.create({
+        nombre: req.body.nombre , 
+        apellido: req.body.apellido,
+        mail: req.body.correo,
+        contraseña: bcryptjs.hashSync (req.body.contrasenia,10),
+        categoria_id: parseInt(req.body.perfil),
+        imagen: req.file ? req.file.filename : "default-image.jpg",
+        edad: parseInt(req.body.edad),
+
+        });
+      req.session.userLogged = true
+
+      res.redirect("perfil")
+    
+    },
+
+    lista: (req,res)=> {
+      db.user.findAll()
+      .then (function(users){
+        res.render("users",{users})
+      })
+    },
+
+    eliminar: (req, res) =>{
+      db.user.destroy({where: {id: req.params.id}})
+      .then(res.redirect ("/login"))
+      .catch(res.status(404))
+    },
+
+    editar:(req, res) => {
+      let fotoUser= db.user.findByPk(req.params.id)
+      let editUser = {
+      nombre: req.body.nombre , 
+      apellido: req.body.apellido,
+      mail: req.body.correo,
+      contraseña: bcryptjs.hashSync (req.body.contrasenia,10),
+      categoria_id: parseInt(req.body.perfil),
+      imagen: req.file ? req.file.filename : fotoUser.imagen,
+      edad: parseInt(req.body.edad),}
+      db.user.update(editUser,{where:{id:req.params.id}})
+      .then(res.redirect ("/perfil"));
+
+    },
+
+    modificar: (req, res) => {
+      db.user.findByPk(req.params.id)
+      .then(user=>res.render("editarUser", {user}))
+    },
+}
+
+
+    /* list: (req,res)=> {
+      const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+      res.render("users",{users})
+    }, */
+
+/* store:(req,res) => {
     const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
     const newUser = {
       id: users[users.length-1].id + 1,
@@ -66,29 +158,9 @@ const usersController = {
  
     }, */
 
-    guardar: (req,res) => {
-      db.user.create({
-        nombre: req.body.nombre , 
-        apellido: req.body.apellido,
-        mail: req.body.correo,
-        contraseña: bcryptjs.hashSync (req.body.contrasenia,10),
-        categoria_id: parseInt(req.body.perfil),
-        imagen: req.file ? req.file.filename : "default-image.jpg",
-        edad: parseInt(req.body.edad),
-
-        });
-      req.session.userLogged = true
-
-      res.redirect("perfil")
     
-    },
 
-    list: (req,res)=> {
-      const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-      res.render("users",{users})
-
-    },
-    destroy :  (req, res) =>{
+    /* destroy :  (req, res) =>{
       let id = req.params.id;
 
       const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -102,9 +174,9 @@ const usersController = {
       fs.writeFileSync(usersFilePath, usersJSON);
 
       res.redirect ("/users/users");
-    },
+    }, */
 
-    edit: (req, res) =>{
+    /* edit: (req, res) =>{
     const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
     let id = req.params.id; 
     const user = users.find(user => user.id == id)
@@ -127,21 +199,13 @@ const usersController = {
       fs.writeFileSync(usersFilePath, usersJSON);
 
       res.redirect ("/users/perfil");
-    },
+    }, */
 
-    editUser: (req, res) => {
+    /* editUser: (req, res) => {
       const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
       const id = req.params.id;
       const user = users.find(user => user.id == id);
       res.render("editarUser", {user})
-    },
-
-    perfil: function (req, res, next) {
-      console.log("Estas en perfil");
-      res.render("perfil", { user: req.session.userLogged });
-    },
-
-
-}
+    }, */
 
 module.exports = usersController
