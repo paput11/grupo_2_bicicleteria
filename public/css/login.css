@@ -108,10 +108,13 @@ input[type="submit"]{
     text-decoration: underline;
 }
 
-<<<<<<< HEAD
 .resolution{
     width: 99%;
     text-align: center;
+}
+
+.text-danger{
+    color:red
 }
 
 
@@ -134,6 +137,4 @@ input[type="submit"]{
     }
 
 
-=======
->>>>>>> 89f82624092d27d9a979be65f767bfb362864999
 

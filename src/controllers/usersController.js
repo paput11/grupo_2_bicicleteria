@@ -45,10 +45,10 @@ const usersController = {
     validacion:(req,res) => {
       
       db.user.findOne({where:{mail: req.body.email}})
-      .then(user=> {/* console.log(user)}) */
+      .then(user=> {
         const contrasenia =  bcryptjs.compareSync(req.body.password,user.dataValues.contraseña)   
         if(contrasenia) {
-          req.session.userLogged = user;
+          req.session.userLogged = user.dataValues;
           return res.redirect("/users/perfil")
         }else{
           return res.render("login",{
@@ -64,7 +64,7 @@ const usersController = {
       .catch(res.render("login",{
         errors:{
             correo:{
-                msg:"no se encuentra este email en nuestra base de datos"
+                msg:"No se encuentra este email en nuestra base de datos"
             }
         }
       }))

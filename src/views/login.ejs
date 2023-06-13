@@ -11,13 +11,14 @@
       <h1>Inicio de Sesion</h1>
       <form method="post" action="login">
         <label><b>Correo electronico</b></label>
+        <% if (locals.errors && errors.correo) { %>
+          <br>
+          <div class="text-danger">
+          <%= errors.correo.msg %>
+        </div>
+        <% } %>
         <div class="username">
           <input type="text" name="email" class="form-control">
-          <% if (locals.errors && errors.correo) { %>
-            <div class="text-danger">
-            <%= errors.correo.msg %>
-          </div>
-          <% } %>
         </div>
         <label><b>Contraseña</b></label>
         <div class="username">
