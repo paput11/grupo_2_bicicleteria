@@ -12,35 +12,6 @@ const usersController = {
     login: (req,res) => { 
       res.render("login");
     },
-    /* loginProcess: (req,res) => {
-      let usoDeLogin = user.findByField("correo",req.body.email);
-      if(usoDeLogin){
-    let okLaContrasenia = bcryptjs.compareSync(req.body.password,usoDeLogin.contrasenia);
-       if(okLaContrasenia){
-              delete usoDeLogin.password;
-              req.session.userLogged = usoDeLogin;
-              return res.redirect("/users/perfil"); // [[USUARIO Para el PERFIL ]
-          }else{
-          return res.render("login",{
-              errors:{
-                  correo:{
-                      msg:"Las credenciales son inválidas"
-                  }
-              }
-            
-          }) 
-        }  
-      }
-      return res.render("login",{
-          errors:{
-              correo:{
-                  msg:"no se encuentra este email en nuestra base de datos"
-              }
-             
-          }   
-      });  
-      
-    }, */
 
     validacion:(req,res) => {
       
@@ -61,13 +32,14 @@ const usersController = {
         
         }
       })      
-      .catch(res.render("login",{
+      .catch((errors)=>{
+      return res.render("login",{
         errors:{
             correo:{
                 msg:"No se encuentra este email en nuestra base de datos"
             }
         }
-      }))
+      })})
     },
 
     perfil: function (req, res) {
@@ -93,7 +65,7 @@ const usersController = {
         });
       req.session.userLogged = true
 
-      res.redirect("perfil")
+      res.redirect("/users/perfil")
     
     },
 
@@ -106,7 +78,7 @@ const usersController = {
 
     eliminar: (req, res) =>{
       db.user.destroy({where: {id: req.params.id}})
-      .then(res.redirect ("/login"))
+      .then(res.redirect ("/"))
       .catch(res.status(404))
     },
 
@@ -121,7 +93,7 @@ const usersController = {
       imagen: req.file ? req.file.filename : fotoUser.imagen,
       edad: parseInt(req.body.edad),}
       db.user.update(editUser,{where:{id:req.params.id}})
-      .then(res.redirect ("/perfil"));
+      .then(res.redirect ("/users/perfil"));
 
     },
 
@@ -206,6 +178,35 @@ const usersController = {
       const id = req.params.id;
       const user = users.find(user => user.id == id);
       res.render("editarUser", {user})
+    }, */
+    /* loginProcess: (req,res) => {
+      let usoDeLogin = user.findByField("correo",req.body.email);
+      if(usoDeLogin){
+    let okLaContrasenia = bcryptjs.compareSync(req.body.password,usoDeLogin.contrasenia);
+       if(okLaContrasenia){
+              delete usoDeLogin.password;
+              req.session.userLogged = usoDeLogin;
+              return res.redirect("/users/perfil"); // [[USUARIO Para el PERFIL ]
+          }else{
+          return res.render("login",{
+              errors:{
+                  correo:{
+                      msg:"Las credenciales son inválidas"
+                  }
+              }
+            
+          }) 
+        }  
+      }
+      return res.render("login",{
+          errors:{
+              correo:{
+                  msg:"no se encuentra este email en nuestra base de datos"
+              }
+             
+          }   
+      });  
+      
     }, */
 
 module.exports = usersController
