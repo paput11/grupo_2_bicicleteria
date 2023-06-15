@@ -85,6 +85,7 @@ const usersController = {
     editar:(req, res) => {
       let fotoUser= db.user.findByPk(req.params.id)
       let editUser = {
+      id: req.params.id,
       nombre: req.body.nombre , 
       apellido: req.body.apellido,
       mail: req.body.correo,
@@ -93,7 +94,7 @@ const usersController = {
       imagen: req.file ? req.file.filename : fotoUser.imagen,
       edad: parseInt(req.body.edad),}
       db.user.update(editUser,{where:{id:req.params.id}})
-      .then(res.redirect ("/users/perfil"));
+      .then(res.render ("perfil",{user: editUser}))
 
     },
 
