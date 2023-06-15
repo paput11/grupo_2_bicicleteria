@@ -62,10 +62,13 @@ const usersController = {
         imagen: req.file ? req.file.filename : "default-image.jpg",
         edad: parseInt(req.body.edad),
 
-        });
-      req.session.userLogged = true
-
-      res.redirect("/users/perfil")
+        })
+      .then((usuario)=>{ db.user.findOne({where:{mail: req.body.correo}})
+        req.session.userLogged = usuario.dataValues
+        console.log(usuario)
+        res.render("perfil",{user: usuario.dataValues})})
+      /* .then(req.session.userLogged = usuario.dataValues)
+      .then(res.render("perfil",{user: usuario.dataValues})) */
     
     },
 
@@ -78,6 +81,7 @@ const usersController = {
 
     eliminar: (req, res) =>{
       db.user.destroy({where: {id: req.params.id}})
+      .then(req.session.userLogged = undefined)
       .then(res.redirect ("/"))
       .catch(res.status(404))
     },
@@ -102,7 +106,22 @@ const usersController = {
       db.user.findByPk(req.params.id)
       .then(user=>res.render("editarUser", {user}))
     },
+
+    salir: (req, res) => {
+      req.session.userLogged = undefined
+      res.redirect ("login")
+    },
+
+    eliminarAdmin: (req, res) => {
+      db.user.destroy({where: {id: req.params.id}})
+      .then(res.redirect ("/users/admin"))
+      .catch(res.status(404))
+    },
+
+
+
 }
+
 
 
     /* list: (req,res)=> {

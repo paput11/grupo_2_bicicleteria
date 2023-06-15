@@ -18,8 +18,10 @@ usersRouter.post("/", requireGuest, upload.single("fotoperfil"), usersController
 
 // Rutas accesibles solo con login
 usersRouter.get("/perfil", requireLogin, usersController.perfil);
+usersRouter.get("/salir", requireLogin, usersController.salir);
 usersRouter.get("/admin", requireLogin, usersController.lista);
 usersRouter.get("/deleteUser/:id", requireLogin, usersController.eliminar);
+usersRouter.get("/deleteUsers/:id", requireLogin, usersController.eliminarAdmin);
 usersRouter.get("/editUser/:id", requireLogin, usersController.modificar);
 usersRouter.post("/editUser/:id", requireLogin, upload.single("fotoperfil"), usersController.editar);
 
