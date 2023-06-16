@@ -63,12 +63,9 @@ const usersController = {
         edad: parseInt(req.body.edad),
 
         })
-      .then((usuario)=>{ db.user.findOne({where:{mail: req.body.correo}})
+      .then((usuario)=>{ /* db.user.findOne({where:{mail: req.body.correo}}) */
         req.session.userLogged = usuario.dataValues
-        console.log(usuario)
         res.render("perfil",{user: usuario.dataValues})})
-      /* .then(req.session.userLogged = usuario.dataValues)
-      .then(res.render("perfil",{user: usuario.dataValues})) */
     
     },
 
@@ -94,10 +91,11 @@ const usersController = {
       apellido: req.body.apellido,
       mail: req.body.correo,
       contraseña: bcryptjs.hashSync (req.body.contrasenia,10),
-      categoria_id: parseInt(req.body.perfil),
+      categoria_id: req.body.perfil == undefined ? fotoUser.categoria_id : parseInt(req.body.perfil),
       imagen: req.file ? req.file.filename : fotoUser.imagen,
-      edad: parseInt(req.body.edad),}
+      edad: parseInt(req.body.edad)}
       db.user.update(editUser,{where:{id:req.params.id}})
+      /* .then(()=>{console.log(req.body)}) */
       .then(res.render ("perfil",{user: editUser}))
 
     },

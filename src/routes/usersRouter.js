@@ -9,12 +9,10 @@ const requireGuest = require ("../middlewares/requireGuest.js")
 const upload = require ("../middlewares/upload.js")
 
 
-
-usersRouter.get("/login", requireGuest, usersController.login);
-usersRouter.post("/login", requireGuest, usersController.validacion);
 usersRouter.get("/registro", requireGuest, usersController.registro);
 usersRouter.post("/", requireGuest, upload.single("fotoperfil"), usersController.guardar)
-
+usersRouter.get("/login", requireGuest, usersController.login);
+usersRouter.post("/login", requireGuest, usersController.validacion);
 
 // Rutas accesibles solo con login
 usersRouter.get("/perfil", requireLogin, usersController.perfil);
