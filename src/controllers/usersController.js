@@ -87,16 +87,15 @@ const usersController = {
       let fotoUser= db.user.findByPk(req.params.id)
       let editUser = {
       id: req.params.id,
-      nombre: req.body.nombre , 
+      nombre: req.body.nombre, 
       apellido: req.body.apellido,
       mail: req.body.correo,
-      contraseña: bcryptjs.hashSync (req.body.contrasenia,10),
+      contraseña: bcryptjs.hashSync(req.body.contrasenia,10),
       categoria_id: req.body.perfil == undefined ? fotoUser.categoria_id : parseInt(req.body.perfil),
       imagen: req.file ? req.file.filename : fotoUser.imagen,
       edad: parseInt(req.body.edad)}
       db.user.update(editUser,{where:{id:req.params.id}})
-      /* .then(()=>{console.log(req.body)}) */
-      .then(res.render ("perfil",{user: editUser}))
+      res.render ("perfil",{user: editUser})
 
     },
 
