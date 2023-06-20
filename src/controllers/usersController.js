@@ -43,8 +43,9 @@ const usersController = {
     },
 
     perfil: function (req, res) {
-      console.log("Estas en perfil");
-      res.render("perfil", { user: req.session.userLogged });
+      console.log("Estas en perfil")
+      console.log(req.session.userLogged)
+      res.render("perfil", { user: req.session.userLogged })
     },
 
     registro: (req,res) => {
@@ -84,24 +85,33 @@ const usersController = {
     },
 
     editar:(req, res) => {
-      let fotoUser= db.user.findByPk(req.params.id)
-      let editUser = {
-      id: req.params.id,
-      nombre: req.body.nombre, 
-      apellido: req.body.apellido,
-      mail: req.body.correo,
-      contraseña: bcryptjs.hashSync(req.body.contrasenia,10),
-      categoria_id: req.body.perfil == undefined ? fotoUser.categoria_id : parseInt(req.body.perfil),
-      imagen: req.file ? req.file.filename : fotoUser.imagen,
-      edad: parseInt(req.body.edad)}
-      db.user.update(editUser,{where:{id:req.params.id}})
-      res.render ("perfil",{user: editUser})
-
+      
+      db.user.findByPk(req.params.id)
+      .then((oldUser)=>{
+        let editUser = {
+        id: parseInt(req.params.id),
+        nombre: req.body.nombre, 
+        apellido: req.body.apellido,
+        mail: req.body.correo,
+        contraseña: bcryptjs.hashSync(req.body.contrasenia,10),
+        categoria_id: req.body.perfil == undefined ? oldUser.categoria_id : parseInt(req.body.perfil),
+        imagen: req.file ? req.file.filename : oldUser.imagen,
+        edad: parseInt(req.body.edad)}
+      return editUser})
+      .then((editUser)=>{
+        db.user.update(editUser,{where:{id:req.params.id}})
+        req.session.sessionStorage.clear()
+        req.session.userLogged = editUser
+        console.log(req.session.userLogged)
+        })
+      .then(res.redirect ("/users/perfil")) 
+    
     },
 
     modificar: (req, res) => {
       db.user.findByPk(req.params.id)
       .then(user=>res.render("editarUser", {user}))
+      
     },
 
     salir: (req, res) => {

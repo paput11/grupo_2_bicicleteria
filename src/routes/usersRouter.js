@@ -16,6 +16,7 @@ usersRouter.post("/login", requireGuest, usersController.validacion);
 
 // Rutas accesibles solo con login
 usersRouter.get("/perfil", requireLogin, usersController.perfil);
+usersRouter.post("/perfil", requireLogin, usersController.perfil);
 usersRouter.get("/salir", requireLogin, usersController.salir);
 usersRouter.get("/admin", requireLogin, usersController.lista);
 usersRouter.get("/deleteUser/:id", requireLogin, usersController.eliminar);
