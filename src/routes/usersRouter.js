@@ -4,6 +4,7 @@ const usersRouter = express.Router();
 
 const usersController = require("../controllers/usersController.js");
 
+
 const requireLogin = require ("../middlewares/requiereLogin.js")
 const requireGuest = require ("../middlewares/requireGuest.js")
 const upload = require ("../middlewares/upload.js")
@@ -23,6 +24,15 @@ usersRouter.get("/deleteUser/:id", requireLogin, usersController.eliminar);
 usersRouter.get("/deleteUsers/:id", requireLogin, usersController.eliminarAdmin);
 usersRouter.get("/editUser/:id", requireLogin, usersController.modificar);
 usersRouter.post("/editUser/:id", requireLogin, upload.single("fotoperfil"), usersController.editar);
+
+//------------------------ Apis ----------------------------------------//
+
+
+usersRouter.get("/", usersController.list);
+usersRouter.get('/:id',usersController.show);
+
+
+
 
 
 
