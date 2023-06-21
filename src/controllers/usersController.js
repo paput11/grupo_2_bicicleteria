@@ -1,239 +1,191 @@
-const path = require ("path")
-const fs = require ("fs")
-const bcryptjs = require ("bcryptjs")
-const db = require ("../database/models")
-const {Op} = require ("sequelize")
+const path = require("path");
+const fs = require("fs");
+const bcryptjs = require("bcryptjs");
+const db = require("../database/models");
+const { Op } = require("sequelize");
 
-
-const usersFilePath = path.join(__dirname,"../data/users.json")
+const usersFilePath = path.join(__dirname, "../data/users.json");
 const user = require("../models/LoginConfig");
 
 const usersController = {
-    login: (req,res) => { 
-      res.render("login");
-    },
+  login: (req, res) => {
+    res.render("login");
+  },
 
-    validacion:(req,res) => {
-      
-      db.user.findOne({where:{mail: req.body.email}})
-      .then(user=> {
-        const contrasenia =  bcryptjs.compareSync(req.body.password,user.dataValues.contraseña)   
-        if(contrasenia) {
+  validacion: (req, res) => {
+    db.user
+      .findOne({ where: { mail: req.body.email } })
+      .then(user => {
+        const contrasenia = bcryptjs.compareSync(
+          req.body.password,
+          user.dataValues.contraseña
+        );
+        if (contrasenia) {
           req.session.userLogged = user.dataValues;
-          return res.redirect("/users/perfil")
-        }else{
-          return res.render("login",{
-              errors:{
-                  correo:{
-                      msg:"Las credenciales son inválidas"
-                  }
+          return res.redirect("/users/perfil");
+        } else {
+          return res.render("login", {
+            errors: {
+              correo: {
+                msg: "Las credenciales son inválidas"
               }
-          })
-        
-        }
-      })      
-      .catch((errors)=>{
-      return res.render("login",{
-        errors:{
-            correo:{
-                msg:"No se encuentra este email en nuestra base de datos"
             }
+          });
         }
-      })})
-    },
+      })
+      .catch(errors => {
+        return res.render("login", {
+          errors: {
+            correo: {
+              msg: "No se encuentra este email en nuestra base de datos"
+            }
+          }
+        });
+      });
+  },
 
-    perfil: function (req, res) {
-      console.log("Estas en perfil")
-      console.log(req.session.userLogged)
-      res.render("perfil", { user: req.session.userLogged })
-    },
+  perfil: function(req, res) {
+    console.log("Estas en perfil");
+    console.log(req.session.userLogged);
+    res.render("perfil", { user: req.session.userLogged });
+  },
 
-    registro: (req,res) => {
-        res.render ("registro");
-    },
-    
+  registro: (req, res) => {
+    res.render("registro");
+  },
 
-    guardar: (req,res) => {
-      db.user.create({
-        nombre: req.body.nombre , 
+  guardar: (req, res) => {
+    db.user
+      .create({
+        nombre: req.body.nombre,
         apellido: req.body.apellido,
         mail: req.body.correo,
-        contraseña: bcryptjs.hashSync (req.body.contrasenia,10),
+        contraseña: bcryptjs.hashSync(req.body.contrasenia, 10),
         categoria_id: parseInt(req.body.perfil),
         imagen: req.file ? req.file.filename : "default-image.jpg",
-        edad: parseInt(req.body.edad),
-
-        })
-      .then((usuario)=>{ /* db.user.findOne({where:{mail: req.body.correo}}) */
-        req.session.userLogged = usuario.dataValues
-        res.render("perfil",{user: usuario.dataValues})})
-    
-    },
-
-    lista: (req,res)=> {
-      db.user.findAll()
-      .then (function(users){
-        res.render("users",{users})
+        edad: parseInt(req.body.edad)
       })
-    },
+      .then(usuario => {
+        req.session.userLogged = usuario.dataValues;
+        res.render("perfil", { user: usuario.dataValues });
+      });
+  },
 
-    eliminar: (req, res) =>{
-      db.user.destroy({where: {id: req.params.id}})
-      .then(req.session.userLogged = undefined)
-      .then(res.redirect ("/"))
-      .catch(res.status(404))
-    },
+  lista: (req, res) => {
+    db.user
+      .findAll()
+      .then(function(users) {
+        res.render("users", { users });
+      })
+      .catch(error => {
+        console.error(error);
+        res.status(500).send("Error al obtener los usuarios");
+      });
+  },
 
-    editar:(req, res) => {
-      
-      db.user.findByPk(req.params.id)
-      .then((oldUser)=>{
+  eliminar: (req, res) => {
+    db.user
+      .destroy({ where: { id: req.params.id } })
+      .then(() => {
+        req.session.userLogged = undefined;
+        res.redirect("/");
+      })
+      .catch(error => {
+        console.error(error);
+        res.status(500).send("Error al eliminar el usuario");
+      });
+  },
+
+  editar: (req, res) => {
+    db.user
+      .findByPk(req.params.id)
+      .then(oldUser => {
         let editUser = {
-        id: parseInt(req.params.id),
-        nombre: req.body.nombre, 
-        apellido: req.body.apellido,
-        mail: req.body.correo,
-        contraseña: bcryptjs.hashSync(req.body.contrasenia,10),
-        categoria_id: req.body.perfil == undefined ? oldUser.categoria_id : parseInt(req.body.perfil),
-        imagen: req.file ? req.file.filename : oldUser.imagen,
-        edad: parseInt(req.body.edad)}
-      return editUser})
-      .then((editUser)=>{
-        db.user.update(editUser,{where:{id:req.params.id}})
-        req.session.sessionStorage.clear()
-        req.session.userLogged = editUser
-        console.log(req.session.userLogged)
-        })
-      .then(res.redirect ("/users/perfil")) 
-    
-    },
-
-    modificar: (req, res) => {
-      db.user.findByPk(req.params.id)
-      .then(user=>res.render("editarUser", {user}))
-      
-    },
-
-    salir: (req, res) => {
-      req.session.userLogged = undefined
-      res.redirect ("login")
-    },
-
-    eliminarAdmin: (req, res) => {
-      db.user.destroy({where: {id: req.params.id}})
-      .then(res.redirect ("/users/admin"))
-      .catch(res.status(404))
-    },
-
-
-
-}
-
-
-
-    /* list: (req,res)=> {
-      const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-      res.render("users",{users})
-    }, */
-
-/* store:(req,res) => {
-    const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-    const newUser = {
-      id: users[users.length-1].id + 1,
-      nombre: req.body.nombre , 
-      apellido: req.body.apellido,
-      correo: req.body.correo,
-      contrasenia: bcryptjs.hashSync (req.body.contrasenia,10),
-      categoria: req.body.perfil,
-      imagen: req.file ? req.file.filename : "default-image.jpg",
-      edad: parseInt(req.body.edad),
-      
-    }
-    users.push (newUser)
-    let userJSON= JSON.stringify(users,null," ")
-    fs.writeFileSync(usersFilePath, userJSON)
-
-    res.redirect ("/catalogo")
- 
-    }, */
-
-    
-
-    /* destroy :  (req, res) =>{
-      let id = req.params.id;
-
-      const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-      let finalusers = users.filter(user => {
-        return user.id != id
+          id: parseInt(req.params.id),
+          nombre: req.body.nombre,
+          apellido: req.body.apellido,
+          mail: req.body.correo,
+          contraseña: bcryptjs.hashSync(req.body.contrasenia, 10),
+          categoria_id:
+            req.body.perfil == undefined
+              ? oldUser.categoria_id
+              : parseInt(req.body.perfil),
+          imagen: req.file ? req.file.filename : oldUser.imagen,
+          edad: parseInt(req.body.edad)
+        };
+        return editUser;
       })
-      
-      let usersJSON = JSON.stringify(finalusers, null, " ");
-    
-      fs.writeFileSync(usersFilePath, usersJSON);
+      .then(editUser => {
+        db.user.update(editUser, { where: { id: req.params.id } });
+        req.session.sessionStorage.clear();
+        req.session.userLogged = editUser;
+      })
+      .then(() => res.redirect("/users/perfil"))
+      .catch(error => {
+        console.error(error);
+        res.status(500).send("Error al editar el usuario");
+      });
+  },
 
-      res.redirect ("/users/users");
-    }, */
+  modificar: (req, res) => {
+    db.user
+      .findByPk(req.params.id)
+      .then(user => res.render("editarUser", { user }))
+      .catch(error => {
+        console.error(error);
+        res.status(500).send("Error al obtener el usuario");
+      });
+  },
 
-    /* edit: (req, res) =>{
-    const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-    let id = req.params.id; 
-    const user = users.find(user => user.id == id)
-    
-    const editUser = {
-      id: parseInt(req.params.id),
-      nombre: req.body.nombre , 
-      apellido: req.body.apellido,
-      correo: req.body.correo,
-      contrasenia: bcryptjs.hashSync (req.body.contrasenia,10),
-      categoria: req.body.perfil,
-      imagen: req.file ? req.file.filename : user.imagen,
-      edad: parseInt(req.body.edad),
-      
-    }
-    let indice= users.findIndex(user=>{return user.id==id})
-      
-      users [indice]= editUser;
-      let usersJSON = JSON.stringify(users, null, " ");
-      fs.writeFileSync(usersFilePath, usersJSON);
+  salir: (req, res) => {
+    req.session.userLogged = undefined;
+    res.redirect("login");
+  },
 
-      res.redirect ("/users/perfil");
-    }, */
+  eliminarAdmin: (req, res) => {
+    db.user
+      .destroy({ where: { id: req.params.id } })
+      .then(() => res.redirect("/users/admin"))
+      .catch(error => {
+        console.error(error);
+        res.status(500).send("Error al eliminar el usuario");
+      });
+  },
 
-    /* editUser: (req, res) => {
-      const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-      const id = req.params.id;
-      const user = users.find(user => user.id == id);
-      res.render("editarUser", {user})
-    }, */
-    /* loginProcess: (req,res) => {
-      let usoDeLogin = user.findByField("correo",req.body.email);
-      if(usoDeLogin){
-    let okLaContrasenia = bcryptjs.compareSync(req.body.password,usoDeLogin.contrasenia);
-       if(okLaContrasenia){
-              delete usoDeLogin.password;
-              req.session.userLogged = usoDeLogin;
-              return res.redirect("/users/perfil"); // [[USUARIO Para el PERFIL ]
-          }else{
-          return res.render("login",{
-              errors:{
-                  correo:{
-                      msg:"Las credenciales son inválidas"
-                  }
-              }
-            
-          }) 
-        }  
-      }
-      return res.render("login",{
-          errors:{
-              correo:{
-                  msg:"no se encuentra este email en nuestra base de datos"
-              }
-             
-          }   
-      });  
-      
-    }, */
+  list: (req, res) => {
+    db.user
+      .findAll()
+      .then(user => {
+        return res.status(200).json({
+          total: user.length,
+          data: user,
+          status: 200
+        });
+      })
+      .catch(error => {
+        console.error(error);
+        return res.status(500).json({ error: 'Error al obtener los usuarios' });
+      });
+  },
 
-module.exports = usersController
+  show: (req, res) => {
+    db.user
+      .findByPk(req.params.id)
+      .then(user => {
+        if (!user) {
+          return res.status(404).json({ error: 'Usuario no encontrado' });
+        }
+
+        return res.status(200).json({
+          data: user,
+          status: 200
+        });
+      })
+      .catch(error => {
+        console.error(error);
+        return res.status(500).json({ error: 'Error al obtener el usuario' });
+      });
+  }
+};
+
+module.exports = usersController;
