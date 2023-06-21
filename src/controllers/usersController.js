@@ -1,13 +1,13 @@
 const path = require ("path")
-const fs = require ("fs")
+/* const fs = require ("fs") */
 const bcryptjs = require ("bcryptjs")
 const db = require ("../database/models")
-const {Op} = require ("sequelize")
+/* const {Op} = require ("sequelize") */
 
 
-const usersFilePath = path.join(__dirname,"../data/users.json")
+/* const usersFilePath = path.join(__dirname,"../data/users.json")
 const user = require("../models/LoginConfig");
-
+ */
 const usersController = {
     login: (req,res) => { 
       res.render("login");
@@ -44,8 +44,12 @@ const usersController = {
 
     perfil: function (req, res) {
       console.log("Estas en perfil")
-      console.log(req.session.userLogged)
-      res.render("perfil", { user: req.session.userLogged })
+      db.user.findByPk(req.session.userLogged.id)
+      .then((newUser)=>{console.log(req.session.userLogged)
+        req.session.userLogged= newUser.dataValues
+        }
+      )
+      .then(res.render("perfil", { user: req.session.userLogged }))
     },
 
     registro: (req,res) => {
@@ -100,7 +104,6 @@ const usersController = {
       return editUser})
       .then((editUser)=>{
         db.user.update(editUser,{where:{id:req.params.id}})
-        req.session.sessionStorage.clear()
         req.session.userLogged = editUser
         console.log(req.session.userLogged)
         })
@@ -124,6 +127,8 @@ const usersController = {
       .then(res.redirect ("/users/admin"))
       .catch(res.status(404))
     },
+
+    
 
 
 
