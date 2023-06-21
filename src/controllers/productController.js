@@ -61,6 +61,41 @@ const productController = {
       .then(res.redirect ("/catalogo"))
       .catch(res.status(404))
   },
+
+  listaApi: (req, res) => {
+    db.product
+      .findAll()
+      .then(productos => {
+        return res.status(200).json({
+          total: productos.length,
+          data: productos,
+          status: 200
+        });
+      })
+      .catch(error => {
+        console.error(error);
+        return res.status(500).json({ error: 'Error al obtener los usuarios' });
+      });
+  },
+
+  detalleApi: (req, res) => {
+    db.product
+      .findByPk(req.params.id)
+      .then(producto => {
+        if (!producto) {
+          return res.status(404).json({ error: 'Producto no encontrado' });
+        }else{
+          return res.status(200).json({
+          data: producto,
+          status: 200
+        })};
+      })
+      .catch(error => {
+        console.error(error);
+        return res.status(500).json({ error: 'Error al obtener el Producto'});
+      });
+  },
+
 }
 
 

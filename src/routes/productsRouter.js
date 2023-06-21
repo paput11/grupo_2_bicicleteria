@@ -27,6 +27,12 @@ productRouter.get('/edit/:id', productController.modificar);
 productRouter.patch('/edit/:id',upload.single("Product"), productController.editar);
 
 
+//------------------------ Apis ----------------------------------------//
+
+productRouter.get("/listApi", productController.listaApi);
+productRouter.get('/detalleApi/:id',productController.detalleApi);
+
+
 /* productRouter.get("/",productController.catalogo) */
 /* productRouter.get ("/detail/:id", productController.detail); */
 
