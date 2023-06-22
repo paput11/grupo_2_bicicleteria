@@ -29,7 +29,7 @@ productRouter.patch('/edit/:id',upload.single("Product"), productController.edit
 
 //------------------------ Apis ----------------------------------------//
 
-productRouter.get("/listApi", productController.listaApi);
+productRouter.get("/listaApi", productController.listaApi);
 productRouter.get('/detalleApi/:id',productController.detalleApi);
 
 

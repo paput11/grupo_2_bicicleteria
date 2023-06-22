@@ -48,8 +48,9 @@ const usersController = {
     perfil: function (req, res) {
       console.log("Estas en perfil")
       db.user.findByPk(req.session.userLogged.id)
-      .then((newUser)=>{console.log(req.session.userLogged)
+      .then((newUser)=>{
         req.session.userLogged= newUser.dataValues
+        console.log(req.session.userLogged)
         }
       )
       .then(res.render("perfil", { user: req.session.userLogged }))

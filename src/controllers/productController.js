@@ -65,16 +65,33 @@ const productController = {
   listaApi: (req, res) => {
     db.product
       .findAll()
-      .then(productos => {
+      .then(productos => { 
+        let products= []
+        for (let i = 0; i < productos.length; i++) {
+          const element = {
+            id: productos[i].id,
+            name: productos[i].nombre,
+            descripcion: productos[i].descripcion,
+            category: productos[i].jerarquia_id,
+            detail: "http://localhost:3000/catalogo/detalleApi/"+productos[i].id,
+          }
+          
+          products.push(element)
+        } 
+        return products
+      })
+      .then((productos)=>{
         return res.status(200).json({
           total: productos.length,
-          data: productos,
+          data:  productos,
           status: 200
-        });
+        })
       })
       .catch(error => {
         console.error(error);
-        return res.status(500).json({ error: 'Error al obtener los usuarios' });
+        return res.status(500).json({
+          error: 'Error al obtener los usuarios',
+          status: 500});
       });
   },
 
@@ -87,12 +104,15 @@ const productController = {
         }else{
           return res.status(200).json({
           data: producto,
+          imagen: "http://localhost:3000/images/trek/"+producto.imagen,
           status: 200
         })};
       })
       .catch(error => {
         console.error(error);
-        return res.status(500).json({ error: 'Error al obtener el Producto'});
+        return res.status(500).json({ 
+          error: 'Error al obtener el Producto',
+          status: 500});
       });
   },
 
