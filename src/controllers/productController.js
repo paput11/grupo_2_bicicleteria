@@ -1,8 +1,8 @@
 const path = require ("path");
-const fs = require ("fs");
+/* const fs = require ("fs"); */
 const db = require ("../database/models")
 const {Op} = require ("sequelize");
-const { stringify } = require("querystring");
+/* const { stringify } = require("querystring"); */
 
 const productsFilePath = path.join(__dirname,"../data/products.json")
 
@@ -75,7 +75,6 @@ const productController = {
             category: productos[i].jerarquia_id,
             detail: "http://localhost:3000/catalogo/detalleApi/"+productos[i].id,
           }
-          
           products.push(element)
         } 
         return products
@@ -100,11 +99,13 @@ const productController = {
       .findByPk(req.params.id)
       .then(producto => {
         if (!producto) {
-          return res.status(404).json({ error: 'Producto no encontrado' });
+          return res.status(404).json({ 
+            error: 'Producto no encontrado',
+            status: 404 });
         }else{
           return res.status(200).json({
           data: producto,
-          imagen: "http://localhost:3000/images/trek/"+producto.imagen,
+          urlImagen: "http://localhost:3000/images/trek/"+producto.imagen,
           status: 200
         })};
       })

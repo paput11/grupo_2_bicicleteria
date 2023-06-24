@@ -50,10 +50,10 @@ const usersController = {
       db.user.findByPk(req.session.userLogged.id)
       .then((newUser)=>{
         req.session.userLogged= newUser.dataValues
-        console.log(req.session.userLogged)
+        res.render("perfil", { user: req.session.userLogged })
         }
       )
-      .then(res.render("perfil", { user: req.session.userLogged }))
+      
     },
 
   registro: (req, res) => {
@@ -117,9 +117,7 @@ const usersController = {
         edad: parseInt(req.body.edad)}
       return editUser})
       .then((editUser)=>{
-        db.user.update(editUser,{where:{id:req.params.id}})
-        req.session.userLogged = editUser
-        console.log(req.session.userLogged)
+        return db.user.update(editUser,{where:{id:req.params.id}})
         })
       .then(res.redirect ("/users/perfil")) 
     
