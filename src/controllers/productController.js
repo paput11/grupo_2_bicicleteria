@@ -66,12 +66,14 @@ const productController = {
     db.product
       .findAll()
       .then(productos => { 
+        
         let products= []
         for (let i = 0; i < productos.length; i++) {
           const element = {
             id: productos[i].id,
             name: productos[i].nombre,
             descripcion: productos[i].descripcion,
+            image: productos[i].imagen,
             category: productos[i].jerarquia_id,
             detail: "http://localhost:3000/catalogo/detalleApi/"+productos[i].id,
           }
