@@ -70,21 +70,42 @@ const productController = {
 
   modificar: (req, res) => {
     db.product.findByPk(req.params.id)
-      .then((product) => (res.render("editarProducto", { product })))
+      .then((product) => {
+        return (res.render("editarProducto", { product }));
+      })
   },
 
-  editar: (req, res) => {
-    let product = db.product.findByPk(req.params.id)
-    const editProduct = {
-      nombre: req.body.nombre,
-      descripcion: req.body.descripcion,
-      jerarquia_id: req.body.categoria,
-      precio: parseInt(req.body.precio),
-      imagen: req.file ? req.file.filename : product.imagen,
-      color: req.body.color,
-    }
-    db.product.update(editProduct, { where: { id: req.params.id } })
+  editar: async (req, res) => {
+    const result = validationResult(req).array();
+    let product = await db.product.findByPk(req.params.id);
+    console.log({ product, result });
+
+    if (result.length) {
+      //como tiene errores => mostramos creacion de producto con los errores
+      return res.render("editarProducto", {
+        product: product.dataValues,
+        errors: [
+          ...result.map((result) => {
+            return ({
+              field: result.path,
+              msg: result.msg
+            });
+          })
+        ]
+      });
+    } else {
+
+      const editProduct = {
+        nombre: req.body.nombre,
+        descripcion: req.body.descripcion,
+        jerarquia_id: req.body.categoria,
+        precio: parseInt(req.body.precio),
+        imagen: req.file ? req.file.filename : product.imagen,
+        color: req.body.color,
+      }
+      db.product.update(editProduct, { where: { id: req.params.id } })
       .then(res.redirect("/catalogo"));
+    }
   },
 
   eliminar: (req, res) => {

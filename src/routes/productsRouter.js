@@ -28,29 +28,16 @@ const productValidator = [
     body("name", "Nombre corto").isLength({ min: 5 }),
     // Condicion Descripcion min 20 de length
     body("descripcion", "Descripción corta").isLength({ min: 20 }),
-
 ];
 
 productRouter.post("/", upload.single("Product"), productValidator, productController.guardar)
 productRouter.delete("/delete/:id", productController.eliminar);
 productRouter.get('/edit/:id', productController.modificar);
-productRouter.patch('/edit/:id', upload.single("Product"), productController.editar);
-
+productRouter.patch('/edit/:id', upload.single("Product"), productValidator, productController.editar);
 
 //------------------------ Apis ----------------------------------------//
 
 productRouter.get("/listaApi", productController.listaApi);
 productRouter.get('/detalleApi/:id', productController.detalleApi);
-
-
-/* productRouter.get("/",productController.catalogo) */
-/* productRouter.get ("/detail/:id", productController.detail); */
-
-/* productRouter.post("/", upload.single("Product"), productController.store) */
-
-/* productRouter.get('/edit/:id', productController.edit); */
-/* productRouter.patch('/edit/:id', upload.single("Product"),productController.change); */
-
-/* productRouter.delete("/delete/:id",productController.destroy); */
 
 module.exports = productRouter
