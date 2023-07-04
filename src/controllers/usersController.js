@@ -1,8 +1,9 @@
-const path = require ("path")
+const path = require("path")
 /* const fs = require ("fs") */
-const bcryptjs = require ("bcryptjs")
-const db = require ("../database/models")
+const bcryptjs = require("bcryptjs")
+const db = require("../database/models")
 /* const {Op} = require ("sequelize") */
+const { body, validationResult } = require('express-validator');
 
 
 /* const usersFilePath = path.join(__dirname,"../data/users.json")
@@ -14,73 +15,135 @@ const usersController = {
   },
 
   validacion: (req, res) => {
-    db.user
-      .findOne({ where: { mail: req.body.email } })
-      .then(user => {
-        const contrasenia = bcryptjs.compareSync(
-          req.body.password,
-          user.dataValues.contraseña
-        );
-        if (contrasenia) {
-          req.session.userLogged = user.dataValues;
-          return res.redirect("/users/perfil");
-        } else {
+    const result = validationResult(req).array();
+    //console.log({ result: result, length: result.length });
+
+    if (result.length) {
+      console.log("hay error", result);
+      return res.render("login", {
+        errors: {
+          correo: {
+            msg: "Las credenciales inválidas"
+          }
+        }
+      });
+    } else {
+      // buscamos el usuario en la db
+      db.user
+        .findOne({ where: { mail: req.body.email } })
+        .then(user => {
+          if (!user) {
+            return res.render("login", {
+              errors: {
+                correo: {
+                  msg: "Las credenciales son inválidas"
+                }
+              }
+            });
+          }
+          //console.log({ user })
+          const contrasenia = bcryptjs.compareSync(
+            req.body.password,
+            user.dataValues.contraseña
+          );
+          if (contrasenia) {
+            req.session.userLogged = user.dataValues;
+            return res.redirect("/users/perfil");
+          } else {
+            return res.render("login", {
+              errors: {
+                correo: {
+                  msg: "Las credenciales son inválidas"
+                }
+              }
+            });
+          }
+        })
+        .catch(errors => {
+          //console.error({ errors })
           return res.render("login", {
             errors: {
               correo: {
-                msg: "Las credenciales son inválidas"
+                msg: "No se encuentra este email en nuestra base de datos"
               }
             }
           });
-        }
-      })
-      .catch(errors => {
-        return res.render("login", {
-          errors: {
-            correo: {
-              msg: "No se encuentra este email en nuestra base de datos"
-            }
-          }
         });
-      });
+    }
+
+
   },
 
-    perfil: function (req, res) {
-      console.log("Estas en perfil")
-      db.user.findByPk(req.session.userLogged.id)
-      .then((newUser)=>{
-        req.session.userLogged= newUser.dataValues
+  perfil: function (req, res) {
+    console.log("Estas en perfil")
+    db.user.findByPk(req.session.userLogged.id)
+      .then((newUser) => {
+        req.session.userLogged = newUser.dataValues
         res.render("perfil", { user: req.session.userLogged })
-        }
+      }
       )
-      
-    },
 
+  },
   registro: (req, res) => {
     res.render("registro");
   },
-
   guardar: (req, res) => {
-    db.user
-      .create({
+    // verificar las necesidades de los campos
+    const result = validationResult(req).array();
+    /*console.info({ 
+    original: validationResult(req).errors,
+    imagen: req.file, 
+    result: result, 
+    req}); */
+
+    //○ Imagen
+    //■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
+    if (result.length) {
+
+      return res.render("registro", {
+        errors: [
+          ...result.map((result) => {
+            return ({
+              field: result.path,
+              msg: result.msg
+            });
+          })
+        ]
+      });
+    } else {
+      const isImageValid = () => {
+        let isValid = false;
+
+        if (req.file) {
+          const validExtentions = ["jpeg", "jpg", "gif", "png"];
+          const fileExtention = req.file.originalname.split(".")[1];
+          isValid = validExtentions.includes(fileExtention);
+          console.log({ validExtentions, fileExtention, isValid });
+        }
+
+        return isValid;
+      };
+      db.user.create({
+
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         mail: req.body.correo,
         contraseña: bcryptjs.hashSync(req.body.contrasenia, 10),
         categoria_id: parseInt(req.body.perfil),
-        imagen: req.file ? req.file.filename : "default-image.jpg",
+        imagen: isImageValid() ? req.file.filename : "default-image.jpg",
         edad: parseInt(req.body.edad)
       })
-      .then(usuario => {
-        req.session.userLogged = usuario.dataValues;
-        res.render("perfil", { user: usuario.dataValues });
-      });
+        .then(usuario => {
+          req.session.userLogged = usuario.dataValues;
+          res.render("perfil", { user: usuario.dataValues });
+        });
+    }
   },
 
   lista: (req, res) => {
     db.user
       .findAll()
-      .then(function(users) {
+      .then(function (users) {
         res.render("users", { users });
       })
       .catch(error => {
@@ -107,21 +170,23 @@ const usersController = {
       .findByPk(req.params.id)
       .then(oldUser => {
         let editUser = {
-        id: parseInt(req.params.id),
-        nombre: req.body.nombre, 
-        apellido: req.body.apellido,
-        mail: req.body.correo,
-        contraseña: bcryptjs.hashSync(req.body.contrasenia,10),
-        categoria_id: req.body.perfil == undefined ? oldUser.categoria_id : parseInt(req.body.perfil),
-        imagen: req.file ? req.file.filename : oldUser.imagen,
-        edad: parseInt(req.body.edad)}
-      return editUser})
-      .then((editUser)=>{
-        return db.user.update(editUser,{where:{id:req.params.id}})
-        })
-      .then(res.redirect ("/users/perfil")) 
-    
-    },
+          id: parseInt(req.params.id),
+          nombre: req.body.nombre,
+          apellido: req.body.apellido,
+          mail: req.body.correo,
+          contraseña: bcryptjs.hashSync(req.body.contrasenia, 10),
+          categoria_id: req.body.perfil == undefined ? oldUser.categoria_id : parseInt(req.body.perfil),
+          imagen: req.file ? req.file.filename : oldUser.imagen,
+          edad: parseInt(req.body.edad)
+        }
+        return editUser
+      })
+      .then((editUser) => {
+        return db.user.update(editUser, { where: { id: req.params.id } })
+      })
+      .then(res.redirect("/users/perfil"))
+
+  },
 
   modificar: (req, res) => {
     db.user

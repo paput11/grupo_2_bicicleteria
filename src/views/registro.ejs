@@ -2,59 +2,74 @@
 <html lang="en">
 <!-- head -->
 <%- include('./partials/head',{cssSheet:"registro"})%>
-<body>
-  <!-- header -->
-  <%- include('./partials/header') %>
-    <main>  
-        <form method="post" action="/users/" enctype="multipart/form-data">
-            <p>
-               
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required minlength="5">
-            
-                <input type="text" id="nombre" name="apellido" placeholder="Apellido">
-            </p>
-                <b><label for="correo" id="correo">Correo electrónico</label></b>
-            <p>
-                <input type="mail" id="correo" name="correo" placeholder="pepito@ejemplo.com" required>
-            </p>
-            <p>
-                <input type="number" id="edad" name="edad" placeholder="Edad">
-            </p>
-                <b><label for="tipoUser" id="tipoUser">Categoría</label></b>
-            <p>
-                <input type="radio" name="perfil" value= 1 class="boton"> 
-                <label>Administrador</label>
-                <input type="radio" name="perfil" value= 2 class="boton"> 
-                <label>Usuario</label>
-                <input type="radio" name="perfil" value= 3 class="boton"> 
-                <label>Administrador_1</label>
-                <input type="radio" name="perfil" value= 4 class="boton"> 
-                <label>Visitante</label>
-                
-            </p>
-            </p>
-                <b><label for="fotoperfil" id="fotoperfil">Ingrese foto perfil del usuario</label></b>
-            </p>
-            <p>
-                <input type="file" id="fotoperfil" name="fotoperfil" accept=".jpg">
-            </p>
-            <p>        
-                <input type="password" id="contraseña" name="contrasenia" placeholder="Ingrese su contraseña" required>
-            </p>
-            <!-- <p>        
+
+    <body>
+        <!-- header -->
+        <%- include('./partials/header') %>
+            <main>
+                <% if (locals?.errors?.length) { %>
+                    <% for (var i=0; i < errors.length; i++) { %>
+                        <br>
+                        <div class="text-danger">
+                            <%= errors[i].msg %>
+                        </div>
+                        <% } %>
+                            <% } %>
+                                <form method="post" action="/users" enctype="multipart/form-data">
+                                    <p>
+
+                                        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required
+                                            minlength="1">
+
+                                        <input type="text" id="apellido" name="apellido" placeholder="Apellido" required
+                                            minlength="1">
+                                    </p>
+                                    <b><label for="correo" id="correo">Correo electrónico</label></b>
+                                    <p>
+                                        <input type="mail" id="correo" name="correo" placeholder="pepito@ejemplo.com"
+                                            required>
+                                    </p>
+                                    <p>
+                                        <input type="number" id="edad" name="edad" placeholder="Edad">
+                                    </p>
+                                    <b><label for="tipoUser" id="tipoUser">Categoría</label></b>
+                                    <p>
+                                        <input type="radio" name="perfil" value=1 class="boton">
+                                        <label>Administrador</label>
+                                        <input type="radio" name="perfil" value=2 class="boton">
+                                        <label>Usuario</label>
+                                        <input type="radio" name="perfil" value=3 class="boton">
+                                        <label>Administrador_1</label>
+                                        <input type="radio" name="perfil" value=4 class="boton">
+                                        <label>Visitante</label>
+
+                                    </p>
+                                    </p>
+                                    <b><label for="fotoperfil">Ingrese foto perfil del usuario</label></b>
+                                    </p>
+                                    <p>
+                                        <input type="file" id="fotoperfil" name="fotoperfil"
+                                            accept="image/png, image/jpeg, image/gif">
+                                    </p>
+                                    <p>
+                                        <input type="password" id="contraseña" name="contrasenia"
+                                            placeholder="Ingrese su contraseña" required minlength="1">
+                                    </p>
+                                    <!-- <p>        
                 <input type="password" id="contraseña" name="contraseña1" placeholder="Confirme su contraseña" required>
             </p> -->
-            <p>
-                <input id="ingreso" type="submit" value="Enviar"> </input>
-            </p>
-            <p>
-                <input id="ingreso" type="reset" value="Borrar"> </input>
-            </p>
-            
-        </form>
+                                    <p>
+                                        <input id="ingreso" type="submit" value="Enviar"> </input>
+                                    </p>
+                                    <p>
+                                        <input id="ingreso" type="reset" value="Borrar"> </input>
+                                    </p>
 
-    </main>
-    <!-- footer -->
-    <%- include('./partials/footer') %>
-</body>
+                                </form>
+
+            </main>
+            <!-- footer -->
+            <%- include('./partials/footer') %>
+    </body>
+
 </html>

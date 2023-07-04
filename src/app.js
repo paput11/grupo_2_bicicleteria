@@ -1,18 +1,18 @@
 /* Paquetes */
 const express = require("express");
-const app = express ();
-const path = require ("path");
+const app = express();
+const path = require("path");
 const methodOverride = require("method-override");
-const session =require("express-session");
+const session = require("express-session");
 
 /* Funcionamiento EJS */
-app.set("view engine","ejs");
-app.set ("views",path.resolve(__dirname,"views"));
+app.set("view engine", "ejs");
+app.set("views", path.resolve(__dirname, "views"));
 
 /* Middlewares globales */
 app.use(express.static(path.join(__dirname, '../public')));
-app.use(express.urlencoded({ extended: false })); 
-app.use(express.json()); 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(session({
     secret: "secreto",
@@ -32,6 +32,6 @@ app.use("/users", usersRouter);
 
 /* Puerto para funcionamiento local */
 const port = process.env.port || 3000;
-app.listen(port,()=> (
+app.listen(port, () => (
     console.log("Servidor escuchando en el puerto http://localhost:" + port)
 ));
