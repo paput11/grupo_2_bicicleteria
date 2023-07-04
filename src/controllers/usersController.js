@@ -1,14 +1,8 @@
 const path = require("path")
-/* const fs = require ("fs") */
 const bcryptjs = require("bcryptjs")
 const db = require("../database/models")
-/* const {Op} = require ("sequelize") */
 const { body, validationResult } = require('express-validator');
 
-
-/* const usersFilePath = path.join(__dirname,"../data/users.json")
-const user = require("../models/LoginConfig");
- */
 const usersController = {
   login: (req, res) => {
     res.render("login");
@@ -16,7 +10,6 @@ const usersController = {
 
   validacion: (req, res) => {
     const result = validationResult(req).array();
-    //console.log({ result: result, length: result.length });
 
     if (result.length) {
       console.log("hay error", result);
@@ -41,7 +34,6 @@ const usersController = {
               }
             });
           }
-          //console.log({ user })
           const contrasenia = bcryptjs.compareSync(
             req.body.password,
             user.dataValues.contraseña
@@ -60,7 +52,6 @@ const usersController = {
           }
         })
         .catch(errors => {
-          //console.error({ errors })
           return res.render("login", {
             errors: {
               correo: {
@@ -90,18 +81,26 @@ const usersController = {
   guardar: (req, res) => {
     // verificar las necesidades de los campos
     const result = validationResult(req).array();
-    /*console.info({ 
-    original: validationResult(req).errors,
-    imagen: req.file, 
-    result: result, 
-    req}); */
 
-    //○ Imagen
-    //■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
-    if (result.length) {
+    let isEmailValid = false;
+    //chequeo de existencia de email
+    db.user
+      .findOne({ where: { mail: req.body.correo } })
+      .then(user => {
+        if (!user) {
+          isEmailValid = true;
+        }
+      })
 
+    //si hay errores
+    if (result.length || !isEmailValid) {
       return res.render("registro", {
         errors: [
+          //si el email existe
+          !isEmailValid && {
+            field: "correo",
+            msg: "el email es invalido"
+          },
           ...result.map((result) => {
             return ({
               field: result.path,
@@ -111,6 +110,8 @@ const usersController = {
         ]
       });
     } else {
+      //○ Imagen
+      //■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
       const isImageValid = () => {
         let isValid = false;
 
@@ -123,8 +124,8 @@ const usersController = {
 
         return isValid;
       };
+      
       db.user.create({
-
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         mail: req.body.correo,
