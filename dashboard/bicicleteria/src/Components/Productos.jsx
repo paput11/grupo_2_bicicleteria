@@ -30,7 +30,7 @@ function Productos () {
         <>
             {details == '' && (
             <div>
-                <h3>Cantidad de productos: {productos.total}</h3>
+                <h3>Cantidad de productos: <button> {productos.total}</button></h3>
                 <ul>
                         {/* {productos.map((producto, i) => (
                             <>

@@ -55,8 +55,8 @@ usersRouter.post("/editUser/:id", requireLogin, upload.single("fotoperfil"), use
 
 //------------------------ Apis ----------------------------------------//
 
-usersRouter.get("/", usersController.list);
-usersRouter.get('/:id', usersController.show);
+usersRouter.get("/listaApi", usersController.list);
+usersRouter.get('/detalleApi/:id', usersController.show);
 
 
 

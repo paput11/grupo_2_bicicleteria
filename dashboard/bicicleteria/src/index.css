@@ -25,30 +25,55 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  display: flex;/* 
+  place-items: center; */
   min-width: 320px;
   min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    #FDDB70,
+    rgba(0, 0, 255, 0.5)
+  ), url("logo.jpg");
 }
 
+div {
+    clear:both;
+    float:left;
+    width:99%;   /* Queremos que vaya de un lado al otro de la plantilla */
+    padding: 5px;
+    color:black;
+    font-size: 30px
+}
+
+
 h1 {
-  font-size: 3.2em;
   line-height: 1.1;
+  font-size: 70px;
+
+    font-family: Comic Sans MS; 
+    font-weight:bold; 
+    color: #FDDB70; 
+    text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68, 6px 6px #414D68, 7px 7px #414D68, 8px 8px #414D68, 9px 9px #414D68;
+  
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  border-radius: 40px;
+  border: 3px solid transparent;
+  padding: 0.4em 0.8em;
+  font-size: 0.8em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #db0b0b;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.4s;
+ 
 }
+
+
+
 button:hover {
-  border-color: #646cff;
+  border-color: rgba(0, 0, 255, 0.5)
 }
 button:focus,
 button:focus-visible {
