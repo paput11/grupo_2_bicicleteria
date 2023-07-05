@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<!-- head -->
-<%- include('./partials/head',{cssSheet:"registro"})%>
-
+<body>
+    <!-- header -->
+    <%- include('./partials/head',{cssSheet:"registro"})%>
+    <%- include('./partials/header') %>
     <body>
-        <!-- header -->
-        <%- include('./partials/header') %>
             <main>
                 <% if (locals?.errors?.length) { %>
                     <% for (var i=0; i < errors.length; i++) { %>
@@ -51,7 +48,7 @@
 
             </main>
             <!-- footer -->
-            <%- include('./partials/footer') %>
+         
     </body>
 
 </html>

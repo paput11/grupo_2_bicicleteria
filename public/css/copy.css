@@ -1,3 +1,10 @@
+img{
+    background-image: url('/public/images/banner-nuevo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+    
 p, h2{
     margin-left: 5%;
     margin-right: 5%;
@@ -7,3 +14,9 @@ p, h2{
 h1{
     text-align: center;
 }
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+  }

@@ -220,12 +220,18 @@ const usersController = {
   list: (req, res) => {
     db.user
       .findAll()
-      .then(user => {
-        return res.status(200).json({
-          total: user.length,
-          data: user,
-          status: 200
-        });
+      .then(usuario => { 
+        let usuarios= []
+        for (let i = 0; i < usuario.length; i++) {
+          const element = {
+            id: usuario[i].id,
+            name: usuario[i].nombre,
+            descripcion: usuario[i].descripcion,
+            detail: "http://localhost:3000/catalogo/detalleApi/"+usuario[i].id,
+          }
+          usuario.push(element)
+        } 
+        return usuarios
       })
       .catch(error => {
         console.error(error);

@@ -1,0 +1,76 @@
+/* Estilos generales para el header */
+header {
+    background-color: #333333;
+    color: #FFFFFF;
+    padding: 20px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar {
+    display: flex;
+  }
+  
+  .navbar a {
+    color: #FFFFFF;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #FFD700;
+  }
+  
+  /* Estilos para el menú de navegación en pantallas móviles */
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar {
+      display: none;
+      flex-direction: column;
+      padding-top: 20px;
+    }
+  
+    .navbar a {
+      margin: 10px 0;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  }
+  

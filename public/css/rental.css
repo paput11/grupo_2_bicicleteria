@@ -1,99 +1,158 @@
-section{
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  background-image: url("../images/fondo\ bicicleta.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+  
+  main {
+    padding: 20px;
+  }
+  
+  .section {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-}
-
-
-.article-box{
+  }
+  
+  .article-box {
     display: flex;
     flex-direction: row;
-    box-sizing: border-box;
-    padding: 2rem;
-    width: 100%;
+    padding: 4rem;
     justify-content: space-between;
-    max-width: 1030px;
-}
-
-.tituloFoto{
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 0.5rem;
-    align-items: center;
-    text-align: left;
-}
-
-.tituloFoto h2{
-    font-size: 50px;
-    color: cadetblue;
-    font-weight: bolder;
-    margin: 0;  
-}
-
-.tituloFoto img{
-    box-sizing: border-box;
+ 
     width: 100%;
-}
-
-.descriptionPrecioCarrito{
+    box-sizing: border-box;
+  }
+  
+  .tituloFoto {
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
     width: 40%;
+    box-sizing: border-box;
+  }
+  
+  .tituloFoto h2 {
+    font-size: 32px;
+    color: #f4f4f4;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    
+  }
+  
+  .tituloFoto img {
+    width: 400px;
+    height: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .descriptionPrecioCarrito {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
     padding: 1rem;
-    justify-content: space-between; 
-}
-
-.description{
-    font-size: 20px;
+    box-sizing: border-box;
+  }
+  
+  .description {
+    font-size: 16px;
     text-align: justify;
     margin: 0;
-}
-
-.precioCarrito{
+    margin-top: 20px;
+    padding: 20px;
+    color: #333333;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .precioCarrito {
     display: flex;
-    box-sizing: border-box;
-    position: relative;
+    flex-direction: row; /* Cambia la dirección del flexbox a horizontal */
     justify-content: space-between;
     align-items: center;
-}
+    background-color: #c5bfbfae;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 200px;
+  }
+  
+  .precioCarrito .descripcion {
+    font-size: 24px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .precioCarrito .precio {
+    font-size: 32px; /* Aumenta el tamaño de la tipografía del precio */
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+  
+  .precioCarrito .botonAgregar {
+    background-color: #FDDB70;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #1f6035;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .precioCarrito .botonAgregar::before {
+    content: "\f07a"; /* Agrega el código del icono */
+    font-family: "Font Awesome 5 Free"; /* Asegúrate de tener cargada la fuente de Font Awesome */
+    font-weight: 900;
+    margin-right: 5px;
+  }
+  
+  .precioCarrito .botonAgregar:hover {
+    background-color: #ffd060;
+  }
 
-.precioCarrito p{
-    font-size: 20px;
-    font-weight: bolder;
-    color: rgb(0, 173, 0);
-}
 
-.precioCarrito i{
-    position: absolute;
-    right: 5px;
-    color: rgb(0, 173, 0);
-}
+  main {
+    margin-bottom: 195px; /* Ajusta el valor según sea necesario */
+  }
 
-.button {
-    background-color: gold;
-    display: block;
-    margin-bottom: 10px;
-    height: 40px;
-    font-size: x-large;
-    text-align: center ;
-    margin-top: 150px;
-}
-
-/*queries*/
-
-@media (max-width: 900px) {
-
-    .article-box{
-        flex-direction: column;
+  
+  
+  /* Media queries para hacer la página responsive */
+  @media screen and (max-width: 768px) {
+    .article-box {
+      flex-direction: column;
+      padding: 1rem;
     }
-    .descriptionPrecioCarrito{
-        width: 100%;
+  
+    .tituloFoto {
+      width: 100%;
+      margin-bottom: 1rem;
     }
-}
-@media (max-width: 500px) {
-.tituloFoto h2{
-    font-size: 30px;
+  
+    .descriptionPrecioCarrito {
+      width: 100%;
     }
-}
+  }
+
+

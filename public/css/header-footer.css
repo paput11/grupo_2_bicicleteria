@@ -149,7 +149,11 @@ footer button{
 }
 
 .footer-contacto-iconos{
-  display: flex;
+  display: contents;
   align-items: end;
   justify-content: space-between;
 }
+
+
+
+

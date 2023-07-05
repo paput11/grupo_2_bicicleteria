@@ -55,13 +55,6 @@ body {
     background-color: #f9f9f9;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  .input-field input[type="number"]::before {
-    content: "$";
-    position: absolute;
-    left: 10px; /* Ajusta la posición del signo de dólar según tus necesidades */
-    top: 50%;
-    transform: translateY(-50%);
-  }
   
   input[type="submit"],
   input[type="reset"] {
@@ -113,10 +106,10 @@ body {
     background-size: cover;
     background-position: center;
     position: absolute;
-    top: 200;
+    top: 0;
     left: 0;
     right: 0;
-    bottom: -20px;
+    bottom: 0;
     opacity: 0.8;
     z-index: -1;
   }

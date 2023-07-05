@@ -8,46 +8,43 @@
     <!-- header -->
     <%- include('./partials/header') %>
         
-    <main>  
+    <main>
         <section>
             <!-- articulo rental N° -->
-            
             <div class="article-box">
                 <div class="tituloFoto">
                     <h2><%= product.nombre %></h2>
                     <img src="/images/trek/<%= product.imagen %>" alt="img-1">
                 </div>
-                <div class="descriptionPrecioCarrito">    
-                    <p class="description"> <%= product.descripcion %>
-                    </p>
+                <div class="descriptionPrecioCarrito">
+                    <p class="description"><%= product.descripcion %></p>
                     <br>
-                    <p class="description"> Color: <%= product.color %>
-                    </p>
+                    <p class="description">Color: <%= product.color %></p>
                     <br>
-                    <p class="description"> Categoría: <%= product.categoria %>
-                    </p>
+                    <p class="description">Categoría: <%= product.jerarquia_id %></p>
                     <div class="precioCarrito">
-                        <p>Precio: <%= product.precio %></p>
-                    <div>
+                        <div class="input-field">
+                            <p class="precio">Precio: <%= product.precio %></p>
+                            <button class="button">Agregar al carrito</button>
+                        </div>
                         <img class="carrito" src="/images/carritoCompras.png" alt="carrito de compras">
                     </div>
                 </div>
-            </div>  
-            
-            <p>
-                <a href="/catalogo/edit/<%= product.id  %>">
-                    <input class= "button" id="ingreso" type="submit" value="Editar"> </input>
-                </a>
-               
                 
-                <form action="/catalogo/delete/<%= product.id %>?_method=DELETE" method="POST" >
-                     <button type="submit" class= "button"> Eliminar </button>
-                </form>
-            </p>
-            
+                <div class="button-group">
+                    <a href="/catalogo/edit/<%= product.id  %>">
+                        <button class="button" id="ingreso">Editar</button>
+                    </a>
+                    <form action="/catalogo/delete/<%= product.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="button">Eliminar</button>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
+    
     <!-- footer -->
     <%- include('./partials/footer') %>
 </body>
-</html> 
+</html>
+
