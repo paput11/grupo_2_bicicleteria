@@ -5,7 +5,7 @@ CREATE TABLE `usuarios` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `nombre` VARCHAR(255) NOT NULL,
    `apellido` VARCHAR(255),
-   `mail` VARCHAR(255),
+   `mail` VARCHAR(255) UNIQUE,
    `contraseña` VARCHAR(255) NOT NULL,
    `categoria_id` INT NOT NULL,
    `imagen` VARCHAR(255),

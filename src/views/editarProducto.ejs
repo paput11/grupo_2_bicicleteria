@@ -2,44 +2,57 @@
 <html lang="en">
 <!-- head -->
 <%- include('./partials/head',{cssSheet:"registro"})%>
-<body>
-  <!-- header -->
-  <%- include('./partials/header') %>
-    <main>  
-        <form action="/catalogo/edit/<%= product.id %>?_method=PATCH" method="POST" enctype="multipart/form-data" >
-            <p>
-                <input type="text" id="nombre" name="nombre" placeholder="Producto" value="<%= product.nombre %>" required minlength="5"> 
-            </p>
-            <p>
-                <input type="text" id="tipo" name="color" placeholder="Color"value="<%= product.color %>">
-            </p>
-            <p>
-                <input type="number" id="precio" name="precio" placeholder="Precio" value="<%= product.precio %>">
-            </p>
-            <p>
-                <input type="text" id="nombre" name="descripcion" placeholder="Descripcion" value="<%= product.descripcion %>">
-            </p>
-            <p>
-                <select name="categoria" id="categoria">
-                    <option value="select">Seleccionar</option>
-                    <option value=1>Bicicletas</option>
-                    <option value=2>Indumentaria</option>
-                    <option value=3>Accesorios</option>
-                  </select>
-            </p>
-                       
-            <input type="file" name="Product">           
-            <p>
-                <input id="ingreso" type="submit" value="Editar"> </input>
-                
-            </p>
-            <p>
-                <input id="ingreso" type="submit" value="Borrar"> </input>
-            </p>        
-        </form>
 
-    </main>
-    <!-- footer -->
-    <%- include('./partials/footer') %>
-</body>
+    <body>
+        <!-- header -->
+        <%- include('./partials/header') %>
+            <main>
+                <% if (locals?.errors?.length) { %>
+                    <% for (var i=0; i < errors.length; i++) { %>
+                        <br>
+                        <div class="text-danger">
+                            <%= errors[i].msg %>
+                        </div>
+                        <% } %>
+                            <% } %>
+                <form action="/catalogo/edit/<%= product.id %>?_method=PATCH" method="POST"
+                    enctype="multipart/form-data">
+                    <p>
+                        <input type="text" id="nombre" name="nombre" placeholder="Producto"
+                            value="<%= product.nombre %>" required minlength="5">
+                    </p>
+                    <p>
+                        <input type="text" id="tipo" name="color" placeholder="Color" value="<%= product.color %>">
+                    </p>
+                    <p>
+                        <input type="number" id="precio" name="precio" placeholder="Precio"
+                            value="<%= product.precio %>">
+                    </p>
+                    <p>
+                        <input type="text" id="nombre" name="descripcion" placeholder="Descripcion"
+                            value="<%= product.descripcion %>" minlength="20">
+                    </p>
+                    <p>
+                        <select name="categoria" id="categoria">
+                            <option value=1>Bicicletas</option>
+                            <option value=2>Indumentaria</option>
+                            <option value=3>Accesorios</option>
+                        </select>
+                    </p>
+
+                    <input type="file" name="Product" accept="image/png, image/jpeg, image/gif">
+                    <p>
+                        <input id="ingreso" type="submit" value="Editar"> </input>
+
+                    </p>
+                    <p>
+                        <input id="ingreso" type="submit" value="Borrar"> </input>
+                    </p>
+                </form>
+
+            </main>
+            <!-- footer -->
+            <%- include('./partials/footer') %>
+    </body>
+
 </html>
