@@ -25,7 +25,7 @@ productRouter.get('/crearProducto', productController.crear);
 //VALIDACIONES PARA PRODUCTOS
 const productValidator = [
     // Condicion Nombre obligatorio y 5 de length
-    body("name", "Nombre corto").isLength({ min: 5 }),
+    body("nombre", "Nombre corto").isLength({ min: 5 }),
     // Condicion Descripcion min 20 de length
     body("descripcion", "Descripción corta").isLength({ min: 20 }),
 ];
