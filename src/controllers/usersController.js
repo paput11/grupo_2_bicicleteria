@@ -78,20 +78,22 @@ const usersController = {
   registro: (req, res) => {
     res.render("registro");
   },
-  guardar: (req, res) => {
+  guardar: async (req, res) => {
     // verificar las necesidades de los campos
     const result = validationResult(req).array();
-
+    console.log(result)
+    //
     let isEmailValid = false;
     //chequeo de existencia de email
-    db.user
+    const user = await db.user
       .findOne({ where: { mail: req.body.correo } })
       .then(user => {
         if (!user) {
           isEmailValid = true;
-        }
+        } 
       })
-
+      console.log(isEmailValid);
+      console.log({mail: req.body.correo});
     //si hay errores
     if (result.length || !isEmailValid) {
       return res.render("registro", {
@@ -110,6 +112,7 @@ const usersController = {
         ]
       });
     } else {
+      //
       //○ Imagen
       //■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
       const isImageValid = () => {
@@ -119,7 +122,7 @@ const usersController = {
           const validExtentions = ["jpeg", "jpg", "gif", "png"];
           const fileExtention = req.file.originalname.split(".")[1];
           isValid = validExtentions.includes(fileExtention);
-          console.log({ validExtentions, fileExtention, isValid });
+          //console.log({ validExtentions, fileExtention, isValid });
         }
 
         return isValid;
