@@ -13,15 +13,15 @@ function Productos () {
     }; 
     const handleReset = () => {
         setDetails('');
+        console.log(details)
     }
 
 
     useEffect(()=>{
-        fetch("http://localhost:3000/catalogo//listaApi")
+        fetch("http://localhost:3000/catalogo/listaApi")
         .then (res=>res.json())
         .then(data => {
-            console.log("data: ", data)
-            setProductos(data.data)
+            setProductos(data)
         })
         .catch(e=>console.log(e))
     },[])
@@ -30,22 +30,23 @@ function Productos () {
         <>
             {details == '' && (
             <div>
-                <h3>Cantidad de productos: {productos.length}</h3>
+                <h3>Cantidad de productos: {productos.total}</h3>
                 <ul>
-                    {/* {productos.map(producto(i)=>{<li key = i>{producto}</li>})} */}
-                    {productos.map((producto, i) => (
-                        <>
-                            <li key={i} onClick={() => viewDetail(producto)}> {producto.name} </li>
-                        </>
-                    ))}
+                        {/* {productos.map((producto, i) => (
+                            <>
+                                <li key={i} onClick={() => viewDetail(producto)}> {producto.name} </li>
+                            </>
+                        ))} */}
                 </ul>
                 
             </div>)}
+            
             {details !== '' && (
             <DetalleProducto
                 details={details}
-                reset={handleReset}
-            />)}
+            >
+                <button onClick={handleReset}>Regresar</button>
+            </DetalleProducto>)}
         </>
     )
 }

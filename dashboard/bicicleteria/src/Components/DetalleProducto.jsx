@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 
-function DetalleProducto(details, reset) {
+function DetalleProducto(details, children) {
+    const [data, setData] = useState('')
+    
+    useEffect(() => {
+        fetch(`http://localhost:3000/catalogo/detalleApi/${details.id}`)
+        .then(res => res.json())
+        .then((res) => {
+            setData(res.data)
+        })
+
+    },[])
   return (
     <>
-        <h2>Detalle: {details.descricion}</h2>
+        {/* <h2>Detalle: {data.descripcion}</h2> */}
         
-        <h4> Precio: {details.precio}</h4>
-        <h4>Color {details.color}</h4>
-        <img src = {"http://localhost:3000/images/trek/"+ details.imagen} alt= "Sin Imagen" ></img>
+        {/* <h4> Precio: {data.precio}</h4> */}
+        {/* <h4>Color {data.color}</h4> */}
+        {/* <img src ={ data.image} alt= "Sin Imagen" ></img> */}
         <br></br>
-        <button onClick={reset}>Regresar</button>
+        {children}
 
     </>
   )
